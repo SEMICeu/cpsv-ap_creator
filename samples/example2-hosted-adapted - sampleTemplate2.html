@@ -1,0 +1,74 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link type="text/css" href="http://rdforms.com/release/dijit/themes/claro/claro.css" rel="stylesheet" />
+    <link type="text/css" href="http://rdforms.com/release/rdforms/view/resources/rdforms.css" rel="stylesheet" />
+    <script src="../release/dojo/dojo.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body class="claro">
+<script type="text/javascript">
+    require([
+        'rdfjson/Graph',             //Rdfjson Graph API
+        'rdforms/template/ItemStore', //Stores all the RDForm templates
+        'rdforms/apps/Experiment',        //The editor User interface
+        'dojo/json',
+        'dojo/text!./emptyRDF.json',
+        'dojo/text!./sampleTemplate2.json',
+        'dojo/domReady!'             //Wait until the dom is ready.
+    ], function(Graph, ItemStore, Experiment, json, emptyRDF, sampleTemplate2) {
+        /*Setup the editor.
+        Create the graph, itemstore and templatebundle
+        Create a new experiment inside the container div and start it*/
+        var graph = new Graph(json.parse(emptyRDF));
+        var itemStore = new ItemStore();
+        var bundle = itemStore.registerBundle({source: json.parse(sampleTemplate2)});
+        var e = new Experiment({
+            graph: graph,
+            template: bundle.getRoot(),
+            hideTemplate: true
+        }, "container");
+        e.startup();
+    
+        /*Function to download text to a local file*/
+        function download(filename, text) {
+            var textXML = dijit.byId("dijit_form_SimpleTextarea_1").value;
+            var element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            element.setAttribute('download', filename);
+
+            element.style.display = 'none';
+            document.body.appendChild(element);
+
+            element.click();
+
+            document.body.removeChild(element);
+        }
+
+
+        /*Append a download button to the ribbon in the RDF tab and add the onclick functionality to it*/
+        /*Append a button to the ribbon in the RDF tab*/
+        var node = document.getElementById("dijit_layout_TabContainer_1_tablist");
+        var btn = document.createElement('button');
+        btn.textContent = "download";
+        node.appendChild(btn);
+        var buttons = node.getElementsByTagName("BUTTON");
+
+
+        /*Add the onlick event. Download the text to a local file.*/
+        buttons[0].onclick = function(){
+
+            /*Get the value of the active text field*/
+            var activeTextField = $(".dijitTabPaneWrapper.dijitTabContainerTop-container.dijitTabPaneWrapperNested.dijitAlignCenter .dijitTabContainerTopChildWrapper.dijitVisible textarea").attr('id');
+            var text = dijit.byId(activeTextField).value;
+            /*var textXML = dijit.byId("dijit_form_SimpleTextarea_1").value;
+            var textJSON = dijit.byId("dijit_form_SimpleTextarea_2").value;*/
+
+            download('text.xml', text);  
+        };
+
+    });
+</script>
+    <div style="width:100%;height:100%" id="container"></div>
+</body>
+</html>

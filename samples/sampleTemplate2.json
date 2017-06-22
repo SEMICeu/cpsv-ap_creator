@@ -1,0 +1,288 @@
+{
+	"root": "cpsv:PublicService",
+	"templates": [{
+		"id": "cpsv:PublicService",
+		"type": "group",
+		"label": {
+			"en": "PublicService"
+		},
+		"description": {
+			"en": "This class represents the Public Service itself. A Public Service is a mandatory or discretionary set of acts performed, or able to be performed, by or on behalf of a public organisation. Services may be for the benefit of an individual, a business, or other public authority, or groups of any of these. The capacity to act exists whether it is used or not, and the term 'benefit' may apply in the sense of enabling the fulfilment of an obligation. As defined in the revised version of the European Interoperability Framework , a European public service comprises any service provided by public administrations in Europe, or by other organisations on their behalf, to businesses, citizens or others public administrations."
+		},
+		"cardinality": {
+			"min": 1,
+			"pref": 1,
+			"max": 1
+		},
+		"property": "http://purl.org/vocab/cpsv#PublicService",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://purl.org/vocab/cpsv#PublicService"
+		},
+		"content": [{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/title",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "Name"
+			},
+			"description": {
+				"en": "This property represents the official Name of the Public Service."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/description",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "Description"
+			},
+			"description": {
+				"en": "This property represents a free text Description of the Public Service. The description is likely to be the text that potential users of the Public Service see in any public service catalogue. Public administrations are encouraged to include a reasonable level of detail in the description, for instance including basic eligibility requirements for the particular Public Service and contact information."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://www.w3.org/ns/dcat#keyword",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "keyword"
+			},
+			"description": {
+				"en": "This property represents a keyword, term or phrase to describe the Public Service."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://data.europa.eu/m8g/sector",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "sector"
+			},
+			"description": {
+				"en": "This property represents the industry or sector a Public Service relates to, or is intended for. For example: environment, safety, housing. Note that a single Public Service may relate to multiple sectors. The possible values for this property are provided as a controlled vocabulary. The CPSV-AP v2.0 recommends to use as controlled vocabulary the List of NACE codes (http://ec.europa.eu/competition/mergers/cases/index/nace_all.html). The CPSV-AP recommends to use skos:Concept as range of the property."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/type",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "type"
+			},
+			"description": {
+				"en": "This property represents the type of a Public Service as described in a controlled vocabulary, for instance social protection, health, recreation, culture and religion, economic affairs... The CPSV-AP v2.0 recommends to use as controlled vocabulary the COFOG taxonomy (http://unstats.un.org/unsd/cr/registry/regcst.asp?Cl=4)."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/language",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "language"
+			},
+			"description": {
+				"en": "This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.0 recommends to use as controlled vocabulary the European Publications Office's Languages Named Authority List (NAL) (http://publications.europa.eu/mdr/authority/language/index.html)."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://www.w3.org/ns/adms#status",
+			"cardinality": {
+				"min": 0,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "status"
+			},
+			"description": {
+				"en": "Indicates whether a Public Service is active, inactive, under development etc. according to a controlled vocabulary. The CPSV-AP v2.0 recommends to use as controlled vocabulary the ADMS Status vocabulary (http://purl.org/adms/status/)."
+			}
+		},
+		{
+			"id": "isGroupedBy: BusinessEvent"
+		},
+		{
+			"id": "isGroupedBy: LifeEvent"
+		},
+		{
+			"id": "m8g:hasCriterion"
+		}]
+	},
+	{
+		"id": "m8g:hasCriterion",
+		"type": "group",
+		"nodetype": "RESOURCE",
+		"label": {
+			"en": "Has criterion"
+		},
+		"property": "http://data.europa.eu/m8g/hasCriterion",
+		"description": "Links a Public Service to a class that describes the criteria for needing or using the service, such as residency in a given location, being over a certain age etc. The Criterion class is defined in the Core Criterion and Core Evidence Vocabulary.",
+		"cardinality": {
+			"min": 0,
+			"pref": 0
+		},
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/CriterionRequirement"
+		},
+		"content": [{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/title",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "name"
+			},
+			"description": {
+				"en": "This property represents the official Name of the CriterionRequirement."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/type",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "type"
+			},
+			"description": {
+				"en": "This property represents the type of CriterionRequirement as described in a controlled vocabulary."
+			}
+		}]
+	},
+	{
+		"id": "isGroupedBy: BusinessEvent",
+		"type": "group",
+		"nodetype": "RESOURCE",
+		"label": {
+			"en": "isGroupedBy: BusinessEvent"
+		},
+		"extends": "m8g:Event",
+		"property": "http://data.europa.eu/m8g/isGroupedBy",
+		"cardinality": {
+			"min": 0,
+			"pref": 0
+		},
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/BusinessEvent"
+		}
+	},
+	{
+		"id": "isGroupedBy: LifeEvent",
+		"type": "group",
+		"nodetype": "RESOURCE",
+		"label": {
+			"en": "isGroupedBy: LifeEvent"
+		},
+		"extends": "m8g:Event",
+		"property": "http://data.europa.eu/m8g/isGroupedBy",
+		"cardinality": {
+			"min": 0,
+			"pref": 0
+		},
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/LifeEvent"
+		}
+	},
+	{
+		"type": "group",
+		"nodetype": "RESOURCE",
+		"id": "m8g:Event",
+		"label": {
+			"en": "Event"
+		},
+		"property": "http://data.europa.eu/m8g/Event",
+		"cardinality": {
+			"min": 0,
+			"pref": 0
+		},
+		"description": {
+			"en": "This class represents an event that can be of any type that triggers, makes use of, or in some way is related to, a Public Service.  It is not expected to be used directly, rather, one or other of its subclasses should be used. The properties of the class are, of course, inherited by those subclasses."
+		},
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/Event"
+		},
+		"content": [{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/title",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "name"
+			},
+			"description": {
+				"en": "This property represents the Name (or title) of the Event."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/description",
+			"cardinality": {
+				"min": 0,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "Description"
+			},
+			"description": {
+				"en": "This property represents a free text description of the Event. The description is likely to be the text that a business or citizen sees for that specific Event when looking for relevant Public Services. Public administrations are therefore encouraged to include a reasonable level of detail in the description."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/type",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "Type"
+			},
+			"description": {
+				"en": "The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child. The CPSV-AP v2.0 recommends to use as controlled vocabulary the CPSV-AP list of Life Events and Business Events."
+			}
+		}]
+	}]
+}

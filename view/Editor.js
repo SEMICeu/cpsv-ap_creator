@@ -792,10 +792,31 @@ define(["dojo/_base/declare",
         _getLanguagesList: function () { //TODO: Take this list from some kind of configuration
             if (this.languages == null) {
                 this.languages = [
-                    {"value": "", label: {"en": "", "sv": ""}},
-                    {"value": "en", label: {"en": "English", "sv": "Engelska"}},
-                    {"value": "de", label: {"en": "German", "sv": "Tyska"}},
-                    {"value": "sv", label: {"en": "Swedish", "sv": "Svenska"}}
+                    {"value": "", label: {"en": ""}},
+                    {"value": "bg", label: {"en": "Bulgarian"}},
+                    {"value": "hr", label: {"en": "Croatian"}},
+                    {"value": "cs", label: {"en": "Czech"}},
+                    {"value": "da", label: {"en": "Danish"}},
+                    {"value": "nl", label: {"en": "Dutch"}},
+                    {"value": "en", label: {"en": "English"}},
+                    {"value": "et", label: {"en": "Estonian"}},
+                    {"value": "fi", label: {"en": "Finnish"}},
+                    {"value": "fr", label: {"en": "French"}},
+                    {"value": "de", label: {"en": "German"}},
+                    {"value": "el", label: {"en": "Greek"}},
+                    {"value": "hu", label: {"en": "Hungarian"}},
+                    {"value": "ga", label: {"en": "Irish"}},
+                    {"value": "it", label: {"en": "Italian"}},
+                    {"value": "lv", label: {"en": "Latvian"}},
+                    {"value": "lt", label: {"en": "Lithuanian"}},
+                    {"value": "mt", label: {"en": "Maltese"}},
+                    {"value": "pl", label: {"en": "Polish"}},
+                    {"value": "pt", label: {"en": "Portuguese"}},
+                    {"value": "ro", label: {"en": "Romanian"}},
+                    {"value": "sk", label: {"en": "Slovak"}},
+                    {"value": "sl", label: {"en": "Slovenian"}},
+                    {"value": "es", label: {"en": "Spanish"}},
+                    {"value": "sv", label: {"en": "Swedish"}}
                 ];
             }
             return this.languages;

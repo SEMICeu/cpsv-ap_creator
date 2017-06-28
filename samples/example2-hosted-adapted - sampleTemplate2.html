@@ -30,7 +30,7 @@
         }, "container");
         e.startup();
 
-        function replaceRDFAbout(text) {
+        function transformRDFXML(text) {
             /*Replace the http://example.com/about with the Public Service Identifier*/
             /*find identifier*/
             var pos = text.indexOf("<dcterms:identifier");
@@ -47,8 +47,6 @@
             /*As long as it finds identifiers, replace them over the whole document*/
             while ( text.indexOf("dcterms:identifier") != -1 ) {
 
-                console.log(text.indexOf("dcterms:identifier", posEnd));
-                console.log(text);
                 /*find identifier*/
                 pos = text.indexOf("dcterms:identifier", posEnd);
                 posStart = text.indexOf(">", pos) + 1;
@@ -75,6 +73,54 @@
             /*Replace all remaining rdf:nodeID with rdf:resource*/
             text = text.replace(/rdf:nodeID/g, "rdf:resource");                
                 
+            return text;
+        }
+
+        function transformRDFJSON(text) {
+            /*Replace the http://example.com/about with the Public Service Identifier*/
+            /*find identifier*/
+            var pos = text.indexOf("http://purl.org/dc/terms/identifier");
+            var posStart = text.indexOf('value": "', pos) + 9;
+            var posEnd = text.indexOf('"', posStart);
+            var identifier = text.substring(posStart, posEnd);
+            /*replace with identifier*/
+            text = text.replace("http://example.com/about", identifier);
+            /*remove identifier and Insert <rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/>*/
+            text = text.replace('"type": "literal",', '"type": "uri",');
+            text = text.replace('"http://purl.org/dc/terms/identifier"', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type');
+            text = text.replace('"value": "' + identifier, '"value": "http://purl.org/vocab/cpsv#PublicService');
+
+            /*As long as it finds identifiers, replace them over the whole document*/
+            while ( text.indexOf("http://purl.org/dc/terms/identifier") != -1 ) {
+                /*find identifier*/
+                pos = text.indexOf("http://purl.org/dc/terms/identifier", posEnd);
+                posStart = text.indexOf('value": "', pos) + 9;
+                posEnd = text.indexOf('"', posStart);
+                identifier = text.substring(posStart, posEnd);
+                /*remove identifier*/
+                text = text.replace('"http://purl.org/dc/terms/identifier": [', "");
+                var index = text.indexOf('{', pos);
+                text = text.substr(0, index) + '' + text.substr(index + 1);
+                index = text.indexOf('"type": "literal",', pos);
+                text = text.substr(0,index) + '' + text.substr(index+18);
+                text = text.replace('"value": "' + identifier + '"', "");
+                index = text.indexOf('}', pos);
+                text = text.substr(0,index) + '' + text.substr(index+1);
+                index = text.indexOf(']', pos);
+                text = text.substr(0,index) + '' + text.substr(index+1);
+                index = text.lastIndexOf(',', pos);
+                text = text.substr(0,index) + '' + text.substr(index+1);
+                text = text.replace(/^\s*[\r\n]/gm, "");
+                /*find bnode*/
+                posNodeID = text.lastIndexOf('"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [', pos);
+                posEndNodeID = text.lastIndexOf('": {', posNodeID);
+                posStartNodeID = text.lastIndexOf('"', posEndNodeID-1)+1;
+                nodeID = text.substring(posStartNodeID, posEndNodeID);
+                while (text.indexOf(nodeID) != -1 ) {
+                    text = text.replace(nodeID, identifier);
+                };
+            }
+
             return text;
         }
     
@@ -112,10 +158,17 @@
             /*var textXML = dijit.byId("dijit_form_SimpleTextarea_1").value;
             var textJSON = dijit.byId("dijit_form_SimpleTextarea_2").value;*/
 
-            textRDFFormat = replaceRDFAbout(textEditorFormat);
-
-            download('PublicServiceDescriptionEditorFormat.xml', textEditorFormat);  
-            download('PublicServiceDescriptionRDF.xml', textRDFFormat);
+            var textRDFFormat = null;
+            if (activeTextField == "dijit_form_SimpleTextarea_1") {
+                textRDFFormat = transformRDFXML(textEditorFormat);
+                download('PublicServiceDescriptionRDF.xml', textRDFFormat);
+                download('PublicServiceDescriptionEditorFormatRDFXML.xml', textEditorFormat);
+            } else {
+                textRDFFormat = transformRDFJSON(textEditorFormat);
+                download('PublicServiceDescriptionRDF.xml', textRDFFormat);
+                download('PublicServiceDescriptionEditorFormatRDFJSON.xml', textEditorFormat);
+            }
+              
         };
 
     });

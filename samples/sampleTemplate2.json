@@ -20,6 +20,21 @@
 		},
 		"content": [{
 			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "Identifier"
+			},
+			"description": {
+				"en": "This property represents a formally-issued Identifier for the Public Service."
+			}
+		},{
+			"type": "text",
 			"nodetype": "LANGUAGE_LITERAL",
 			"property": "http://purl.org/dc/terms/title",
 			"cardinality": {
@@ -239,6 +254,22 @@
 		},
 		"content": [{
 			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "Identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Event."
+			}
+		},
+		{
+			"type": "text",
 			"nodetype": "LANGUAGE_LITERAL",
 			"property": "http://purl.org/dc/terms/title",
 			"cardinality": {
@@ -282,6 +313,22 @@
 			},
 			"description": {
 				"en": "The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child. The CPSV-AP v2.0 recommends to use as controlled vocabulary the CPSV-AP list of Life Events and Business Events."
+			}
+		}
+		,
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/relation",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "Related service"
+			},
+			"description": {
+				"en": "This property links an event directly to a public service that is related to it."
 			}
 		}]
 	}]

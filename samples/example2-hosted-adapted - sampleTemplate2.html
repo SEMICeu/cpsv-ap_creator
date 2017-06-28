@@ -29,6 +29,54 @@
             hideTemplate: true
         }, "container");
         e.startup();
+
+        function replaceRDFAbout(text) {
+            /*Replace the http://example.com/about with the Public Service Identifier*/
+            /*find identifier*/
+            var pos = text.indexOf("<dcterms:identifier");
+            var posStart = text.indexOf(">", pos) + 1;
+            var posEnd = text.indexOf("<", posStart);
+            var identifier = text.substring(posStart, posEnd);
+            /*replace with identifier*/
+            text = text.replace("http://example.com/about", identifier);
+            /*remove identifier and Insert <rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/>*/
+            text = text.replace("<dcterms:identifier>" + identifier + "</dcterms:identifier>", '<rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/>');
+
+            var posNodeID, posStartNodeID, posEndNodeID = 0;
+            var nodeID = null;
+            /*As long as it finds identifiers, replace them over the whole document*/
+            while ( text.indexOf("dcterms:identifier") != -1 ) {
+
+                console.log(text.indexOf("dcterms:identifier", posEnd));
+                console.log(text);
+                /*find identifier*/
+                pos = text.indexOf("dcterms:identifier", posEnd);
+                posStart = text.indexOf(">", pos) + 1;
+                posEnd = text.indexOf("<", posStart);
+                identifier = text.substring(posStart, posEnd);
+                /*find rdf:nodeID*/
+                posNodeID = text.lastIndexOf("nodeID", pos);
+                posStartNodeID = text.indexOf('"', posNodeID) + 1;
+                posEndNodeID = text.indexOf('"', posStartNodeID);
+                nodeID = text.substring(posStartNodeID, posEndNodeID);
+                /*replace all occurences*/
+                while (text.indexOf(nodeID) != -1 ) {
+                    text = text.replace(nodeID, identifier);
+                };
+                /*remove identifier*/
+                text = text.replace(" <dcterms:identifier>" + identifier + "</dcterms:identifier>", "");
+                text = text.replace(/^\s*[\r\n]/gm, "");
+
+            }
+
+            /*Replace all rdf:Description rdf:nodeID with rdf:Description rdf:about*/
+            text = text.replace(/rdf:Description rdf:nodeID/g, "rdf:Description rdf:about");
+
+            /*Replace all remaining rdf:nodeID with rdf:resource*/
+            text = text.replace(/rdf:nodeID/g, "rdf:resource");                
+                
+            return text;
+        }
     
         /*Function to download text to a local file*/
         function download(filename, text) {
@@ -60,11 +108,14 @@
 
             /*Get the value of the active text field*/
             var activeTextField = $(".dijitTabPaneWrapper.dijitTabContainerTop-container.dijitTabPaneWrapperNested.dijitAlignCenter .dijitTabContainerTopChildWrapper.dijitVisible textarea").attr('id');
-            var text = dijit.byId(activeTextField).value;
+            var textEditorFormat = dijit.byId(activeTextField).value;
             /*var textXML = dijit.byId("dijit_form_SimpleTextarea_1").value;
             var textJSON = dijit.byId("dijit_form_SimpleTextarea_2").value;*/
 
-            download('text.xml', text);  
+            textRDFFormat = replaceRDFAbout(textEditorFormat);
+
+            download('PublicServiceDescriptionEditorFormat.xml', textEditorFormat);  
+            download('PublicServiceDescriptionRDF.xml', textRDFFormat);
         };
 
     });

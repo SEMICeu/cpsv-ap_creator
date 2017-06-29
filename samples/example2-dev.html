@@ -15,25 +15,26 @@
 
 <script type="text/javascript">
     require([
-        'rdfjson/Graph',              //Rdfjson Graph API
+        'rdfjson/Graph',             //Rdfjson Graph API
         'rdforms/template/ItemStore', //Stores all the RDForm templates
-        'rdforms/view/Editor',        //The editor User interface
-        'dojo/json',                          //Json parser
-        'dojo/text!./sampleRDF.json',         //The sample RDF
-        'dojo/text!./sampleTemplate.json',    //The sample template
+        'rdforms/apps/Experiment',        //The editor User interface
+        'dojo/json',
+        'dojo/text!./emptyRDF.json',
+        'dojo/text!./sampleTemplate2.json',
         'dojo/domReady!'             //Wait until the dom is ready.
-    ], function(Graph, ItemStore, Editor, json, sampleRDF, sampleTemplate) {
-        var graph = new Graph(json.parse(sampleRDF));
+    ], function(Graph, ItemStore, Experiment, json, emptyRDF, sampleTemplate2) {
+        var graph = new Graph(json.parse(emptyRDF));
+        console.log(graph);
         var itemStore = new ItemStore();
-        var bundle = itemStore.registerBundle({source: json.parse(sampleTemplate)});
-        new Editor({
+        var bundle = itemStore.registerBundle({source: json.parse(sampleTemplate2)});
+        var e = new Experiment({
             graph: graph,
-            resource: "http://example.org/about",
             template: bundle.getRoot(),
-            compact: true
-        }, "node");
+            hideTemplate: true
+        }, "container");
+        e.startup();
     });
 </script>
-<div id="node"></div>
+<div style="width:100%;height:100%" id="container"></div>
 </body>
 </html>

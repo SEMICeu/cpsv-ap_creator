@@ -7,6 +7,7 @@
     <script src="../release/dojo/dojo.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="download.js"></script>
+    <script src="import.js"></script>
 </head>
 <body class="claro">
 <script type="text/javascript">
@@ -33,35 +34,16 @@
         e.startup();
 
 
-        /*Append a download button to the ribbon in the RDF tab and add the onclick functionality to it*/
+        /*Append a download and Browse button to the ribbon in the RDF tab and add the onclick functionality to it*/
         /*Append a button to the ribbon in the RDF tab*/
-        var node = document.getElementById("dijit_layout_TabContainer_1_tablist");
-        var btn = document.createElement('button');
-        btn.textContent = "download";
-        node.appendChild(btn);
-        var buttons = node.getElementsByTagName("BUTTON");
+        $('#dijit_layout_TabContainer_1_tablist').append("<button>download</button>");
+        var buttons = document.getElementById("dijit_layout_TabContainer_1_tablist").getElementsByTagName("BUTTON");
+        /*Append a Browse button to the ribbon in the RDF tab and add the onclick functionality to it*/
+        $('#dijit_layout_TabContainer_1_tablist').append("<input type='file' accept='text/plain' onchange='openFile(event)'>");
 
-
-        /*Add the onlick event. Download the text to a local file.*/
+        /*Add the onlick event to the button. Download the text to a local file.*/
         buttons[0].onclick = function(){
-
-            /*Get the value of the active text field*/
-            var activeTextField = $(".dijitTabPaneWrapper.dijitTabContainerTop-container.dijitTabPaneWrapperNested.dijitAlignCenter .dijitTabContainerTopChildWrapper.dijitVisible textarea").attr('id');
-            var textEditorFormat = dijit.byId(activeTextField).value;
-            /*var textXML = dijit.byId("dijit_form_SimpleTextarea_1").value;
-            var textJSON = dijit.byId("dijit_form_SimpleTextarea_2").value;*/
-
-            var textRDFFormat = null;
-            if (activeTextField == "dijit_form_SimpleTextarea_1") {
-                textRDFFormat = transformRDFXML(textEditorFormat);
-                download('PublicServiceDescriptionRDFXML.xml', textRDFFormat);
-                download('PublicServiceDescriptionEditorFormatRDFXML.xml', textEditorFormat);
-            } else {
-                textRDFFormat = transformRDFJSON(textEditorFormat);
-                download('PublicServiceDescriptionRDFJSON.xml', textRDFFormat);
-                download('PublicServiceDescriptionEditorFormatRDFJSON.xml', textEditorFormat);
-            }
-              
+            downloadClicked();              
         };
 
     });
@@ -72,14 +54,14 @@
         </header>
         <div class="body" id="body"></div>
         <footer>
-                <a href="http://ec.europa.eu/"><img src="../images/logo_commission.png" width="172" height="119" alt="European Commission"/></a>
-                <p>
-                    <small>CPSV-AP validator: Copyright ©  European Union 2016. This validator is published under the <a href="https://joinup.ec.europa.eu/community/eupl/home">EUPL v1.1 licence</a><br/>
-                    This project is funded by <a href="http://ec.europa.eu/isa/actions/01-trusted-information-exchange/1-3action_en.htm">ISA Action 1.3</a> under framework contract DI/07171 Lot 2 (Specific Contract 270).<br/>
-                    Authors: Ana Fernández de Soria (based on the work done on the DCAT-AP validator).<br/>
-                    Apache Fuseki is a copyright © 2011-2015 of the Apache Software Foundation, licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
-                    </small>
-                </p>
+            <a href="http://ec.europa.eu/"><img src="../images/logo_commission.png" width="172" height="119" alt="European Commission"/></a>
+            <p>
+                <small>CPSV-AP validator: Copyright ©  European Union 2016. This validator is published under the <a href="https://joinup.ec.europa.eu/community/eupl/home">EUPL v1.1 licence</a><br/>
+                This project is funded by <a href="http://ec.europa.eu/isa/actions/01-trusted-information-exchange/1-3action_en.htm">ISA Action 1.3</a> under framework contract DI/07171 Lot 2 (Specific Contract 270).<br/>
+                Authors: Ana Fernández de Soria (based on the work done on the DCAT-AP validator).<br/>
+                Apache Fuseki is a copyright © 2011-2015 of the Apache Software Foundation, licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+                </small>
+            </p>
         </footer>
     </div>
 </body>

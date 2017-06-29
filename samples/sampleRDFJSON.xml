@@ -1,0 +1,108 @@
+{
+  "http://example.com/about": {
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "type": "literal",
+        "value": "ID PS"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "type": "literal",
+        "value": "nlfnkjeznjfkze"
+      }
+    ],
+    "http://data.europa.eu/m8g/isGroupedBy": [
+      {
+        "type": "bnode",
+        "value": "_:n9"
+      },
+      {
+        "type": "bnode",
+        "value": "_:n8"
+      },
+      {
+        "type": "bnode",
+        "value": "_:n7"
+      },
+      {
+        "type": "bnode",
+        "value": "_:n6"
+      },
+      {
+        "type": "bnode",
+        "value": "_:n5"
+      }
+    ]
+  },
+  "_:n9": {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+      {
+        "type": "uri",
+        "value": "http://data.europa.eu/m8g/BusinessEvent"
+      }
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "type": "literal",
+        "value": "ID Business Event 1"
+      }
+    ]
+  },
+  "_:n8": {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+      {
+        "type": "uri",
+        "value": "http://data.europa.eu/m8g/BusinessEvent"
+      }
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "type": "literal",
+        "value": "ID Business Event 2"
+      }
+    ]
+  },
+  "_:n7": {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+      {
+        "type": "uri",
+        "value": "http://data.europa.eu/m8g/BusinessEvent"
+      }
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "type": "literal",
+        "value": "ID Business Event 3"
+      }
+    ]
+  },
+  "_:n6": {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+      {
+        "type": "uri",
+        "value": "http://data.europa.eu/m8g/LifeEvent"
+      }
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "type": "literal",
+        "value": "ID LIfe Event 1"
+      }
+    ]
+  },
+  "_:n5": {
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+      {
+        "type": "uri",
+        "value": "http://data.europa.eu/m8g/LifeEvent"
+      }
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "type": "literal",
+        "value": "ID Life Event 2"
+      }
+    ]
+  }
+}

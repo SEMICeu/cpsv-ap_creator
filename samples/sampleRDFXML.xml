@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:ns1="http://data.europa.eu/m8g/">
+  <rdf:Description rdf:about="http://example.com/about">
+    <dcterms:identifier>ID PS</dcterms:identifier>
+    <dcterms:title>nlfnkjeznjfkze</dcterms:title>
+    <ns1:isGroupedBy rdf:nodeID="_9"/>
+    <ns1:isGroupedBy rdf:nodeID="_8"/>
+    <ns1:isGroupedBy rdf:nodeID="_0"/>
+    <ns1:isGroupedBy rdf:nodeID="_5"/>
+    <ns1:isGroupedBy rdf:nodeID="_3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="_9">
+    <rdf:type rdf:resource="http://data.europa.eu/m8g/BusinessEvent"/>
+    <dcterms:identifier>ID Business Event 1</dcterms:identifier>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="_8">
+    <rdf:type rdf:resource="http://data.europa.eu/m8g/BusinessEvent"/>
+    <dcterms:identifier>ID Business Event 2</dcterms:identifier>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="_0">
+    <rdf:type rdf:resource="http://data.europa.eu/m8g/BusinessEvent"/>
+    <dcterms:identifier>ID Business Event 3</dcterms:identifier>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="_5">
+    <rdf:type rdf:resource="http://data.europa.eu/m8g/LifeEvent"/>
+    <dcterms:identifier>ID LIfe Event 1</dcterms:identifier>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="_3">
+    <rdf:type rdf:resource="http://data.europa.eu/m8g/LifeEvent"/>
+    <dcterms:identifier>ID Life Event 2</dcterms:identifier>
+  </rdf:Description>
+</rdf:RDF>

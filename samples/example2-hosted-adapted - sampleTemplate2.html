@@ -3,8 +3,10 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link type="text/css" href="http://rdforms.com/release/dijit/themes/claro/claro.css" rel="stylesheet" />
     <link type="text/css" href="http://rdforms.com/release/rdforms/view/resources/rdforms.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/concat/cpsv.css">
     <script src="../release/dojo/dojo.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="download.js"></script>
 </head>
 <body class="claro">
 <script type="text/javascript">
@@ -27,117 +29,8 @@
             graph: graph,
             template: bundle.getRoot(),
             hideTemplate: true
-        }, "container");
+        }, "body");
         e.startup();
-
-        function transformRDFXML(text) {
-            /*Replace the http://example.com/about with the Public Service Identifier*/
-            /*find identifier*/
-            var pos = text.indexOf("<dcterms:identifier");
-            var posStart = text.indexOf(">", pos) + 1;
-            var posEnd = text.indexOf("<", posStart);
-            var identifier = text.substring(posStart, posEnd);
-            /*replace with identifier*/
-            text = text.replace("http://example.com/about", identifier);
-            /*remove identifier and Insert <rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/>*/
-            text = text.replace("<dcterms:identifier>" + identifier + "</dcterms:identifier>", '<rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/>');
-
-            var posNodeID, posStartNodeID, posEndNodeID = 0;
-            var nodeID = null;
-            /*As long as it finds identifiers, replace them over the whole document*/
-            while ( text.indexOf("dcterms:identifier") != -1 ) {
-
-                /*find identifier*/
-                pos = text.indexOf("dcterms:identifier", posEnd);
-                posStart = text.indexOf(">", pos) + 1;
-                posEnd = text.indexOf("<", posStart);
-                identifier = text.substring(posStart, posEnd);
-                /*find rdf:nodeID*/
-                posNodeID = text.lastIndexOf("nodeID", pos);
-                posStartNodeID = text.indexOf('"', posNodeID) + 1;
-                posEndNodeID = text.indexOf('"', posStartNodeID);
-                nodeID = text.substring(posStartNodeID, posEndNodeID);
-                /*replace all occurences*/
-                while (text.indexOf(nodeID) != -1 ) {
-                    text = text.replace(nodeID, identifier);
-                };
-                /*remove identifier*/
-                text = text.replace(" <dcterms:identifier>" + identifier + "</dcterms:identifier>", "");
-                text = text.replace(/^\s*[\r\n]/gm, "");
-
-            }
-
-            /*Replace all rdf:Description rdf:nodeID with rdf:Description rdf:about*/
-            text = text.replace(/rdf:Description rdf:nodeID/g, "rdf:Description rdf:about");
-
-            /*Replace all remaining rdf:nodeID with rdf:resource*/
-            text = text.replace(/rdf:nodeID/g, "rdf:resource");                
-                
-            return text;
-        }
-
-        function transformRDFJSON(text) {
-            /*Replace the http://example.com/about with the Public Service Identifier*/
-            /*find identifier*/
-            var pos = text.indexOf("http://purl.org/dc/terms/identifier");
-            var posStart = text.indexOf('value": "', pos) + 9;
-            var posEnd = text.indexOf('"', posStart);
-            var identifier = text.substring(posStart, posEnd);
-            /*replace with identifier*/
-            text = text.replace("http://example.com/about", identifier);
-            /*remove identifier and Insert <rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/>*/
-            text = text.replace('"type": "literal",', '"type": "uri",');
-            text = text.replace('"http://purl.org/dc/terms/identifier"', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type');
-            text = text.replace('"value": "' + identifier, '"value": "http://purl.org/vocab/cpsv#PublicService');
-
-            /*As long as it finds identifiers, replace them over the whole document*/
-            while ( text.indexOf("http://purl.org/dc/terms/identifier") != -1 ) {
-                /*find identifier*/
-                pos = text.indexOf("http://purl.org/dc/terms/identifier", posEnd);
-                posStart = text.indexOf('value": "', pos) + 9;
-                posEnd = text.indexOf('"', posStart);
-                identifier = text.substring(posStart, posEnd);
-                /*remove identifier*/
-                text = text.replace('"http://purl.org/dc/terms/identifier": [', "");
-                var index = text.indexOf('{', pos);
-                text = text.substr(0, index) + '' + text.substr(index + 1);
-                index = text.indexOf('"type": "literal",', pos);
-                text = text.substr(0,index) + '' + text.substr(index+18);
-                text = text.replace('"value": "' + identifier + '"', "");
-                index = text.indexOf('}', pos);
-                text = text.substr(0,index) + '' + text.substr(index+1);
-                index = text.indexOf(']', pos);
-                text = text.substr(0,index) + '' + text.substr(index+1);
-                index = text.lastIndexOf(',', pos);
-                text = text.substr(0,index) + '' + text.substr(index+1);
-                text = text.replace(/^\s*[\r\n]/gm, "");
-                /*find bnode*/
-                posNodeID = text.lastIndexOf('"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [', pos);
-                posEndNodeID = text.lastIndexOf('": {', posNodeID);
-                posStartNodeID = text.lastIndexOf('"', posEndNodeID-1)+1;
-                nodeID = text.substring(posStartNodeID, posEndNodeID);
-                while (text.indexOf(nodeID) != -1 ) {
-                    text = text.replace(nodeID, identifier);
-                };
-            }
-
-            return text;
-        }
-    
-        /*Function to download text to a local file*/
-        function download(filename, text) {
-            var textXML = dijit.byId("dijit_form_SimpleTextarea_1").value;
-            var element = document.createElement('a');
-            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-            element.setAttribute('download', filename);
-
-            element.style.display = 'none';
-            document.body.appendChild(element);
-
-            element.click();
-
-            document.body.removeChild(element);
-        }
 
 
         /*Append a download button to the ribbon in the RDF tab and add the onclick functionality to it*/
@@ -161,11 +54,11 @@
             var textRDFFormat = null;
             if (activeTextField == "dijit_form_SimpleTextarea_1") {
                 textRDFFormat = transformRDFXML(textEditorFormat);
-                download('PublicServiceDescriptionRDF.xml', textRDFFormat);
+                download('PublicServiceDescriptionRDFXML.xml', textRDFFormat);
                 download('PublicServiceDescriptionEditorFormatRDFXML.xml', textEditorFormat);
             } else {
                 textRDFFormat = transformRDFJSON(textEditorFormat);
-                download('PublicServiceDescriptionRDF.xml', textRDFFormat);
+                download('PublicServiceDescriptionRDFJSON.xml', textRDFFormat);
                 download('PublicServiceDescriptionEditorFormatRDFJSON.xml', textEditorFormat);
             }
               
@@ -173,6 +66,21 @@
 
     });
 </script>
-    <div style="width:100%;height:100%" id="container"></div>
+    <div class="container">
+        <header class="banner">
+            <a id="logobanner" href="#"><img src="../images/CPSV-AP_logo.png" width="70" height="70" alt="CPSV-AP logo" /><h1>CPSV-AP Validator</h1></a>
+        </header>
+        <div class="body" id="body"></div>
+        <footer>
+                <a href="http://ec.europa.eu/"><img src="../images/logo_commission.png" width="172" height="119" alt="European Commission"/></a>
+                <p>
+                    <small>CPSV-AP validator: Copyright ©  European Union 2016. This validator is published under the <a href="https://joinup.ec.europa.eu/community/eupl/home">EUPL v1.1 licence</a><br/>
+                    This project is funded by <a href="http://ec.europa.eu/isa/actions/01-trusted-information-exchange/1-3action_en.htm">ISA Action 1.3</a> under framework contract DI/07171 Lot 2 (Specific Contract 270).<br/>
+                    Authors: Ana Fernández de Soria (based on the work done on the DCAT-AP validator).<br/>
+                    Apache Fuseki is a copyright © 2011-2015 of the Apache Software Foundation, licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+                    </small>
+                </p>
+        </footer>
+    </div>
 </body>
 </html>

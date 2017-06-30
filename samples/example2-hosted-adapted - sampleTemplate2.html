@@ -8,6 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="download.js"></script>
     <script src="import.js"></script>
+    <script src="openTab.js"></script>
 </head>
 
 
@@ -49,60 +50,41 @@
             downloadClicked();              
         };
 
-    });
-  
-  
-  
-    function opentab(evt, tabname){
-    	var i, tabcontent, tablinks;
-    	
-    	tabcontent = document.getElementsByClassName("tabcontent");
-    		for (i = 0; i < tabcontent.length; i++) {
-    			tabcontent[i].style.display = "none";
-    		}
-    		
-    	tablinks = document.getElementsByClassName("tablinks");
-    		for (i = 0; i < tablinks.length; i++) {
-    			tablinks[i].className = tablinks[i].className.replace(" active", "");
-    		}
-    		
-    	document.getElementById(tabname).style.display = "block";
-    		evt.currentTarget.className += " active";
-    }
-    
+    });    
     
 </script>
 
 
     <div class="container">
-        <header class="banner">
+        <div class="banner">
         	  <a id="logobanner" href="#"><img src="../images/CPSV-AP_logo.png" width="100" height="100" float = "left" alt="CPSV-AP logo" /></a>
         	  <h1 id = "maintitle"> Public Service Describer </h1>
    
         	  <div class= "tab">
-        	  	<button class=" tablinks" id="editorButton" onclick="opentab(event, 'editor') ">Editor</button>
-        	  	<button class="tablinks" onclick="opentab(event, 'about')">About</button>
+        	  	<button class=" tablinks" id="editorButton" onclick="openTab(event, 'editor') ">Editor</button>
+        	  	<button class="tablinks" onclick="openTab(event, 'about')">About</button>
  			</div>
-        </header>
+        </div>
         
  		
         <div id= "about" class= "tabcontent" display: "none">
-        <h2> Usage instructions:  </h2>   
-        <p> The Public Service describer The CPSV-AP New Tool will allow European public administrations to create public service descriptions 
-        in an easy-to-use web form and export these descriptions in CPSV-AP 2.0 compliant machine-readable formats to store locally on a computer. 
-        Created descriptions can be imported again to easily update or edit the created descriptions and export again. Descriptions are exported in two formats:
-        <ul>
-        <li> <b>Machine-readable CPSV-AP 2.0</b> compliant format </li>
-        <li> <b>Public Service Describer format</b>, this format is used to import the public service description to make changes or updates </li>
-        </ul>
-        <p>Descriptions are to be made one at the time. </p>
-        <h2> Deployment instructions:  </h2>   
-        <p> The source code and instructions to install this tool on your local computer can be found on the following github page: </p>
-        <p> <a href= https://github.com/catalogue-of-services-isa/cpsv-ap_rdf_editor> https://github.com/catalogue-of-services-isa/cpsv-ap_rdf_editor</a> </p>
+            <h2> Usage instructions:  </h2>   
+            <p> The Public Service Describer will allow European public administrations to create public service descriptions 
+            in an easy-to-use web form and export these descriptions in CPSV-AP 2.1 compliant machine-readable formats to store locally on a computer. 
+            Created descriptions can be imported again to easily update or edit the created descriptions and export again. Descriptions are exported in two formats:
+            <ul>
+            <li> <b>Machine-readable CPSV-AP 2.1</b> compliant format </li>
+            <li> <b>Public Service Describer format</b>, this format is used to import the public service description into the Public Service Describer to make changes or updates </li>
+            </ul>
+            <p>The tool allows to make a description for one public service. </p>
+            <h2> Deployment instructions:  </h2>   
+            <p> The source code and instructions to install this tool on your local computer can be found on
+            <a href= https://github.com/catalogue-of-services-isa/cpsv-ap_rdf_editor> gitHub.</a> </p>
         </div>
-      		
+      	
+
  		<div id= "editor" class= "tabcontent">
-        <div class="body" id="body"></div>
+            <div class="body" id="body"></div>
         </div>
         
         <footer>

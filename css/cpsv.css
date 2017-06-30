@@ -25,28 +25,33 @@ text-decoration:none;
 }
 
 h1{
-margin:0px 5px 5px 150px;
+margin:0px 5px 5px 10px;
 color:white;
-padding: 20px 0px 0px 0px;
+padding: 30px 0px 0px 0px;
 overflow: hidden;
+width: 60%;
+float:left;
 
 }
 
 div.tab {
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+	float: right;
+	width: 30%;
+	padding: 25px 0px 0px 0px;
 }
 
 /* Style the buttons inside the tab */
 div.tab button {
-    background-color: inherit;
+	
     float: left;
-    border: none;
-    outline: none;
+    border: 1px solid white;
+    border-radius: 5px;
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
+	background-color: white;
+	margin: 3px;
 }
 
 div.tab button:hover {
@@ -54,7 +59,7 @@ div.tab button:hover {
 }
 
 div.tab button.active {
-    background-color: #ccc;
+    background-color: #6CC6E8;
 }
 
 .body{

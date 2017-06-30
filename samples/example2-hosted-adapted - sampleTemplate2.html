@@ -11,7 +11,7 @@
 </head>
 
 
-<body class="claro">
+<body class="claro" onLoad= "document.getElementById('editorButton').click();">
 
 <script type="text/javascript">
     require([
@@ -50,7 +50,9 @@
         };
 
     });
-    
+  
+  
+  
     function opentab(evt, tabname){
     	var i, tabcontent, tablinks;
     	
@@ -67,6 +69,8 @@
     	document.getElementById(tabname).style.display = "block";
     		evt.currentTarget.className += " active";
     }
+    
+    
 </script>
 
 
@@ -75,14 +79,15 @@
         	  <a id="logobanner" href="#"><img src="../images/CPSV-AP_logo.png" width="100" height="100" float = "left" alt="CPSV-AP logo" /></a>
         	  <h1 id = "maintitle"> Public Service Describer </h1>
    
+        	  <div class= "tab">
+        	  	<button class=" tablinks" id="editorButton" onclick="opentab(event, 'editor') ">Editor</button>
+        	  	<button class="tablinks" onclick="opentab(event, 'about')">About</button>
+ 			</div>
         </header>
-         <div class= "tab">
-        	<button class="tablinks" onclick="opentab(event, 'editor')">Editor</button>
- 			<button class="tablinks" onclick="opentab(event, 'about')">About</button>
- 		</div>
+        
  		
         <div id= "about" class= "tabcontent" display: "none">
-        <h1> Public Service Describer </h1>
+        <h1 id="abouttitle"> Public Service Describer </h1>
         <p> This editor was made by Carmen and it's very cool. It creates public service descriptions. </p>   
         <p> Instructions to install this editor on your local computer can be found on the following github page: 
         <a href= https://github.com/catalogue-of-services-isa/cpsv-ap_rdf_editor> https://github.com/catalogue-of-services-isa/cpsv-ap_rdf_editor</a> </p>

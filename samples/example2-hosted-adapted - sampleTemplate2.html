@@ -8,7 +8,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="download.js"></script>
 </head>
+
+
 <body class="claro">
+
 <script type="text/javascript">
     require([
         'rdfjson/Graph',             //Rdfjson Graph API
@@ -65,14 +68,48 @@
         };
 
     });
+    
+    function opentab(evt, tabname){
+    	var i, tabcontent, tablinks;
+    	
+    	tabcontent = document.getElementsByClassName("tabcontent");
+    		for (i = 0; i < tabcontent.length; i++) {
+    			tabcontent[i].style.display = "none";
+    		}
+    		
+    	tablinks = document.getElementsByClassName("tablinks");
+    		for (i = 0; i < tablinks.length; i++) {
+    			tablinks[i].className = tablinks[i].className.replace(" active", "");
+    		}
+    		
+    	document.getElementById(tabname).style.display = "block";
+    		evt.currentTarget.className += " active";
+    }
 </script>
+
+
     <div class="container">
         <header class="banner">
         	  <a id="logobanner" href="#"><img src="../images/CPSV-AP_logo.png" width="100" height="100" float = "left" alt="CPSV-AP logo" /></a>
         	  <h1 id = "maintitle"> Public Service Describer </h1>
    
         </header>
+         <div class= "tab">
+        	<button class="tablinks" onclick="opentab(event, 'editor')">Editor</button>
+ 			<button class="tablinks" onclick="opentab(event, 'about')">About</button>
+ 		</div>
+ 		
+        <div id= "about" class= "tabcontent" display: "none">
+        <h1> Public Service Describer </h1>
+        <p> This editor was made by Carmen and it's very cool. It creates public service descriptions. </p>   
+        <p> Instructions to install this editor on your local computer can be found on the following github page: 
+        <a href= https://github.com/catalogue-of-services-isa/cpsv-ap_rdf_editor> https://github.com/catalogue-of-services-isa/cpsv-ap_rdf_editor</a> </p>
+        </div>
+      		
+ 		<div id= "editor" class= "tabcontent">
         <div class="body" id="body"></div>
+        </div>
+        
         <footer>
                 <a href="http://ec.europa.eu/"><img src="../images/logo_commission.png" width="172" height="119" alt="European Commission"/></a>
                 <p>

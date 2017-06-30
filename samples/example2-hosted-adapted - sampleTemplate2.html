@@ -7,6 +7,7 @@
     <script src="../release/dojo/dojo.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="download.js"></script>
+    <script src="import.js"></script>
 </head>
 
 
@@ -36,35 +37,16 @@
         e.startup();
 
 
-        /*Append a download button to the ribbon in the RDF tab and add the onclick functionality to it*/
+        /*Append a download and Browse button to the ribbon in the RDF tab and add the onclick functionality to it*/
         /*Append a button to the ribbon in the RDF tab*/
-        var node = document.getElementById("dijit_layout_TabContainer_1_tablist");
-        var btn = document.createElement('button');
-        btn.textContent = "download";
-        node.appendChild(btn);
-        var buttons = node.getElementsByTagName("BUTTON");
+        $('#dijit_layout_TabContainer_1_tablist').append("<button>download</button>");
+        var buttons = document.getElementById("dijit_layout_TabContainer_1_tablist").getElementsByTagName("BUTTON");
+        /*Append a Browse button to the ribbon in the RDF tab and add the onclick functionality to it*/
+        $('#dijit_layout_TabContainer_1_tablist').append("<input type='file' accept='text/plain' onchange='openFile(event)'>");
 
-
-        /*Add the onlick event. Download the text to a local file.*/
+        /*Add the onlick event to the button. Download the text to a local file.*/
         buttons[0].onclick = function(){
-
-            /*Get the value of the active text field*/
-            var activeTextField = $(".dijitTabPaneWrapper.dijitTabContainerTop-container.dijitTabPaneWrapperNested.dijitAlignCenter .dijitTabContainerTopChildWrapper.dijitVisible textarea").attr('id');
-            var textEditorFormat = dijit.byId(activeTextField).value;
-            /*var textXML = dijit.byId("dijit_form_SimpleTextarea_1").value;
-            var textJSON = dijit.byId("dijit_form_SimpleTextarea_2").value;*/
-
-            var textRDFFormat = null;
-            if (activeTextField == "dijit_form_SimpleTextarea_1") {
-                textRDFFormat = transformRDFXML(textEditorFormat);
-                download('PublicServiceDescriptionRDFXML.xml', textRDFFormat);
-                download('PublicServiceDescriptionEditorFormatRDFXML.xml', textEditorFormat);
-            } else {
-                textRDFFormat = transformRDFJSON(textEditorFormat);
-                download('PublicServiceDescriptionRDFJSON.xml', textRDFFormat);
-                download('PublicServiceDescriptionEditorFormatRDFJSON.xml', textEditorFormat);
-            }
-              
+            downloadClicked();              
         };
 
     });

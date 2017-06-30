@@ -106,3 +106,24 @@ function download(filename, text) {
 
     document.body.removeChild(element);
 }
+
+/*Function executed once the download button is clicked*/
+/*Checks whether RDF/XML or RDF/JSON is active and launches the appropriate actions*/
+function downloadClicked() {
+	/*Get the value of the active text field*/
+    var activeTextField = $(".dijitTabPaneWrapper.dijitTabContainerTop-container.dijitTabPaneWrapperNested.dijitAlignCenter .dijitTabContainerTopChildWrapper.dijitVisible textarea").attr('id');
+    var textEditorFormat = dijit.byId(activeTextField).value;
+    /*var textXML = dijit.byId("dijit_form_SimpleTextarea_1").value;
+    var textJSON = dijit.byId("dijit_form_SimpleTextarea_2").value;*/
+
+    var textRDFFormat = null;
+    if (activeTextField == "dijit_form_SimpleTextarea_1") {
+        textRDFFormat = transformRDFXML(textEditorFormat);
+        download('PublicServiceDescriptionRDFXML.xml', textRDFFormat);
+        download('PublicServiceDescriptionEditorFormatRDFXML.xml', textEditorFormat);
+    } else {
+        textRDFFormat = transformRDFJSON(textEditorFormat);
+        download('PublicServiceDescriptionRDFJSON.xml', textRDFFormat);
+        download('PublicServiceDescriptionEditorFormatRDFJSON.xml', textEditorFormat);
+    }
+}

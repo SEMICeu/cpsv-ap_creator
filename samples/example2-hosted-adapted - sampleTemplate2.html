@@ -44,8 +44,8 @@
         $('#dijit_layout_TabContainer_1_tablist').append("<button>download</button>");
         var buttons = document.getElementById("dijit_layout_TabContainer_1_tablist").getElementsByTagName("BUTTON");
         /*Append a Browse button to the ribbon in the RDF tab and add the onclick functionality to it*/
-        $('#dijit_layout_TabContainer_1_tablist').append("<input type='file' accept='text/plain' onchange='openFile(event)'>");
-
+        $('#dijit_layout_TabContainer_1_tablist').append("<input type='file' accept='text/xml' onchange='openFile(event)'>");
+        
         /*Add the onlick event to the button. Download the text to a local file.*/
         buttons[0].onclick = function(){
             downloadClicked();              

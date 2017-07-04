@@ -418,7 +418,90 @@
 
 	{
 		"type": "group",
-		"id": "cpsv:Rule"
+		"id": "cpsv:Rule",
+		"property": "http://purl.org/vocab/cpsv#Rule",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://purl.org/vocab/cpsv#Rule"
+		},
+		"content": [
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Rule."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/title",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "name"
+			},
+			"description": {
+				"en": "This property represents the Name of the Rule."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/description",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "description"
+			},
+			"description": {
+				"en": "This property represents a free text Description of the Rule."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/language",
+			"cardinality": {
+				"min": 0,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "type"
+			},
+			"description": {
+				"en": "This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.0 recommends to use as controlled vocabulary the European Publications Office's Languages Named Authority List (NAL) (http://publications.europa.eu/mdr/authority/language/index.html)."
+			}
+		},
+		{
+			"label": {
+				"en": "implements"
+			},
+			"description": {
+				"en": "The Implements property links a Rule to relevant legislation or policy documents i.e. the Formal Framework under which the Rules are being defined."
+			},
+			"property": "http://purl.org/vocab/cpsv#implements",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "cpsv:FormalFramework"
+		}]
 	},
 
 

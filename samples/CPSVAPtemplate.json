@@ -424,7 +424,76 @@
 
 	{
 		"type": "group",
-		"id": "m8g:Output"
+		"id": "m8g:Output",
+		"property": "http://data.europa.eu/m8g/Output",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/Output"
+		},
+		"content": [
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Output."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/title",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "name"
+			},
+			"description": {
+				"en": "This property represents the Name (or title) of the Output."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/description",
+			"cardinality": {
+				"min": 0,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "description"
+			},
+			"description": {
+				"en": "This property represents a free text Description of the Output."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/type",
+			"cardinality": {
+				"min": 0,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "type"
+			},
+			"description": {
+				"en": "This property represents the type of Output as defined in a controlled vocabulary. The CPSV-AP v2.0 recommends to use as controlled vocabulary the CPSV-AP list of Outputs."
+			}
+		}]
 	},
 
 	{

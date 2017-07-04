@@ -406,15 +406,330 @@
 		"id": "m8g:Cost"
 	},
 
-	{
-		"type": "group",
-		"id": "m8g:Channel"
-	},
 
 	{
 		"type": "group",
-		"id": "schema:ContactPoint"
+		"id": "m8g:Channel",
+		"property": "http://data.europa.eu/m8g/Channel",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/Channel"
+		},
+		"content": [
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Channel."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/type",
+			"cardinality": {
+				"min": 0,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "type"
+			},
+			"description": {
+				"en": "This property represents the type of Channel as defined in a controlled vocabulary. The CPSV-AP v2.0 recommends to use as controlled vocabulary the CPSV-AP list of Channels."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "https://schema.org/openingHours",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "openingHours"
+			},
+			"description": {
+				"en": "This property represents the normal opening hours of a channel. The value should follow the flexible format defined for schema.org's opening hours property. Following that structure, days of the week are represented by two letter codes (Mo, Tu, We, Th, Fr, Sa, Su). Lists should be comma separated (for example: Mo, We, Fr) and periods separated by a hyphen. If it is appropriate to add opening hours then this follows the day so if a channel is available 08:00 – 20:00 Monday to Saturday and 08:00 – 18:00 on Sundays that would be encoded as Mo-Sa 08:00-20:00, Su 08:00-18:00."
+			}
+		},
+		{
+			"label": {
+				"en": "availabilityRestriction"
+			},
+			"description": {
+				"en": "This property links a channel to information about when the channel is not available, overriding the general opening hours information. The details are provided using the Opening Hours Specification class."
+			},
+			"property": "https://schema.org/hoursAvailable",
+			"cardinality": {
+				"min": 0,
+				"pref": 0,
+				"max": 1
+			},
+			"id": "schema:OpeningHoursSpecification"
+		},
+		{
+			"label": {
+				"en": "hasInput"
+			},
+			"description": {
+				"en": "In the majority of cases, the evidence required to use a Public Service will be independent of the channel through which the service is accessed. The Has Input property should normally be used to link a Public Service directly to one or more pieces of Evidence. However, where the type of Evidence required varies according to the channel used to access the Public Service, then the Has Input property may be used at the Channel level. For example, a digital signature may be required for an online channel, whereas a physical signature may be required for a face to face service provision."
+			},
+			"property": "http://purl.org/vocab/cpsv#hasInput",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "m8g:Evidence"
+		},
+		{
+			"label": {
+				"en": "ownedBy"
+			},
+			"description": {
+				"en": "This property links the Channel class with one or more instances of the Public Organisation class. This property indicates the owner of a specific Channel through which a Public Service is being delivered."
+			},
+			"property": "http://data.europa.eu/m8g/ownedBy",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "m8g:Agent"
+		}]
 	},
+
+
+	{
+		"type": "group",
+		"id": "schema:ContactPoint",
+		"property": "https://schema.org/ContactPoint",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "https://schema.org/ContactPoint"
+		},
+		"content":[
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Contact Point."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "https://schema.org/email",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "hasEmail"
+			},
+			"description": {
+				"en": "The email address of the Contact Point."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "https://schema.org/telephone",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "hasTelephone"
+			},
+			"description": {
+				"en": "The telephone number of the Contact Point."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "https://schema.org/openingHours",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "openingHours"
+			},
+			"description": {
+				"en": "This property represents the normal opening hours of a contact point. The value should follow the flexible format defined for schema.org's opening hours property (http://schema.org/openingHours). Following that structure, days of the week are represented by two letter codes (Mo, Tu, We, Th, Fr, Sa, Su). Lists should be comma separated (for example: Mo, We, Fr) and periods separated by a hyphen (for example: Mo-Fr). If it is appropriate to add opening hours then this follows the day so if a contact point is available 08:00 – 20:00 Monday to Saturday and 08:00 – 18:00 on Sundays that would be encoded as Mo-Sa 08:00-20:00, Su 08:00-18:00."
+			}
+		},
+		{
+			"label": {
+				"en": "availabilityRestriction"
+			},
+			"description": {
+				"en": "This property links a contact point to information about when the contact point is not available, overriding the general opening hours information."
+			},
+			"property": "https://schema.org/hoursAvailable",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "schema:OpeningHoursSpecification"
+		}]
+	},
+
+
+	{
+		"type": "group",
+		"id": "schema:OpeningHoursSpecification",
+		"property": "http://schema.org/openingHoursSpecification",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://schema.org/openingHoursSpecification"
+		},
+		"content": [
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Opening Hours Specification."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "DATATYPE_LITERAL",
+  			"datatype": "http://www.w3.org/2001/XMLSchema#date",
+			"property": "http://schema.org/validFrom",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "validFrom"
+			},
+			"description": {
+				"en": "The date when the opening hours becomes valid. Values expected to be one of these types: DateTime."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "DATATYPE_LITERAL",
+  			"datatype": "http://www.w3.org/2001/XMLSchema#date",
+			"property": "http://schema.org/validThrough",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "validThrough"
+			},
+			"description": {
+				"en": "The date after when the item is not valid. Values expected to be one of these types: DateTime."
+			}
+		},
+		{
+			"type": "choice",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://schema.org/dayOfWeek",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "dayOfWeek"
+			},
+			"description": {
+				"en": "The day of the week for which these opening hours are valid."
+			},
+			"choices": [
+			{
+				"value": "http://schema.org/Monday",
+				"label": "Monday"
+			},
+			{
+				"value": "http://schema.org/Tuesday",
+				"label": "Tuesday"
+			},
+			{
+				"value": "http://schema.org/Wednesday",
+				"label": "Wednesday"
+			},
+			{
+				"value": "http://schema.org/Thursday",
+				"label": "Thursday"
+			},
+			{
+				"value": "http://schema.org/Friday",
+				"label": "Friday"
+			},
+			{
+				"value": "http://schema.org/Saturday",
+				"label": "Saturday"
+			},
+			{
+				"value": "http://schema.org/Sunday",
+				"label": "Sunday"
+			},
+			{
+				"value": "http://schema.org/PublicHolidays",
+				"label": "PublicHolidays"
+			}]
+		},
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://schema.org/opens",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "opens"
+			},
+			"description": {
+				"en": "The opening hour of the place or service on the given day(s) of the week in the form hh:mm:ss[Z|(+|-)hh:mm]."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://schema.org/closes",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "closes"
+			},
+			"description": {
+				"en": "The closing hour of the place or service on the given day(s) of the week in the form hh:mm:ss[Z|(+|-)hh:mm]."
+			}
+		}]
+	},
+
 
 	{
 		"type": "group",
@@ -728,7 +1043,104 @@
 
 	{
 		"type": "group",
-		"id": "m8g:Evidence"
+		"id": "m8g:Evidence",
+		"property": "http://data.europa.eu/m8g/Evidence",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/Evidence"
+		},
+		"content": [{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the piece of Evidence."
+			}
+		},{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/title",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "name"
+			},
+			"description": {
+				"en": "This property represents the official Name of the piece of Evidence."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/description",
+			"cardinality": {
+				"min": 0,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "description"
+			},
+			"description": {
+				"en": "This property represents a free text Description of the piece of Evidence."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/type",
+			"cardinality": {
+				"min": 0,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "type"
+			},
+			"description": {
+				"en": "This property represents the type of Evidence as described in a controlled vocabulary."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://data.europa.eu/eli/ontology#language",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "language"
+			},
+			"description": {
+				"en": "Indicates the language(s) in which the Evidence must be provided. The CPSV-AP v2.0 recommends to use as controlled vocabulary the European Publications Office's Languages Named Authority List (NAL) (http://publications.europa.eu/mdr/authority/language/index.html)."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "URI",
+			"property": "http://xmlns.com/foaf/0.1/page",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "relatedDocumentation"
+			},
+			"description": {
+				"en": "This property represents documentation that contains information related to the Evidence, for instance a particular template for an administrative document, an application or a guide on formatting the Input."
+			}
+		}]
 	},
 
 

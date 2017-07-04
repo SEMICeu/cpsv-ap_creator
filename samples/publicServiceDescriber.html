@@ -55,30 +55,29 @@
     
 </script>
 
-
-    <div class="container">
-        <div class="banner">
-              <a id="logobanner" href="#"><img src="../images/CPSV-AP_logo.png" width="100" height="100" float = "left" alt="CPSV-AP logo" /></a>
-              <h1 id = "maintitle"> Public Service Describer </h1>
+        <header class="banner">
+              <a id="logobanner" href="#"><img src="../images/CPSV-AP_logo.png" width="70" height="70" float = "left" alt="CPSV-AP logo" /></a>
+              <h1> Public Service Describer </h1>
    
               <div class= "tab">
                 <button class=" tablinks" id="editorButton" onclick="openTab(event, 'editor') ">Editor</button>
                 <button class="tablinks" onclick="openTab(event, 'about')">About</button>
             </div>
-        </div>
+        </header>
         
         
         <div id= "about" class= "tabcontent" display: "none">
-            <h2> Usage instructions:  </h2>   
-            <p> The Public Service Describer will allow European public administrations to create public service descriptions 
-            in an easy-to-use web form and export these descriptions in CPSV-AP 2.1 compliant machine-readable formats to store locally on a computer. 
-            Created descriptions can be imported again to easily update or edit the created descriptions and export again. Descriptions are exported in two formats:
+            <h2> About the Public Service Describer </h2>
+            <p>This is a proof of concept editor for editing public service descriptions according to the Core Public Service Vocabulary Application Profile (CPSV-AP) v2.1. The editor is driven by the RDForms library which uses templates to generate HTML Forms to edit RDF. The Public Service Describer will allow European public administrations to create public service descriptions 
+            in an easy-to-use web form and export these descriptions in CPSV-AP 2.1 compliant machine-readable formats to store locally on a computer. </p>
+            <h2> Usage instructions </h2>   
+            <p> Edit your description in the editor tab, see the results in the present tab and download the resulting RDF in the RDF tab. Any changes you make in the editor will be reflected in the other tabs. Created descriptions can be imported into the RDF tab and then viewed (and possibly changed) in the editor tab. The tool allows to make a description for one public service. </p>
+            Descriptions are exported in two formats:
             <ul>
-            <li> <b>Machine-readable CPSV-AP 2.1</b> compliant format </li>
-            <li> <b>Public Service Describer format</b>, this format is used to import the public service description into the Public Service Describer to make changes or updates </li>
+                <li> <b><font color="#284670">Machine-readable CPSV-AP 2.1</font></b> compliant format; and </li>
+                <li> <b><font color="#284670">Public Service Describer format</font></b>, this format is used to import the public service description into the Public Service Describer to make changes or updates. </li>
             </ul>
-            <p>The tool allows to make a description for one public service. </p>
-            <h2> Deployment instructions:  </h2>   
+            <h2> Deployment instructions </h2>   
             <p> The source code and instructions to install this tool on your local computer can be found on
             <a href= https://github.com/catalogue-of-services-isa/cpsv-ap_rdf_editor> gitHub.</a> </p>
         </div>
@@ -89,7 +88,7 @@
         </div>
         
         <footer>
-                <a href="http://ec.europa.eu/"><img src="../images/logo_commission.png" width="172" height="119" alt="European Commission"/></a>
+                <a href="http://ec.europa.eu/"><img src="../images/logo_commission.png" width="115" alt="European Commission"/></a>
                 <p>
                     <small>Public service describer: Copyright ©  European Union 2016. This validator is published under the <a href="https://joinup.ec.europa.eu/community/eupl/home">EUPL v1.1 licence</a><br/>
                     This project is funded by <a href="https://ec.europa.eu/isa2/actions/accessing-member-state-information-resources-european-level_en">ISA2 Action 2016.29</a> under framework contract DI/07171 Lot 2 (Specific Contract 414).<br/>

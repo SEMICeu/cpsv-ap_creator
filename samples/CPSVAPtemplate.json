@@ -33,7 +33,8 @@
 			"description": {
 				"en": "This property represents a formally-issued Identifier for the Public Service."
 			}
-		},{
+		},
+		{
 			"type": "text",
 			"nodetype": "LANGUAGE_LITERAL",
 			"property": "http://purl.org/dc/terms/title",
@@ -92,7 +93,7 @@
 				"en": "sector"
 			},
 			"description": {
-				"en": "This property represents the industry or sector a Public Service relates to, or is intended for. For example: environment, safety, housing. Note that a single Public Service may relate to multiple sectors. The possible values for this property are provided as a controlled vocabulary. The CPSV-AP v2.0 recommends to use as controlled vocabulary the List of NACE codes (http://ec.europa.eu/competition/mergers/cases/index/nace_all.html). The CPSV-AP recommends to use skos:Concept as range of the property."
+				"en": "This property represents the industry or sector a Public Service relates to, or is intended for. For example: environment, safety, housing. Note that a single Public Service may relate to multiple sectors. The possible values for this property are provided as a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the List of NACE codes (http://ec.europa.eu/competition/mergers/cases/index/nace_all.html). The CPSV-AP recommends to use skos:Concept as range of the property."
 			}
 		},
 		{
@@ -107,7 +108,7 @@
 				"en": "type"
 			},
 			"description": {
-				"en": "This property represents the type of a Public Service as described in a controlled vocabulary, for instance social protection, health, recreation, culture and religion, economic affairs... The CPSV-AP v2.0 recommends to use as controlled vocabulary the COFOG taxonomy (http://unstats.un.org/unsd/cr/registry/regcst.asp?Cl=4)."
+				"en": "This property represents the type of a Public Service as described in a controlled vocabulary, for instance social protection, health, recreation, culture and religion, economic affairs... The CPSV-AP v2.1 recommends to use as controlled vocabulary the COFOG taxonomy (http://unstats.un.org/unsd/cr/registry/regcst.asp?Cl=4)."
 			}
 		},
 		{
@@ -122,7 +123,7 @@
 				"en": "language"
 			},
 			"description": {
-				"en": "This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.0 recommends to use as controlled vocabulary the European Publications Office's Languages Named Authority List (NAL) (http://publications.europa.eu/mdr/authority/language/index.html)."
+				"en": "This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the European Publications Office's Languages Named Authority List (NAL) (http://publications.europa.eu/mdr/authority/language/index.html)."
 			}
 		},
 		{
@@ -138,7 +139,7 @@
 				"en": "status"
 			},
 			"description": {
-				"en": "Indicates whether a Public Service is active, inactive, under development etc. according to a controlled vocabulary. The CPSV-AP v2.0 recommends to use as controlled vocabulary the ADMS Status vocabulary (http://purl.org/adms/status/)."
+				"en": "Indicates whether a Public Service is active, inactive, under development etc. according to a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the ADMS Status vocabulary (http://purl.org/adms/status/)."
 			}
 		},
 		{	
@@ -324,7 +325,7 @@
 				"en": "spatial"
 			},
 			"description": {
-				"en": "A Public Service is likely to be available only within a given area, typically the area covered by a particular public authority. Also a Public Service may be available within certain time periods such as the winter months. The CPSV-AP v2.0 recommends to use as controlled vocabulary the European Publications Office's Administrative Territorial Units Named Authority List (http://publications.europa.eu/resource/authority/atu/)"
+				"en": "A Public Service is likely to be available only within a given area, typically the area covered by a particular public authority. Also a Public Service may be available within certain time periods such as the winter months. The CPSV-AP v2.1 recommends to use as controlled vocabulary the European Publications Office's Administrative Territorial Units Named Authority List (http://publications.europa.eu/resource/authority/atu/)"
 			}
 		},
 		{
@@ -387,10 +388,96 @@
 				"max": 1
 			},
 			"id": "m8g:Cost"
+		},
+		{
+			"label": {
+				"en": "isDescribedAt"
+			},
+			"description": {
+				"en": "The Is Described At property links a Public Service to the dataset where it belongs to. It is used to track the metadata of the origin of the public service descriptions."
+			},
+			"property": "http://data.europa.eu/m8g/isDescribedAt",
+			"cardinality": {
+				"min": 0,
+				"pref": 0,
+				"max": 1
+			},
+			"id": "m8g:PublicServiceDataset"
 		}]
 	},
 
 
+
+	{
+		"type": "group",
+		"id": "m8g:PublicServiceDataset",
+		"property": "http://data.europa.eu/m8g/PublicServiceDataset",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/PublicServiceDataset"
+		},
+		"content": [
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Public Service Dataset."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/title",
+			"cardinality": {
+				"min": 1,
+				"pref": 1
+			},
+			"label": {
+				"en": "name"
+			},
+			"description": {
+				"en": "This property contains a name given to the Public Service Dataset. This property can be repeated for parallel language versions of the name."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://www.w3.org/ns/dcat#landingPage",
+			"cardinality": {
+				"min": 1,
+				"pref": 1
+			},
+			"label": {
+				"en": "landingPage"
+			},
+			"description": {
+				"en": "This property refers to a web page that provides access to the Public Service Dataset. It is intended to point to a landing page at the original data provider, not to a page on a site of a third party, such as an aggregator."
+			}
+		},
+		{
+			"label": {
+				"en": "publisher"
+			},
+			"description": {
+				"en": "This property represents the Publisher of the Public Service Dataset, i.e. an entity (organisation) responsible for making the Public Service Dataset available."
+			},
+			"property": "http://data.europa.eu/m8g/publisher",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"id": "m8g:Agent"
+		}]
+	},
 
 
 	{
@@ -462,7 +549,7 @@
 				"en": "currency"
 			},
 			"description": {
-				"en": "This property represents the currency in which the Cost needs to be paid and the value of the Cost is expressed. The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.0 recommends to use as controlled vocabulary the European Publications Office's Currencies Named Authority List (NAL) (http://publications.europa.eu/mdr/authority/currency/index.html)."
+				"en": "This property represents the currency in which the Cost needs to be paid and the value of the Cost is expressed. The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the European Publications Office's Currencies Named Authority List (NAL) (http://publications.europa.eu/mdr/authority/currency/index.html)."
 			}
 		},
 		{
@@ -534,7 +621,7 @@
 				"en": "type"
 			},
 			"description": {
-				"en": "This property represents the type of Channel as defined in a controlled vocabulary. The CPSV-AP v2.0 recommends to use as controlled vocabulary the CPSV-AP list of Channels."
+				"en": "This property represents the type of Channel as defined in a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the CPSV-AP list of Channels."
 			}
 		},
 		{
@@ -890,7 +977,7 @@
 				"en": "type"
 			},
 			"description": {
-				"en": "This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.0 recommends to use as controlled vocabulary the European Publications Office's Languages Named Authority List (NAL) (http://publications.europa.eu/mdr/authority/language/index.html)."
+				"en": "This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the European Publications Office's Languages Named Authority List (NAL) (http://publications.europa.eu/mdr/authority/language/index.html)."
 			}
 		},
 		{
@@ -979,7 +1066,7 @@
 				"en": "type"
 			},
 			"description": {
-				"en": "This property represents the type of Output as defined in a controlled vocabulary. The CPSV-AP v2.0 recommends to use as controlled vocabulary the CPSV-AP list of Outputs."
+				"en": "This property represents the type of Output as defined in a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the CPSV-AP list of Outputs."
 			}
 		}]
 	},
@@ -1050,7 +1137,7 @@
 				"en": "type"
 			},
 			"description": {
-				"en": "This property represents the Type of a Formal Framework as described in a controlled vocabulary (e.g. directive, law, draft proposition, Parliamentary act, ministerial decision etc.). The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.0 recommends to use as controlled vocabulary the Resource Types Named Authority Lists (NAL) (http://publications.europa.eu/mdr/authority/resource-type/index.html)"
+				"en": "This property represents the Type of a Formal Framework as described in a controlled vocabulary (e.g. directive, law, draft proposition, Parliamentary act, ministerial decision etc.). The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the Resource Types Named Authority Lists (NAL) (http://publications.europa.eu/mdr/authority/resource-type/index.html)"
 			}
 		},
 		{
@@ -1065,7 +1152,7 @@
 				"en": "language"
 			},
 			"description": {
-				"en": "This property represents the Language(s) in which the Formal Framework is available. The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.0 recommends to use as controlled vocabulary the European Publications Office's Languages Named Authority List (NAL) (http://publications.europa.eu/mdr/authority/language/index.html)."
+				"en": "This property represents the Language(s) in which the Formal Framework is available. The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the European Publications Office's Languages Named Authority List (NAL) (http://publications.europa.eu/mdr/authority/language/index.html)."
 			}
 		},
 		{
@@ -1081,7 +1168,7 @@
 				"en": "status"
 			},
 			"description": {
-				"en": "This property represents the Status of the Formal Framework, for instance in force, not in force, partially applicable, implicitly revoked, explicitly revoked, repealed, expired, suspended, … The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.0 recommends to use as controlled vocabulary the European Legislation Identifier (http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52012XG1026(01))."
+				"en": "This property represents the Status of the Formal Framework, for instance in force, not in force, partially applicable, implicitly revoked, explicitly revoked, repealed, expired, suspended, … The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the European Legislation Identifier (http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52012XG1026(01))."
 			}
 		},
 		{
@@ -1096,7 +1183,7 @@
 				"en": "subject"
 			},
 			"description": {
-				"en": "This property represents the Subject of this Formal Framework. The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.0 recommends to use as controlled vocabulary the Eurovoc domains (http://eurovoc.europa.eu/drupal/?q=node/555)."
+				"en": "This property represents the Subject of this Formal Framework. The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the Eurovoc domains (http://eurovoc.europa.eu/drupal/?q=node/555)."
 			}
 		},
 		{
@@ -1111,7 +1198,7 @@
 				"en": "territorialApplication"
 			},
 			"description": {
-				"en": "This property represents the geographical scope of where the Formal Framework is applicable, for instance EU, country/Member State, region… The values of this property come from a controlled vocabulary. The CPSV-AP v2.0 recommends to use as controlled vocabulary the NUTS taxonomy (http://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=NUTS_22&StrLanguageCode=EN&IntPcKey=&StrLayoutCode=HIERARCHIC)."
+				"en": "This property represents the geographical scope of where the Formal Framework is applicable, for instance EU, country/Member State, region… The values of this property come from a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the NUTS taxonomy (http://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=NUTS_22&StrLanguageCode=EN&IntPcKey=&StrLayoutCode=HIERARCHIC)."
 			}
 		},
 		{
@@ -1213,7 +1300,7 @@
 				"en": "language"
 			},
 			"description": {
-				"en": "Indicates the language(s) in which the Evidence must be provided. The CPSV-AP v2.0 recommends to use as controlled vocabulary the European Publications Office's Languages Named Authority List (NAL) (http://publications.europa.eu/mdr/authority/language/index.html)."
+				"en": "Indicates the language(s) in which the Evidence must be provided. The CPSV-AP v2.1 recommends to use as controlled vocabulary the European Publications Office's Languages Named Authority List (NAL) (http://publications.europa.eu/mdr/authority/language/index.html)."
 			}
 		},
 		{
@@ -1342,7 +1429,7 @@
 				"en": "type"
 			},
 			"description": {
-				"en": "This property represents the Type of an Agent as described in a controlled vocabulary. In the context of CPSV-AP an Agent can be a Public Organisation or a Person. The CPSV-AP v2.0 recommends to use as controlled vocabulary the CPSV-AP list of Agents."
+				"en": "This property represents the Type of an Agent as described in a controlled vocabulary. In the context of CPSV-AP an Agent can be a Public Organisation or a Person. The CPSV-AP v2.1 recommends to use as controlled vocabulary the CPSV-AP list of Agents."
 			}
 		},
 		{
@@ -1426,7 +1513,7 @@
 				"en": "spatial"
 			},
 			"description": {
-				"en": "The CPSV-AP v2.0 recommends to use as controlled vocabulary the European Publications Office's Administrative Territorial Units Named Authority List (http://publications.europa.eu/resource/authority/atu/)."
+				"en": "The CPSV-AP v2.1 recommends to use as controlled vocabulary the European Publications Office's Administrative Territorial Units Named Authority List (http://publications.europa.eu/resource/authority/atu/)."
 			}
 		}]
 	},
@@ -1571,7 +1658,7 @@
 				"en": "type"
 			},
 			"description": {
-				"en": "The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child. The CPSV-AP v2.0 recommends to use as controlled vocabulary the CPSV-AP list of Life Events and Business Events."
+				"en": "The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child. The CPSV-AP v2.1 recommends to use as controlled vocabulary the CPSV-AP list of Life Events and Business Events."
 			}
 		},
 		{

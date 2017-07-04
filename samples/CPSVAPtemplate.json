@@ -28,7 +28,7 @@
 				"max": 1
 			},
 			"label": {
-				"en": "Identifier"
+				"en": "identifier"
 			},
 			"description": {
 				"en": "This property represents a formally-issued Identifier for the Public Service."
@@ -43,7 +43,7 @@
 				"max": 1
 			},
 			"label": {
-				"en": "Name"
+				"en": "name"
 			},
 			"description": {
 				"en": "This property represents the official Name of the Public Service."
@@ -59,7 +59,7 @@
 				"max": 1
 			},
 			"label": {
-				"en": "Description"
+				"en": "description"
 			},
 			"description": {
 				"en": "This property represents a free text Description of the Public Service. The description is likely to be the text that potential users of the Public Service see in any public service catalogue. Public administrations are encouraged to include a reasonable level of detail in the description, for instance including basic eligibility requirements for the particular Public Service and contact information."
@@ -141,33 +141,524 @@
 				"en": "Indicates whether a Public Service is active, inactive, under development etc. according to a controlled vocabulary. The CPSV-AP v2.0 recommends to use as controlled vocabulary the ADMS Status vocabulary (http://purl.org/adms/status/)."
 			}
 		},
-		{
-			"id": "isGroupedBy: BusinessEvent"
+		{	
+			"label": {
+				"en": "isGroupedBy: BusinessEvent"
+			},
+			"description": {
+				"en": "This property links the Public Service to the Event class. Several Public Services may be associated with a particular Event and, likewise, the same Public Service may be associated with several different Events."
+			},
+			"property": "http://data.europa.eu/m8g/isGroupedBy",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "BusinessEvent"
 		},
 		{
-			"id": "isGroupedBy: LifeEvent"
+			"label": {
+				"en": "isGroupedBy: LifeEvent"
+			},
+			"description": {
+				"en": "This property links the Public Service to the Event class. Several Public Services may be associated with a particular Event and, likewise, the same Public Service may be associated with several different Events."
+			},
+			"property": "http://data.europa.eu/m8g/isGroupedBy",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "LifeEvent"
 		},
 		{
-			"id": "m8g:hasCriterion"
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/requires",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"label": {
+				"en": "requires"
+			},
+			"description": {
+				"en": "One Public Service may require, or in some way make use of, the output of one or several other Public Services. In this case, for a Public Service to be executed, another Public Service must be executed beforehand. The nature of the requirement will be described in the associated Rule or Input."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/relation",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"label": {
+				"en": "related"
+			},
+			"description": {
+				"en": "This property represents a Public Service related to the particular instance of the Public Service class."
+			}
+		},
+		{	
+			"label": {
+				"en": "hasCriterion"
+			},
+			"description": {
+				"en": "Links a Public Service to a class that describes the criteria for needing or using the service, such as residency in a given location, being over a certain age etc. The Criterion class is defined in the Core Criterion and Core Evidence Vocabulary."
+			},
+			"property": "http://data.europa.eu/m8g/hasCriterion",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "m8g:CriterionRequirement"
+		},
+		{	
+			"label": {
+				"en": "hasCompetentAuthority"
+			},
+			"description": {
+				"en": "This property links a Public Service to a Public Organisation, which is the responsible Agent for the delivery of the Public Service. Whether the particular Public Organisation provides the public service directly or outsources it is not relevant. The Public Organisation that is the Competent Authority of the service is the one that is ultimately responsible for managing and providing the public service."
+			},
+			"property": "http://data.europa.eu/m8g/hasCompetentAuthority",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"id": "m8g:PublicOrganisation"
+		},
+		{
+			"label": {
+				"en": "serviceProvider"
+			},
+			"description": {
+				"en": "This property links a Public Service to an Agent who provides it. This is distinct from the role of Competent Authority and may be an external contractor."
+			},
+			"property": "http://data.europa.eu/m8g/serviceProvider",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "m8g:Agent"
+		},
+		{
+			"label": {
+				"en": "hasParticipation"
+			},
+			"description": {
+				"en": "The CPSV-AP defines the three basic roles of Competent Authority, Service Provider and Service User but this simple model can be extended if required using the Has Participation property that links to the Participation class."
+			},
+			"property": "http://data.europa.eu/m8g/hasParticipation",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "m8g:Participation"
+		},
+		{
+			"label": {
+				"en": "hasInput"
+			},
+			"description": {
+				"en": "The Has Input property links a Public Service to one or more instances of the Evidence class. A specific Public Service may require the presence of certain pieces of Evidence in order to be delivered. If the evidence required to make use of a service varies according to the channel through which it is accessed, then Has Input should be at the level of the Channel."
+			},
+			"property": "http://purl.org/vocab/cpsv#hasInput",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "m8g:Evidence"
+		},
+		{
+			"label": {
+				"en": "hasFormalFramework"
+			},
+			"description": {
+				"en": "The Has Formal Framework property links a Public Service to a Formal Framework. It indicates the Formal Framework (e.g. legislation) to which the Public Service relates, operates or has its legal basis."
+			},
+			"property": "http://data.europa.eu/m8g/hasFormalFramework",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "cpsv:FormalFramework"
+		},
+		{
+			"label": {
+				"en": "produces"
+			},
+			"description": {
+				"en": "The Produces property links a Public Service to one or more instances of the Output class, describing the actual result of executing a given Public Service. Outputs can be any resource, for instance a document, artefact or anything else being produced as a result of executing the Public Service."
+			},
+			"property": "http://purl.org/vocab/cpsv#produces",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "m8g:Output"
+		},
+		{
+			"label": {
+				"en": "follows"
+			},
+			"description": {
+				"en": "The follows property links a Public Service to the Rule(s) under which it operates. The definition of the Rule class is very broad. In a typical case, the competent authority that provides the public service will also define the rules that will implement its own policies. The CPSV-AP is flexible to allow for significant variation in such a scenario."
+			},
+			"property": "http://purl.org/vocab/cpsv#follows",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "cpsv:Rule"
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/spatial",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"label": {
+				"en": "spatial"
+			},
+			"description": {
+				"en": "A Public Service is likely to be available only within a given area, typically the area covered by a particular public authority. Also a Public Service may be available within certain time periods such as the winter months. The CPSV-AP v2.0 recommends to use as controlled vocabulary the European Publications Office's Administrative Territorial Units Named Authority List (http://publications.europa.eu/resource/authority/atu/)"
+			}
+		},
+		{
+			"label": {
+				"en": "hasContactPoint"
+			},
+			"description": {
+				"en": "A contact point for the service is almost always helpful. The value of this property, the contact information itself, should be provided using VCard. Note that the contact information should be relevant to the Public Service which may not be the same as contact information for the Competent Authority or any Participant."
+			},
+			"property": "http://data.europa.eu/m8g/hasContactPoint",
+			"cardinality": {
+				"min": 0,
+				"pref": 0,
+				"max": 1
+			},
+			"id": "schema:ContactPoint"
+		},
+		{
+			"label": {
+				"en": "hasChannel"
+			},
+			"description": {
+				"en": "This property links the Public Service to any Channel through which an Agent provides, uses or otherwise interacts with the Public Service, such as an online service, phone number or office."
+			},
+			"property": "http://data.europa.eu/m8g/hasChannel",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "m8g:Channel"
+		},
+		{
+			"type": "text",
+			"nodetype": "DATATYPE_LITERAL",
+			"datatype": "http://www.w3.org/2001/XMLSchema#duration",
+			"property": "http://data.europa.eu/m8g/processingTime",
+			"cardinality": {
+				"min": 0,
+				"pref": 0,
+				"max": 1
+			},
+			"label": {
+				"en": "processingTime"
+			},
+			"description": {
+				"en": "The value of this property is the (estimated) time needed for executing a Public Service. The actual information is provided using the ISO8601 syntax for durations."
+			}
+		},
+		{
+			"label": {
+				"en": "hasCost"
+			},
+			"description": {
+				"en": "The Has Cost property links a Public Service to one or more instances of the Cost class. It indicates the costs related to the execution of a Public Service for the citizen or business related to the execution of the particular Public Service. Where the cost varies depending on the channel through which the service is accessed, it can be linked to the channel using the If Accessed Through relationship."
+			},
+			"property": "http://data.europa.eu/m8g/hasCost",
+			"cardinality": {
+				"min": 0,
+				"pref": 0,
+				"max": 1
+			},
+			"id": "m8g:Cost"
 		}]
 	},
+
+
+
+
+
+
+
+
+
+
+
+
 	{
-		"id": "m8g:hasCriterion",
+		"type": "group",
+		"id": "m8g:Cost"
+	},
+
+	{
+		"type": "group",
+		"id": "m8g:Channel"
+	},
+
+	{
+		"type": "group",
+		"id": "schema:ContactPoint"
+	},
+
+	{
+		"type": "group",
+		"id": "cpsv:Rule"
+	},
+
+
+	{
+		"type": "group",
+		"id": "m8g:Output"
+	},
+
+	{
+		"type": "group",
+		"id": "cpsv:FormalFramework"
+	},
+
+	{
+		"type": "group",
+		"id": "m8g:Evidence"
+	},
+
+
+	{
+		"type": "group",
+		"id": "m8g:Participation",
+		"property": "http://data.europa.eu/m8g/Participation",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/Participation"
+		},
+		"content": [{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Participation."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/description",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "description"
+			},
+			"description": {
+				"en": "A free text description of the Participation."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://data.europa.eu/m8g/role",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "role"
+			},
+			"description": {
+				"en": "Provides the role played. This should be provided using a controlled vocabulary. Since this is an extension mechanism for the CPSV-AP, the controlled vocabulary should be decided to suit local implementations."
+			}
+		}]
+	},
+
+
+	{
+		"id": "m8g:Agent",
 		"type": "group",
 		"nodetype": "RESOURCE",
-		"label": {
-			"en": "Has criterion"
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://purl.org/dc/terms/Agent"
 		},
-		"property": "http://data.europa.eu/m8g/hasCriterion",
-		"description": "Links a Public Service to a class that describes the criteria for needing or using the service, such as residency in a given location, being over a certain age etc. The Criterion class is defined in the Core Criterion and Core Evidence Vocabulary.",
-		"cardinality": {
-			"min": 0,
-			"pref": 0
+		"content": [{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Agent."
+			}
+		},{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/title",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "name"
+			},
+			"description": {
+				"en": "This property represents the Name of the Agent."
+			}
 		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/type",
+			"cardinality": {
+				"min": 1,
+				"pref": 1
+			},
+			"label": {
+				"en": "type"
+			},
+			"description": {
+				"en": "This property represents the Type of an Agent as described in a controlled vocabulary. In the context of CPSV-AP an Agent can be a Public Organisation or a Person. The CPSV-AP v2.0 recommends to use as controlled vocabulary the CPSV-AP list of Agents."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://data.europa.eu/m8g/hasAddress",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "hasAddress"
+			},
+			"description": {
+				"en": "This property represents an Address related to an Agent. Asserting the address relationship implies that the Agent has an Address."
+			}
+		},
+		{
+			"label": {
+				"en": "playsRole"
+			},
+			"description": {
+				"en": "This property links an Agent to the Participation class. The Participation class facilitates the detailed description of how an Agent participates in or interacts with a Public Service and may include temporal and spatial constraints on that participation."
+			},
+			"property": "http://data.europa.eu/m8g/playsRole",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "m8g:Participation"
+		}]
+	},
+
+
+	{
+		"id": "m8g:PublicOrganisation",
+		"type": "group",
+		"nodetype": "RESOURCE",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/PublicOrganisation"
+		},
+		"content": [{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Public Organisation."
+			}
+		},{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://www.w3.org/2004/02/skos/core#altLabel",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "preferredLabel"
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/spatial",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "spatial"
+			},
+			"description": {
+				"en": "The CPSV-AP v2.0 recommends to use as controlled vocabulary the European Publications Office's Administrative Territorial Units Named Authority List (http://publications.europa.eu/resource/authority/atu/)."
+			}
+		}]
+	},
+
+
+	{
+		"id": "m8g:CriterionRequirement",
+		"type": "group",
+		"nodetype": "RESOURCE",
 		"constraints": {
 			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/CriterionRequirement"
 		},
 		"content": [{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Criterion Requirement."
+			}
+		},{
 			"type": "text",
 			"nodetype": "LANGUAGE_LITERAL",
 			"property": "http://purl.org/dc/terms/title",
@@ -200,36 +691,22 @@
 			}
 		}]
 	},
+
+
 	{
-		"id": "isGroupedBy: BusinessEvent",
+		"id": "BusinessEvent",
 		"type": "group",
 		"nodetype": "RESOURCE",
-		"label": {
-			"en": "isGroupedBy: BusinessEvent"
-		},
 		"extends": "m8g:Event",
-		"property": "http://data.europa.eu/m8g/isGroupedBy",
-		"cardinality": {
-			"min": 0,
-			"pref": 0
-		},
 		"constraints": {
 			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/BusinessEvent"
 		}
 	},
 	{
-		"id": "isGroupedBy: LifeEvent",
+		"id": "LifeEvent",
 		"type": "group",
 		"nodetype": "RESOURCE",
-		"label": {
-			"en": "isGroupedBy: LifeEvent"
-		},
 		"extends": "m8g:Event",
-		"property": "http://data.europa.eu/m8g/isGroupedBy",
-		"cardinality": {
-			"min": 0,
-			"pref": 0
-		},
 		"constraints": {
 			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/LifeEvent"
 		}
@@ -238,20 +715,6 @@
 		"type": "group",
 		"nodetype": "RESOURCE",
 		"id": "m8g:Event",
-		"label": {
-			"en": "Event"
-		},
-		"property": "http://data.europa.eu/m8g/Event",
-		"cardinality": {
-			"min": 0,
-			"pref": 0
-		},
-		"description": {
-			"en": "This class represents an event that can be of any type that triggers, makes use of, or in some way is related to, a Public Service.  It is not expected to be used directly, rather, one or other of its subclasses should be used. The properties of the class are, of course, inherited by those subclasses."
-		},
-		"constraints": {
-			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/Event"
-		},
 		"content": [{
 			"type": "text",
 			"nodetype": "ONLY_LITERAL",
@@ -262,7 +725,7 @@
 				"max": 1
 			},
 			"label": {
-				"en": "Identifier"
+				"en": "identifier"
 			},
 			"description": {
 				"en": "This property represents an Identifier for the Event."
@@ -294,7 +757,7 @@
 				"max": 1
 			},
 			"label": {
-				"en": "Description"
+				"en": "description"
 			},
 			"description": {
 				"en": "This property represents a free text description of the Event. The description is likely to be the text that a business or citizen sees for that specific Event when looking for relevant Public Services. Public administrations are therefore encouraged to include a reasonable level of detail in the description."
@@ -309,13 +772,12 @@
 				"pref": 1
 			},
 			"label": {
-				"en": "Type"
+				"en": "type"
 			},
 			"description": {
 				"en": "The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child. The CPSV-AP v2.0 recommends to use as controlled vocabulary the CPSV-AP list of Life Events and Business Events."
 			}
-		}
-		,
+		},
 		{
 			"type": "text",
 			"nodetype": "ONLY_LITERAL",
@@ -325,7 +787,7 @@
 				"pref": 1
 			},
 			"label": {
-				"en": "Related service"
+				"en": "relatedService"
 			},
 			"description": {
 				"en": "This property links an event directly to a public service that is related to it."

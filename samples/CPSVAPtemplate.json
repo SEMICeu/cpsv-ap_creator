@@ -97,8 +97,8 @@
 			}
 		},
 		{
-			"type": "text",
-			"nodetype": "LANGUAGE_LITERAL",
+			"type": "choice",
+			"nodetype": "ONLY_LITERAL",
 			"property": "http://purl.org/dc/terms/type",
 			"cardinality": {
 				"min": 0,
@@ -109,7 +109,197 @@
 			},
 			"description": {
 				"en": "This property represents the type of a Public Service as described in a controlled vocabulary, for instance social protection, health, recreation, culture and religion, economic affairs... The CPSV-AP v2.1 recommends to use as controlled vocabulary the COFOG taxonomy (http://unstats.un.org/unsd/cr/registry/regcst.asp?Cl=4)."
-			}
+			},
+			"choices": [
+				{"value": "01 - General public services"},
+				{"value": "01.1 - Executive and legislative organs, financial and fiscal affairs, external affairs"},
+				{"value": "01.1.1 - Executive and legislative organs  (CS)"},
+				{"value": "01.1.2 - Financial and fiscal affairs  (CS)"},
+				{"value": "01.1.3 - External affairs  (CS)"},
+				{"value": "01.2 - Foreign economic aid"},
+				{"value": "01.2.1 - Economic aid to developing countries and countries in transition  (CS)"},
+				{"value": "01.2.2 - Economic aid routed through international organizations  (CS)"},
+				{"value": "01.3 - General services"},
+				{"value": "01.3.1 - General personnel services  (CS)"},
+				{"value": "01.3.2 - Overall planning and statistical services  (CS)"},
+				{"value": "01.3.3 - Other general services  (CS)"},
+				{"value": "01.4 - Basic research"},
+				{"value": "01.4.0 - Basic research  (CS)"},
+				{"value": "01.5 - R&D General public services"},
+				{"value": "01.5.0 - R&D General public services  (CS)"},
+				{"value": "01.6 - General public services n.e.c."},
+				{"value": "01.6.0 - General public services n.e.c.  (CS)"},
+				{"value": "01.7 - Public debt transactions"},
+				{"value": "01.7.0 - Public debt transactions  (CS)"},
+				{"value": "01.8 - Transfers of a general character between different levels of government"},
+				{"value": "01.8.0 - Transfers of a general character between different levels of government  (CS)"},
+				{"value": "02 - Defence"},
+				{"value": "02.1 - Military defence"},
+				{"value": "02.1.0 - Military defence  (CS)"},
+				{"value": "02.2 - Civil defence"},
+				{"value": "02.2.0 - Civil defence  (CS)"},
+				{"value": "02.3 - Foreign military aid"},
+				{"value": "02.3.0- Foreign military aid  (CS)"},
+				{"value": "02.4 - R&D Defence"},
+				{"value": "02.4.0- R&D Defence  (CS)"},
+				{"value": "02.5 - Defence n.e.c."},
+				{"value": "02.5.0- Defence n.e.c.  (CS)"},
+				{"value": "03 - Public order and safety"},
+				{"value": "03.1 - Police services"},
+				{"value": "03.1.0 - Police services  (CS)"},
+				{"value": "03.2 - Fire-protection services"},
+				{"value": "03.2.0 - Fire-protection services  (CS)"},
+				{"value": "03.3 - Law courts"},
+				{"value": "03.3.0 - Law courts  (CS)"},
+				{"value": "03.4 - Prisons"},
+				{"value": "03.4.0 - Prisons  (CS)"},
+				{"value": "03.5 - R&D Public order and safety"},
+				{"value": "03.5.0 - R&D Public order and safety  (CS)"},
+				{"value": "03.6 - Public order and safety n.e.c."},
+				{"value": "03.6.0 - Public order and safety n.e.c.  (CS)"},
+				{"value": "04 - Economic affairs"},
+				{"value": "04.1 - General economic, commercial and labour affairs"},
+				{"value": "04.1.1 - General economic and commercial affairs  (CS)"},
+				{"value": "04.1.2 - General labour affairs  (CS)"},
+				{"value": "04.2 - Agriculture, forestry, fishing and hunting"},
+				{"value": "04.2.1 - Agriculture  (CS)"},
+				{"value": "04.2.2 - Forestry  (CS)"},
+				{"value": "04.2.3 - Fishing and hunting  (CS)"},
+				{"value": "04.3 - Fuel and energy"},
+				{"value": "04.3.1 - Coal and other solid mineral fuels  (CS)"},
+				{"value": "04.3.2 - Petroleum and natural gas  (CS)"},
+				{"value": "04.3.3 - Nuclear fuel  (CS)"},
+				{"value": "04.3.4 - Other fuels  (CS)"},
+				{"value": "04.3.5 - Electricity  (CS)"},
+				{"value": "04.3.6 - Non-electric energy  (CS)"},
+				{"value": "04.4 - Mining, manufacturing and construction"},
+				{"value": "04.4.1 - Mining of mineral resources other than mineral fuels  (CS)"},
+				{"value": "04.4.2 - Manufacturing  (CS)"},
+				{"value": "04.4.3 - Construction  (CS)"},
+				{"value": "04.5 - Transport"},
+				{"value": "04.5.1 - Road transport  (CS)"},
+				{"value": "04.5.2 - Water transport  (CS)"},
+				{"value": "04.5.3 - Railway transport  (CS)"},
+				{"value": "04.5.4 - Air transport  (CS)"},
+				{"value": "04.5.5 - Pipeline and other transport  (CS)"},
+				{"value": "04.6 - Communication"},
+				{"value": "04.6.0 - Communication  (CS)"},
+				{"value": "04.7 - Other industries"},
+				{"value": "04.7.1 - Distributive trades, storage and warehousing  (CS)"},
+				{"value": "04.7.2 - Hotels and restaurants  (CS)"},
+				{"value": "04.7.3 - Tourism  (CS)"},
+				{"value": "04.7.4 - Multi-purpose development projects  (CS)"},
+				{"value": "04.8 - R&D Economic affairs"},
+				{"value": "04.8.1 - R&D General economic, commercial and labour affairs  (CS)"},
+				{"value": "04.8.2 - R&D Agriculture, forestry, fishing and hunting  (CS)"},
+				{"value": "04.8.3 - R&D Fuel and energy  (CS)"},
+				{"value": "04.8.4 - R&D Mining, manufacturing and construction  (CS)"},
+				{"value": "04.8.5 - R&D Transport  (CS)"},
+				{"value": "04.8.6 - R&D Communication  (CS)"},
+				{"value": "04.8.7 - R&D Other industries  (CS)"},
+				{"value": "04.9 - Economic affairs n.e.c."},
+				{"value": "04.9.0 - Economic affairs n.e.c.  (CS)"},
+				{"value": "05 - Environmental protection"},
+				{"value": "05.1 - Waste management"},
+				{"value": "05.1.0 - Waste management  (CS)"},
+				{"value": "05.2 - Waste water management"},
+				{"value": "05.2.0 - Waste water management  (CS)"},
+				{"value": "05.3 - Pollution abatement"},
+				{"value": "05.3.0 - Pollution abatement  (CS)"},
+				{"value": "05.4 - Protection of biodiversity and landscape"},
+				{"value": "05.4.0 - Protection of biodiversity and landscape  (CS)"},
+				{"value": "05.5 - R&D Environmental protection"},
+				{"value": "05.5.0 - R&D Environmental protection  (CS)"},
+				{"value": "05.6 - Environmental protection n.e.c."},
+				{"value": "05.6.0 - Environmental protection n.e.c.  (CS)"},
+				{"value": "06 - Housing and community amenities"},
+				{"value": "06.1 - Housing development"},
+				{"value": "06.1.0 - Housing development  (CS)"},
+				{"value": "06.2 - Community development"},
+				{"value": "06.2.0 - Community development  (CS)"},
+				{"value": "06.3 - Water supply"},
+				{"value": "06.3.0 - Water supply  (CS)"},
+				{"value": "06.4 - Street lighting"},
+				{"value": "06.4.0 - Street lighting  (CS)"},
+				{"value": "06.5 - R&D Housing and community amenities"},
+				{"value": "06.5.0 - R&D Housing and community amenities  (CS)"},
+				{"value": "06.6 - Housing and community amenities n.e.c."},
+				{"value": "06.6.0 - Housing and community amenities n.e.c.  (CS)"},
+				{"value": "07 - Health"},
+				{"value": "07.1 - Medical products, appliances and equipment"},
+				{"value": "07.1.1 - Pharmaceutical products  (IS)"},
+				{"value": "07.1.2 - Other medical products  (IS)"},
+				{"value": "07.1.3 - Therapeutic appliances and equipment  (IS)"},
+				{"value": "07.2 - Outpatient services"},
+				{"value": "07.2.1 - General medical services  (IS)"},
+				{"value": "07.2.2 - Specialized medical services  (IS)"},
+				{"value": "07.2.3 - Dental services  (IS)"},
+				{"value": "07.2.4 - Paramedical services  (IS)"},
+				{"value": "07.3 - Hospital services"},
+				{"value": "07.3.1 - General hospital services  (IS)"},
+				{"value": "07.3.2 - Specialized hospital services  (IS)"},
+				{"value": "07.3.3 - Medical and maternity centre services  (IS)"},
+				{"value": "07.3.4 - Nursing and convalescent home services  (IS)"},
+				{"value": "07.4 - Public health services"},
+				{"value": "07.4.0 - Public health services  (IS)"},
+				{"value": "07.5 - R&D Health"},
+				{"value": "07.5.0 - R&D Health  (CS)"},
+				{"value": "07.6 - Health n.e.c."},
+				{"value": "07.6.0 - Health n.e.c.  (CS)"},
+				{"value": "08 - Recreation, culture and religion"},
+				{"value": "08.1 - Recreational and sporting services"},
+				{"value": "08.1.0 - Recreational and sporting services  (IS)"},
+				{"value": "08.2 - Cultural services"},
+				{"value": "08.2.0 - Cultural services  (IS)"},
+				{"value": "08.3 - Broadcasting and publishing services"},
+				{"value": "08.3.0 - Broadcasting and publishing services  (CS)"},
+				{"value": "08.4 - Religious and other community services"},
+				{"value": "08.4.0 - Religious and other community services  (CS)"},
+				{"value": "08.5 - R&D Recreation, culture and religion"},
+				{"value": "08.5.0 - R&D Recreation, culture and religion  (CS)"},
+				{"value": "08.6 - Recreation, culture and religion n.e.c."},
+				{"value": "08.6.0 - Recreation, culture and religion n.e.c.  (CS)"},
+				{"value": "09 - Education"},
+				{"value": "09.1 - Pre-primary and primary education"},
+				{"value": "09.1.1 - Pre-primary education  (IS)"},
+				{"value": "09.1.2 - Primary education  (IS)"},
+				{"value": "09.2 - Secondary education"},
+				{"value": "09.2.1 - Lower-secondary education  (IS)"},
+				{"value": "09.2.2 - Upper-secondary education  (IS)"},
+				{"value": "09.3 - Post-secondary non-tertiary education"},
+				{"value": "09.3.0 - Post-secondary non-tertiary education  (IS)"},
+				{"value": "09.4 - Tertiary education"},
+				{"value": "09.4.1 - First stage of tertiary education  (IS)"},
+				{"value": "09.4.2 - Second stage of tertiary education  (IS)"},
+				{"value": "09.5 - Education not definable by level"},
+				{"value": "09.5.0 - Education not definable by level  (IS)"},
+				{"value": "09.6 - Subsidiary services to education"},
+				{"value": "09.6.0 - Subsidiary services to education  (IS)"},
+				{"value": "09.7 - R&D Education"},
+				{"value": "09.7.0 - R&D Education  (CS)"},
+				{"value": "09.8 - Education n.e.c."},
+				{"value": "09.8.0 - Education n.e.c.  (CS)"},
+				{"value": "10 - Social protection"},
+				{"value": "10.1 - Sickness and disability"},
+				{"value": "10.1.1 - Sickness  (IS)"},
+				{"value": "10.1.2 - Disability  (IS)"},
+				{"value": "10.2 - Old age"},
+				{"value": "10.2.0 - Old age  (IS)"},
+				{"value": "10.3 - Survivors"},
+				{"value": "10.3.0 - Survivors  (IS)"},
+				{"value": "10.4 - Family and children"},
+				{"value": "10.4.0 - Family and children  (IS)"},
+				{"value": "10.5 - Unemployment"},
+				{"value": "10.5.0 - Unemployment  (IS)"},
+				{"value": "10.6 - Housing"},
+				{"value": "10.6.0 - Housing  (IS)"},
+				{"value": "10.7 - Social exclusion n.e.c."},
+				{"value": "10.7.0 - Social exclusion n.e.c.  (IS)"},
+				{"value": "10.8 - R&D Social protection"},
+				{"value": "10.8.0 - R&D Social protection  (CS)"},
+				{"value": "10.9 - Social protection n.e.c."},
+				{"value": "10.9.0 - Social protection n.e.c.  (CS)"}
+			]
 		},
 		{
 			"type": "text",
@@ -1599,112 +1789,80 @@
 			"description": {
 				"en": "The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child. The CPSV-AP v2.1 recommends to use as controlled vocabulary the CPSV-AP list of Life Events and Business Events."
 			},
-			"styles": [
-				"tree"
-			],
-				"choices": [
-					{
-				        "top":true,
-						"value": "Starting business",
-						"selectable": "true",
-						"label": {"en": "Starting business"},
-						"children": [
-							{"_reference": "Registering a company"},
-							{"_reference": "Needing a licence, permit or certificate to start or continue an activity"},
-							{"_reference": "Registering Intellectual Property"},
-							{"_reference": "Registering a branch"},
-							{"_reference": "Starting a new activity"},
-							{"_reference": "Hiring an employee"}
-						]
-					},
-					{
-				        "top":true,
-						"value": "Starting cross-border business",
-						"selectable": "true",
-						"label": {"en": "Starting cross-border business"},
-						"children": [
-							{"_reference": "Registering a cross-border business"},
-							{"_reference": "Registering a branch"}
-						]
-					}, 
-					{
-				        "top":true,
-						"value": "Doing business",
-						"selectable": "true",
-						"label": {"en": "Doing business"},
-						"children": [
-							{"_reference":	"Financing a company"},
-							{"_reference":	"Needing a licence, permit or certificate to start or continue an activity"},
-							{"_reference":	"Registering Intellectual Property"},
-							{"_reference":	"Hiring an employee"},
-							{"_reference":	"Participating in public procurement"},
-							{"_reference":	"Notifying and reporting to authorities"},
-							{"_reference":	"Starting a new activity"},
-							{"_reference":	"Registering a branch"},
-							{"_reference":	"Having problems in paying creditors"}
-						]
-					},
-					{
-				        "top":true,
-						"value": "Closing business",
-						"selectable": "true",
-						"label": {"en": "Closing business"},
-						"children": [
-							{"_reference":	"Restructuring a company"},
-							{"_reference":	"Dissolution of a company"}
-						]
-					},
-					{					
-						"value": "Restructuring a company",
-						"label": {"en": "Restructuring a company"}
-					},
-					{					
-						"value": "Dissolution of a company"
-					},
-					{
-						"value": "Financing a company",
-						"label": {"en": "Financing a company"}
-					},
-					{
-						"value": "Needing a licence, permit or certificate to start or continue an activity",
-						"label": {"en": "Needing a licence, permit or certificate to start or continue an activity"}
-					},
-					{
-						"value": "Registering Intellectual Property",
-						"label": {"en": "Registering Intellectual Property"}
-					}, 
-					{
-						"value": "Hiring an employee",
-						"label": {"en": "Hiring an employee"}
-					}, 
-					{
-						"value": "Participating in public procurement",
-						"label": {"en": "Participating in public procurement"}
-					}, 
-					{
-						"value": "Notifying and reporting to authorities",
-						"label": {"en": "Notifying and reporting to authorities"}
-					}, 
-					{
-						"value": "Starting a new activity",
-						"label": {"en": "Starting a new activity"}
-					}, 
-					{
-						"value": "Having problems in paying creditors",
-						"label": {"en": "Having problems in paying creditors"}
-					},     
-					{
-						"value": "Registering a cross-border business",
-						"label": {"en": "Registering a cross-border business"}
-					}, 
-					{
-						"value": "Registering a company",
-						"label": {"en": "Registering a company"}
-					},
-					{
-						"value": "Registering a branch",
-						"label": {"en": "Registering a branch"}
-					}]
+			"choices": [
+	{	"value": "Starting business",
+		"label": {"en": "1. Starting business"}
+ 	},
+	{	"value": "Registering a company",
+		"label": {"en": "1.1 Registering a company"}
+ 	},
+	{	"value": "Needing a licence, permit or certificate to start or continue an activity",
+		"label": {"en": "1.2Needing a licence, permit or certificate to start or continue an activity"}
+ 	},
+	{	"value": "Registering Intellectual Property",
+		"label": {"en": "1.3 Registering Intellectual Property"}
+ 	},
+	{	"value": "Registering a branch",
+		"label": {"en": "1.4 Registering a branch"}
+ 	},
+	{	"value": "Starting a new activity",
+		"label": {"en": "1.5 Starting a new activity"}
+ 	},
+	{	"value": "Financing a company",
+		"label": {"en": "1.6 Financing a company"}
+ 	},
+	{	"value": "Hiring an employee",
+		"label": {"en": "1.7 Hiring an employee "}
+ 	},
+	{	"value": "Starting cross-border business",
+		"label": {"en": "2. Starting cross-border business"}
+ 	},
+	{	"value": "Registering a cross-border business",
+		"label": {"en": "2.1 Registering a cross-border business"}
+ 	},
+	{	"value": "Registering a branch",
+		"label": {"en": "2.2 Registering a branch"}
+ 	},
+	{	"value": "Doing business",
+		"label": {"en": "3. Doing business"}
+ 	},
+	{	"value": "Financing a company",
+		"label": {"en": "3.1 Financing a company"}
+ 	},
+	{	"value": "Needing a licence, permit or certificate to start or continue an activity",
+		"label": {"en": "3.2 Needing a licence, permit or certificate to start or continue an activity"}
+ 	},
+	{	"value": "Registering Intellectual Property",
+		"label": {"en": "3.3 Registering Intellectual Property"}
+ 	},
+	{	"value": "Hiring an employee",
+		"label": {"en": "3.4 Hiring an employee"}
+ 	},
+	{	"value": "Participating in public procurement",
+		"label": {"en": "3.5 Participating in public procurement"}
+ 	},
+	{	"value": "Notifying and reporting to authorities",
+		"label": {"en": "3.6 Notifying and reporting to authorities"}
+ 	},
+	{	"value": "Starting a new activity",
+		"label": {"en": "3.7 Starting a new activity"}
+ 	},
+	{	"value": "Registering a branch",
+		"label": {"en": "3.8 Registering a branch"}
+ 	},
+	{	"value": "Having problems in paying creditors",
+		"label": {"en": "3.9 Having problems in paying creditors"}
+ 	},
+	{	"value": "Closing business",
+		"label": {"en": "4. Closing business"}
+ 	},
+	{	"value": "Restructuring of a company",
+		"label": {"en": "4.1 Restructuring of a company"}
+ 	},
+	{	"value": "Dissolution of a company",
+		"label": {"en": "4.2 Dissolution of a company"}
+	 }
+ ]
 		}]
 	},
 	{
@@ -1717,8 +1875,8 @@
 		},
 		"content":
 		[{
-			"type": "text",
-			"nodetype": "LANGUAGE_LITERAL",
+			"type": "choice",
+			"nodetype": "ONLY_LITERAL",
 			"property": "http://purl.org/dc/terms/type",
 			"cardinality": {
 				"min": 0,
@@ -1729,7 +1887,24 @@
 			},
 			"description": {
 				"en": "The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child. The CPSV-AP v2.1 recommends to use as controlled vocabulary the CPSV-AP list of Life Events and Business Events."
-			}
+			},
+			"choices": [
+				{"value": "Having a child"},
+				{"value": "Becoming a (social) caretaker"},
+				{"value": "Starting education"},
+				{"value":"Looking for a new job"},
+				{"value": "Losing/quitting a job"},
+				{"value": "Looking for a place to live"},
+				{"value": "Changing relationship status"},
+				{"value": "Driving a vehicle"},
+				{"value": "Travelling abroad"},
+				{"value": "Moving to/from the country"},
+				{"value": "Going into military service"},
+				{"value": "Facing an emergency / health problem"},
+				{"value": "Facing a crime"},
+				{"value": "Retirement"},
+				{"value": "Death of a relative"}
+			]
 		}]
 	},
 	{

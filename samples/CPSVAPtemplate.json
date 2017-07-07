@@ -1300,8 +1300,8 @@
 			]
 		},
 		{
-			"type": "text",
-			"nodetype": "LANGUAGE_LITERAL",
+			"type": "choice",
+			"nodetype": "ONLY_LITERAL",
 			"property": "http://purl.org/dc/terms/language",
 			"cardinality": {
 				"min": 0,
@@ -1312,7 +1312,11 @@
 			},
 			"description": {
 				"en": "This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the European Publications Office's Languages Named Authority List (NAL) (http://publications.europa.eu/mdr/authority/language/index.html)."
-			}
+			},
+			"choices": 
+			[
+				{"value": "TODO"}
+			]
 		},
 		{
 			"type": "choice",
@@ -1351,34 +1355,42 @@
 						"label": "WithDrawn"
 					}
 				]
-		},
-		{	
-			"label": {
-				"en": "isGroupedBy: BusinessEvent"
-			},
-			"description": {
-				"en": "This property links the Public Service to the Event class. Several Public Services may be associated with a particular Event and, likewise, the same Public Service may be associated with several different Events."
-			},
-			"property": "http://data.europa.eu/m8g/isGroupedBy",
+		},		
+		{
+			"type": "choice",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/spatial",
 			"cardinality": {
 				"min": 0,
 				"pref": 0
 			},
-			"id": "BusinessEvent"
+			"label": {
+				"en": "spatial"
+			},
+			"description": {
+				"en": "A Public Service is likely to be available only within a given area, typically the area covered by a particular public authority. Also a Public Service may be available within certain time periods such as the winter months. The CPSV-AP v2.1 recommends to use as controlled vocabulary the European Publications Office's Administrative Territorial Units Named Authority List (http://publications.europa.eu/resource/authority/atu/)"
+			},
+			"choices":
+			[
+				{"value": "TODO"}
+			]
 		},
 		{
-			"label": {
-				"en": "isGroupedBy: LifeEvent"
-			},
-			"description": {
-				"en": "This property links the Public Service to the Event class. Several Public Services may be associated with a particular Event and, likewise, the same Public Service may be associated with several different Events."
-			},
-			"property": "http://data.europa.eu/m8g/isGroupedBy",
+			"type": "text",
+			"nodetype": "DATATYPE_LITERAL",
+			"datatype": "http://www.w3.org/2001/XMLSchema#duration",
+			"property": "http://data.europa.eu/m8g/processingTime",
 			"cardinality": {
 				"min": 0,
-				"pref": 0
+				"pref": 0,
+				"max": 1
 			},
-			"id": "LifeEvent"
+			"label": {
+				"en": "processingTime"
+			},
+			"description": {
+				"en": "The value of this property is the (estimated) time needed for executing a Public Service. The actual information is provided using the ISO8601 syntax for durations."
+			}
 		},
 		{
 			"type": "text",
@@ -1412,20 +1424,6 @@
 		},
 		{	
 			"label": {
-				"en": "hasCriterion"
-			},
-			"description": {
-				"en": "Links a Public Service to a class that describes the criteria for needing or using the service, such as residency in a given location, being over a certain age etc. The Criterion class is defined in the Core Criterion and Core Evidence Vocabulary."
-			},
-			"property": "http://data.europa.eu/m8g/hasCriterion",
-			"cardinality": {
-				"min": 0,
-				"pref": 0
-			},
-			"id": "m8g:CriterionRequirement"
-		},
-		{	
-			"label": {
 				"en": "hasCompetentAuthority"
 			},
 			"description": {
@@ -1438,6 +1436,48 @@
 				"max": 1
 			},
 			"id": "m8g:PublicOrganisation"
+		},
+		{	
+			"label": {
+				"en": "isGroupedBy: BusinessEvent"
+			},
+			"description": {
+				"en": "This property links the Public Service to the Event class. Several Public Services may be associated with a particular Event and, likewise, the same Public Service may be associated with several different Events."
+			},
+			"property": "http://data.europa.eu/m8g/isGroupedBy",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "BusinessEvent"
+		},
+		{
+			"label": {
+				"en": "isGroupedBy: LifeEvent"
+			},
+			"description": {
+				"en": "This property links the Public Service to the Event class. Several Public Services may be associated with a particular Event and, likewise, the same Public Service may be associated with several different Events."
+			},
+			"property": "http://data.europa.eu/m8g/isGroupedBy",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "LifeEvent"
+		},
+		{	
+			"label": {
+				"en": "hasCriterion"
+			},
+			"description": {
+				"en": "Links a Public Service to a class that describes the criteria for needing or using the service, such as residency in a given location, being over a certain age etc. The Criterion class is defined in the Core Criterion and Core Evidence Vocabulary."
+			},
+			"property": "http://data.europa.eu/m8g/hasCriterion",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "m8g:CriterionRequirement"
 		},
 		{
 			"label": {
@@ -1524,21 +1564,6 @@
 			"id": "cpsv:Rule"
 		},
 		{
-			"type": "text",
-			"nodetype": "LANGUAGE_LITERAL",
-			"property": "http://purl.org/dc/terms/spatial",
-			"cardinality": {
-				"min": 0,
-				"pref": 0
-			},
-			"label": {
-				"en": "spatial"
-			},
-			"description": {
-				"en": "A Public Service is likely to be available only within a given area, typically the area covered by a particular public authority. Also a Public Service may be available within certain time periods such as the winter months. The CPSV-AP v2.1 recommends to use as controlled vocabulary the European Publications Office's Administrative Territorial Units Named Authority List (http://publications.europa.eu/resource/authority/atu/)"
-			}
-		},
-		{
 			"label": {
 				"en": "hasContactPoint"
 			},
@@ -1566,23 +1591,6 @@
 				"pref": 0
 			},
 			"id": "m8g:Channel"
-		},
-		{
-			"type": "text",
-			"nodetype": "DATATYPE_LITERAL",
-			"datatype": "http://www.w3.org/2001/XMLSchema#duration",
-			"property": "http://data.europa.eu/m8g/processingTime",
-			"cardinality": {
-				"min": 0,
-				"pref": 0,
-				"max": 1
-			},
-			"label": {
-				"en": "processingTime"
-			},
-			"description": {
-				"en": "The value of this property is the (estimated) time needed for executing a Public Service. The actual information is provided using the ISO8601 syntax for durations."
-			}
 		},
 		{
 			"label": {
@@ -2425,7 +2433,7 @@
 				"pref": 1
 			},
 			"label": {
-				"en": "status"
+				"en": "executionStatus"
 			},
 			"description": {
 				"en": "Indicates the different statuses that a public service can go through during its execution."

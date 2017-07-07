@@ -91,3 +91,46 @@ margin:0 15px 0 0;
 footer p{
 color:#7C8395;
 }
+
+#dijit_layout_ContentPane_5_splitter {
+    display:none;
+    position:relative;
+}
+
+#dijit_layout_ContentPane_6 {
+    display:none;
+    position:relative;
+}
+
+#dijit_layout_ContentPane_7_splitter {
+    display:none;
+    position:relative;
+}
+
+#dijit_layout_ContentPane_5 {
+    width:95% !important;
+    height:200px !important;
+    border: none !important;
+    padding:0 !important;
+}
+
+#dijit_layout_ContentPane_7 {
+    position:relative;
+    left:910px !important;
+    top:200px !important;
+    width:150px !important;
+    border:none !important;
+    padding:0 !important;
+}
+
+#dijit_Tree_0 {
+    height:200px !important;
+}
+
+#dijit_layout_BorderContainer_0 {
+    height:250px !important;
+}
+
+.claro .dijitContentPane {
+    padding:0;
+}

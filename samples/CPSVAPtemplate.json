@@ -7,7 +7,7 @@
 			"en": "PublicService"
 		},
 		"description": {
-			"en": "This class represents the Public Service itself. A Public Service is a mandatory or discretionary set of acts performed, or able to be performed, by or on behalf of a public organisation. Services may be for the benefit of an individual, a business, or other public authority, or groups of any of these. The capacity to act exists whether it is used or not, and the term 'benefit' may apply in the sense of enabling the fulfilment of an obligation. As defined in the revised version of the European Interoperability Framework , a European public service comprises any service provided by public administrations in Europe, or by other organisations on their behalf, to businesses, citizens or others public administrations."
+			"en": "This class represents the Public Service itself. A Public Service is a mandatory or discretionary set of activities performed, or able to be performed, by or on behalf of a public organisation, publicly funded and arise from public policy. Services may be for the benefit of an individual, a business, or other public authority, or groups of any of these. A service exists whether it is used or not, and the term 'benefit' may apply in the sense of enabling the fulfilment of an obligation. As defined in the revised version of the European Interoperability Framework, a European public service comprises any service provided by public administrations in Europe, or by other organisations on their behalf, to businesses, citizens or others public administrations."
 		},
 		"cardinality": {
 			"min": 1,
@@ -1174,6 +1174,21 @@
 		{
 			"type": "text",
 			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://data.europa.eu/m8g/executionStatus",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "status"
+			},
+			"description": {
+				"en": "Indicates the different statuses that a public service can go through during its execution."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
 			"property": "http://data.europa.eu/m8g/subject",
 			"cardinality": {
 				"min": 0,
@@ -1306,7 +1321,7 @@
 		{
 			"type": "text",
 			"nodetype": "URI",
-			"property": "http://xmlns.com/foaf/0.1/page",
+			"property": "http://xmlns.com/foaf/0.1/Document",
 			"cardinality": {
 				"min": 0,
 				"pref": 1
@@ -1415,21 +1430,6 @@
 			},
 			"description": {
 				"en": "This property represents the Name of the Agent."
-			}
-		},
-		{
-			"type": "text",
-			"nodetype": "LANGUAGE_LITERAL",
-			"property": "http://purl.org/dc/terms/type",
-			"cardinality": {
-				"min": 1,
-				"pref": 1
-			},
-			"label": {
-				"en": "type"
-			},
-			"description": {
-				"en": "This property represents the Type of an Agent as described in a controlled vocabulary. In the context of CPSV-AP an Agent can be a Public Organisation or a Person. The CPSV-AP v2.1 recommends to use as controlled vocabulary the CPSV-AP list of Agents."
 			}
 		},
 		{

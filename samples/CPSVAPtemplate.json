@@ -1583,7 +1583,129 @@
 		"extends": "m8g:Event",
 		"constraints": {
 			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/BusinessEvent"
-		}
+		},
+		"content":
+		[{
+			"type": "choice",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/type",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "type"
+			},
+			"description": {
+				"en": "The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child. The CPSV-AP v2.1 recommends to use as controlled vocabulary the CPSV-AP list of Life Events and Business Events."
+			},
+			"styles": [
+				"tree"
+			],
+				"choices": [
+					{
+				        "top":true,
+						"value": "Starting business",
+						"selectable": "true",
+						"label": {"en": "Starting business"},
+						"children": [
+							{"_reference": "Registering a company"},
+							{"_reference": "Needing a licence, permit or certificate to start or continue an activity"},
+							{"_reference": "Registering Intellectual Property"},
+							{"_reference": "Registering a branch"},
+							{"_reference": "Starting a new activity"},
+							{"_reference": "Hiring an employee"}
+						]
+					},
+					{
+				        "top":true,
+						"value": "Starting cross-border business",
+						"selectable": "true",
+						"label": {"en": "Starting cross-border business"},
+						"children": [
+							{"_reference": "Registering a cross-border business"},
+							{"_reference": "Registering a branch"}
+						]
+					}, 
+					{
+				        "top":true,
+						"value": "Doing business",
+						"selectable": "true",
+						"label": {"en": "Doing business"},
+						"children": [
+							{"_reference":	"Financing a company"},
+							{"_reference":	"Needing a licence, permit or certificate to start or continue an activity"},
+							{"_reference":	"Registering Intellectual Property"},
+							{"_reference":	"Hiring an employee"},
+							{"_reference":	"Participating in public procurement"},
+							{"_reference":	"Notifying and reporting to authorities"},
+							{"_reference":	"Starting a new activity"},
+							{"_reference":	"Registering a branch"},
+							{"_reference":	"Having problems in paying creditors"}
+						]
+					},
+					{
+				        "top":true,
+						"value": "Closing business",
+						"selectable": "true",
+						"label": {"en": "Closing business"},
+						"children": [
+							{"_reference":	"Restructuring a company"},
+							{"_reference":	"Dissolution of a company"}
+						]
+					},
+					{					
+						"value": "Restructuring a company",
+						"label": {"en": "Restructuring a company"}
+					},
+					{					
+						"value": "Dissolution of a company"
+					},
+					{
+						"value": "Financing a company",
+						"label": {"en": "Financing a company"}
+					},
+					{
+						"value": "Needing a licence, permit or certificate to start or continue an activity",
+						"label": {"en": "Needing a licence, permit or certificate to start or continue an activity"}
+					},
+					{
+						"value": "Registering Intellectual Property",
+						"label": {"en": "Registering Intellectual Property"}
+					}, 
+					{
+						"value": "Hiring an employee",
+						"label": {"en": "Hiring an employee"}
+					}, 
+					{
+						"value": "Participating in public procurement",
+						"label": {"en": "Participating in public procurement"}
+					}, 
+					{
+						"value": "Notifying and reporting to authorities",
+						"label": {"en": "Notifying and reporting to authorities"}
+					}, 
+					{
+						"value": "Starting a new activity",
+						"label": {"en": "Starting a new activity"}
+					}, 
+					{
+						"value": "Having problems in paying creditors",
+						"label": {"en": "Having problems in paying creditors"}
+					},     
+					{
+						"value": "Registering a cross-border business",
+						"label": {"en": "Registering a cross-border business"}
+					}, 
+					{
+						"value": "Registering a company",
+						"label": {"en": "Registering a company"}
+					},
+					{
+						"value": "Registering a branch",
+						"label": {"en": "Registering a branch"}
+					}]
+		}]
 	},
 	{
 		"id": "LifeEvent",
@@ -1592,7 +1714,23 @@
 		"extends": "m8g:Event",
 		"constraints": {
 			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/LifeEvent"
-		}
+		},
+		"content":
+		[{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/type",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "type"
+			},
+			"description": {
+				"en": "The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child. The CPSV-AP v2.1 recommends to use as controlled vocabulary the CPSV-AP list of Life Events and Business Events."
+			}
+		}]
 	},
 	{
 		"type": "group",
@@ -1644,21 +1782,6 @@
 			},
 			"description": {
 				"en": "This property represents a free text description of the Event. The description is likely to be the text that a business or citizen sees for that specific Event when looking for relevant Public Services. Public administrations are therefore encouraged to include a reasonable level of detail in the description."
-			}
-		},
-		{
-			"type": "text",
-			"nodetype": "LANGUAGE_LITERAL",
-			"property": "http://purl.org/dc/terms/type",
-			"cardinality": {
-				"min": 0,
-				"pref": 1
-			},
-			"label": {
-				"en": "type"
-			},
-			"description": {
-				"en": "The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child. The CPSV-AP v2.1 recommends to use as controlled vocabulary the CPSV-AP list of Life Events and Business Events."
 			}
 		},
 		{

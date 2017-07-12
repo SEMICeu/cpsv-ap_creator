@@ -1,0 +1,3041 @@
+{
+	"root": "cpsv:PublicService",
+	"templates": [{
+		"id": "cpsv:PublicService",
+		"type": "group",
+		"label": {
+			"en": "PublicService"
+		},
+		"description": {
+			"en": "This class represents the Public Service itself. A Public Service is a mandatory or discretionary set of activities performed, or able to be performed, by or on behalf of a public organisation, publicly funded and arise from public policy. Services may be for the benefit of an individual, a business, or other public authority, or groups of any of these. A service exists whether it is used or not, and the term 'benefit' may apply in the sense of enabling the fulfilment of an obligation. As defined in the revised version of the European Interoperability Framework, a European public service comprises any service provided by public administrations in Europe, or by other organisations on their behalf, to businesses, citizens or others public administrations."
+		},
+		"cardinality": {
+			"min": 1,
+			"pref": 1,
+			"max": 1
+		},
+		"property": "http://purl.org/vocab/cpsv#PublicService",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://purl.org/vocab/cpsv#PublicService"
+		},
+		"content": [{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents a formally-issued Identifier for the Public Service."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/title",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "name"
+			},
+			"description": {
+				"en": "This property represents the official Name of the Public Service."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/description",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "description"
+			},
+			"description": {
+				"en": "This property represents a free text Description of the Public Service. The description is likely to be the text that potential users of the Public Service see in any public service catalogue. Public administrations are encouraged to include a reasonable level of detail in the description, for instance including basic eligibility requirements for the particular Public Service and contact information."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://www.w3.org/ns/dcat#keyword",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "keyword"
+			},
+			"description": {
+				"en": "This property represents a keyword, term or phrase to describe the Public Service."
+			}
+		},
+		{
+			"type": "choice",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://data.europa.eu/m8g/sector",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "sector"
+			},
+			"description": {
+				"en": "This property represents the industry or sector a Public Service relates to, or is intended for. For example: environment, safety, housing. Note that a single Public Service may relate to multiple sectors. The possible values for this property are provided as a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the List of NACE codes (http://ec.europa.eu/competition/mergers/cases/index/nace_all.html). The CPSV-AP recommends to use skos:Concept as range of the property."
+			}, 
+			"choices": [
+					{"value": "A - Agriculture, forestry and fishing"},
+					{"value": "A1 - Crop and animal production, hunting and related service activities"},
+					{"value": "A1.1 - Growing of non-perennial crops"},
+					{"value": "A1.1.1 - Growing of cereals (except rice), leguminous crops and oil seeds"},
+					{"value": "A1.1.2 - Growing of rice"},
+					{"value": "A1.1.3 - Growing of vegetables and melons, roots and tubers"},
+					{"value": "A1.1.4 - Growing of sugar cane"},
+					{"value": "A1.1.5 - Growing of tobacco"},
+					{"value": "A1.1.6 - Growing of fibre crops"},
+					{"value": "A1.1.9 - Growing of other non-perennial crops"},
+					{"value": "A1.2 - Growing of perennial crops"},
+					{"value": "A1.2.1 - Growing of grapes"},
+					{"value": "A1.2.2 - Growing of tropical and subtropical fruits"},
+					{"value": "A1.2.3 - Growing of citrus fruits"},
+					{"value": "A1.2.4 - Growing of pome fruits and stone fruits"},
+					{"value": "A1.2.5 - Growing of other tree and bush fruits and nuts"},
+					{"value": "A1.2.6 - Growing of oleaginous fruits"},
+					{"value": "A1.2.7 - Growing of beverage crops"},
+					{"value": "A1.2.8 - Growing of spices, aromatic, drug and pharmaceutical crops"},
+					{"value": "A1.2.9 - Growing of other perennial crops"},
+					{"value": "A1.3 - Plant propagation"},
+					{"value": "A1.3.0 - Plant propagation"},
+					{"value": "A1.4 - Animal production"},
+					{"value": "A1.4.1 - Raising of dairy cattle"},
+					{"value": "A1.4.2 - Raising of other cattle and buffaloes"},
+					{"value": "A1.4.3 - Raising of horses and other equines"},
+					{"value": "A1.4.4 - Raising of camels and camelids"},
+					{"value": "A1.4.5 - Raising of sheep and goats"},
+					{"value": "A1.4.6 - Raising of swine/pigs"},
+					{"value": "A1.4.7 - Raising of poultry"},
+					{"value": "A1.4.9 - Raising of other animals"},
+					{"value": "A1.5 - Mixed farming"},
+					{"value": "A1.5.0 - Mixed farming"},
+					{"value": "A1.6 - Support activities to agriculture and post-harvest crop activities"},
+					{"value": "A1.6.1 - Support activities for crop production"},
+					{"value": "A1.6.2 - Support activities for animal production"},
+					{"value": "A1.6.3 - Post-harvest crop activities"},
+					{"value": "A1.6.4 - Seed processing for propagation"},
+					{"value": "A1.7 - Hunting, trapping and related service activities"},
+					{"value": "A1.7.0 - Hunting, trapping and related service activities"},
+					{"value": "A2 - Forestry and logging"},
+					{"value": "A2.1 - Silviculture and other forestry activities"},
+					{"value": "A2.1.0 - Silviculture and other forestry activities"},
+					{"value": "A2.2 - Logging"},
+					{"value": "A2.2.0 - Logging"},
+					{"value": "A2.3 - Gathering of wild growing non-wood products"},
+					{"value": "A2.3.0 - Gathering of wild growing non-wood products"},
+					{"value": "A2.4 - Support services to forestry"},
+					{"value": "A2.4.0 - Support services to forestry"},
+					{"value": "A3 - Fishing and aquaculture"},
+					{"value": "A3.1 - Fishing"},
+					{"value": "A3.1.1 - Marine fishing"},
+					{"value": "A3.1.2 - Freshwater fishing"},
+					{"value": "A3.2 - Aquaculture"},
+					{"value": "A3.2.1 - Marine aquaculture"},
+					{"value": "A3.2.2 - Freshwater aquaculture"},
+					{"value": "B - Mining and quarrying"},
+					{"value": "B5 - Mining of coal and lignite"},
+					{"value": "B5.1 - Mining of hard coal"},
+					{"value": "B5.1.0 - Mining of hard coal"},
+					{"value": "B5.2 - Mining of lignite"},
+					{"value": "B5.2.0 - Mining of lignite"},
+					{"value": "B6 - Extraction of crude petroleum and natural gas"},
+					{"value": "B6.1 - Extraction of crude petroleum"},
+					{"value": "B6.1.0 - Extraction of crude petroleum"},
+					{"value": "B6.2 - Extraction of natural gas"},
+					{"value": "B6.2.0 - Extraction of natural gas"},
+					{"value": "B7 - Mining of metal ores"},
+					{"value": "B7.1 - Mining of iron ores"},
+					{"value": "B7.1.0 - Mining of iron ores"},
+					{"value": "B7.2 - Mining of non-ferrous metal ores"},
+					{"value": "B7.2.1 - Mining of uranium and thorium ores"},
+					{"value": "B7.2.9 - Mining of other non-ferrous metal ores"},
+					{"value": "B8 - Other mining and quarrying"},
+					{"value": "B8.1 - Quarrying of stone, sand and clay"},
+					{"value": "B8.1.1 - Quarrying of ornamental and building stone, limestone, gypsum, chalk and slate"},
+					{"value": "B8.1.2 - Operation of gravel and sand pits; mining of clays and kaolin"},
+					{"value": "B8.9 - Mining and quarrying n.e.c."},
+					{"value": "B8.9.1 - Mining of chemical and fertiliser minerals"},
+					{"value": "B8.9.2 - Extraction of peat"},
+					{"value": "B8.9.3 - Extraction of salt"},
+					{"value": "B8.9.9 - Other mining and quarrying n.e.c."},
+					{"value": "B9 - Mining support service activities"},
+					{"value": "B9.1 - Support activities for petroleum and natural gas extraction"},
+					{"value": "B9.1.0 - Support activities for petroleum and natural gas extraction"},
+					{"value": "B9.9 - Support activities for other mining and quarrying"},
+					{"value": "B9.9.0 - Support activities for other mining and quarrying"},
+					{"value": "C - Manufacturing"},
+					{"value": "C10 - Manufacture of food products"},
+					{"value": "C10.1 - Processing and preserving of meat and production of meat products"},
+					{"value": "C10.1.1 - Processing and preserving of meat"},
+					{"value": "C10.1.2 - Processing and preserving of poultry meat"},
+					{"value": "C10.1.3 - Production of meat and poultry meat products"},
+					{"value": "C10.2 - Processing and preserving of fish, crustaceans and molluscs"},
+					{"value": "C10.2.0 - Processing and preserving of fish, crustaceans and molluscs"},
+					{"value": "C10.3 - Processing and preserving of fruit and vegetables"},
+					{"value": "C10.3.1 - Processing and preserving of potatoes"},
+					{"value": "C10.3.2 - Manufacture of fruit and vegetable juice"},
+					{"value": "C10.3.9 - Other processing and preserving of fruit and vegetables"},
+					{"value": "C10.4 - Manufacture of vegetable and animal oils and fats"},
+					{"value": "C10.4.1 - Manufacture of oils and fats"},
+					{"value": "C10.4.2 - Manufacture of margarine and similar edible fats"},
+					{"value": "C10.5 - Manufacture of dairy products"},
+					{"value": "C10.5.1 - Operation of dairies and cheese making"},
+					{"value": "C10.5.2 - Manufacture of ice cream"},
+					{"value": "C10.6 - Manufacture of grain mill products, starches and starch products"},
+					{"value": "C10.6.1 - Manufacture of grain mill products"},
+					{"value": "C10.6.2 - Manufacture of starches and starch products"},
+					{"value": "C10.7 - Manufacture of bakery and farinaceous products"},
+					{"value": "C10.7.1 - Manufacture of bread; manufacture of fresh pastry goods and cakes"},
+					{"value": "C10.7.2 - Manufacture of rusks and biscuits; manufacture of preserved pastry goods and cakes"},
+					{"value": "C10.7.3 - Manufacture of macaroni, noodles, couscous and similar farinaceous products"},
+					{"value": "C10.8 - Manufacture of other food products"},
+					{"value": "C10.8.1 - Manufacture of sugar"},
+					{"value": "C10.8.2 - Manufacture of cocoa, chocolate and sugar confectionery"},
+					{"value": "C10.8.3 - Processing of tea and coffee"},
+					{"value": "C10.8.4 - Manufacture of condiments and seasonings"},
+					{"value": "C10.8.5 - Manufacture of prepared meals and dishes"},
+					{"value": "C10.8.6 - Manufacture of homogenised food preparations and dietetic food"},
+					{"value": "C10.8.9 - Manufacture of other food products n.e.c."},
+					{"value": "C10.9 - Manufacture of prepared animal feeds"},
+					{"value": "C10.9.1 - Manufacture of prepared feeds for farm animals"},
+					{"value": "C10.9.2 - Manufacture of prepared pet foods"},
+					{"value": "C11 - Manufacture of beverages"},
+					{"value": "C11.0 - Manufacture of beverages"},
+					{"value": "C11.0.1 - Distilling, rectifying and blending of spirits"},
+					{"value": "C11.0.2 - Manufacture of wine from grape"},
+					{"value": "C11.0.3 - Manufacture of cider and other fruit wines"},
+					{"value": "C11.0.4 - Manufacture of other non-distilled fermented beverages"},
+					{"value": "C11.0.5 - Manufacture of beer"},
+					{"value": "C11.0.6 - Manufacture of malt"},
+					{"value": "C11.0.7 - Manufacture of soft drinks; production of mineral waters and other bottled waters"},
+					{"value": "C12 - Manufacture of tobacco products"},
+					{"value": "C12.0 - Manufacture of tobacco products"},
+					{"value": "C12.0.0 - Manufacture of tobacco products"},
+					{"value": "C13 - Manufacture of textiles"},
+					{"value": "C13.1 - Preparation and spinning of textile fibres"},
+					{"value": "C13.1.0 - Preparation and spinning of textile fibres"},
+					{"value": "C13.2 - Weaving of textiles"},
+					{"value": "C13.2.0 - Weaving of textiles"},
+					{"value": "C13.3 - Finishing of textiles"},
+					{"value": "C13.3.0 - Finishing of textiles"},
+					{"value": "C13.9 - Manufacture of other textiles"},
+					{"value": "C13.9.1 - Manufacture of knitted and crocheted fabrics"},
+					{"value": "C13.9.2 - Manufacture of made-up textile articles, except apparel"},
+					{"value": "C13.9.3 - Manufacture of carpets and rugs"},
+					{"value": "C13.9.4 - Manufacture of cordage, rope, twine and netting"},
+					{"value": "C13.9.5 - Manufacture of non-wovens and articles made from non-wovens, except apparel"},
+					{"value": "C13.9.6 - Manufacture of other technical and industrial textiles"},
+					{"value": "C13.9.9 - Manufacture of other textiles n.e.c."},
+					{"value": "C14 - Manufacture of wearing apparel"},
+					{"value": "C14.1 - Manufacture of wearing apparel, except fur apparel"},
+					{"value": "C14.1.1 - Manufacture of leather clothes"},
+					{"value": "C14.1.2 - Manufacture of workwear"},
+					{"value": "C14.1.3 - Manufacture of other outerwear"},
+					{"value": "C14.1.4 - Manufacture of underwear"},
+					{"value": "C14.1.9 - Manufacture of other wearing apparel and accessories"},
+					{"value": "C14.2 - Manufacture of articles of fur"},
+					{"value": "C14.2.0 - Manufacture of articles of fur"},
+					{"value": "C14.3 - Manufacture of knitted and crocheted apparel"},
+					{"value": "C14.3.1 - Manufacture of knitted and crocheted hosiery"},
+					{"value": "C14.3.9 - Manufacture of other knitted and crocheted apparel"},
+					{"value": "C15 - Manufacture of leather and related products"},
+					{"value": "C15.1 - Tanning and dressing of leather; manufacture of luggage, handbags, saddlery and harness; dressing and dyeing of fur"},
+					{"value": "C15.1.1 - Tanning and dressing of leather; dressing and dyeing of fur"},
+					{"value": "C15.1.2 - Manufacture of luggage, handbags and the like, saddlery and harness"},
+					{"value": "C15.2 - Manufacture of footwear"},
+					{"value": "C15.2.0 - Manufacture of footwear"},
+					{"value": "C16 - Manufacture of wood and of products of wood and cork, except furniture; manufacture of articles of straw and plaiting materials"},
+					{"value": "C16.1 - Sawmilling and planing of wood"},
+					{"value": "C16.1.0 - Sawmilling and planing of wood"},
+					{"value": "C16.2 - Manufacture of products of wood, cork, straw and plaiting materials"},
+					{"value": "C16.2.1 - Manufacture of veneer sheets and wood-based panels"},
+					{"value": "C16.2.2 - Manufacture of assembled parquet floors"},
+					{"value": "C16.2.3 - Manufacture of other builders' carpentry and joinery"},
+					{"value": "C16.2.4 - Manufacture of wooden containers"},
+					{"value": "C16.2.9 - Manufacture of other products of wood; manufacture of articles of cork, straw and plaiting materials"},
+					{"value": "C17 - Manufacture of paper and paper products"},
+					{"value": "C17.1 - Manufacture of pulp, paper and paperboard"},
+					{"value": "C17.1.1 - Manufacture of pulp"},
+					{"value": "C17.1.2 - Manufacture of paper and paperboard"},
+					{"value": "C17.2 - Manufacture of articles of paper and paperboard"},
+					{"value": "C17.2.1 - Manufacture of corrugated paper and paperboard and of containers of paper and paperboard"},
+					{"value": "C17.2.2 - Manufacture of household and sanitary goods and of toilet requisites"},
+					{"value": "C17.2.3 - Manufacture of paper stationery"},
+					{"value": "C17.2.4 - Manufacture of wallpaper"},
+					{"value": "C17.2.9 - Manufacture of other articles of paper and paperboard"},
+					{"value": "C18 - Printing and reproduction of recorded media"},
+					{"value": "C18.1 - Printing and service activities related to printing"},
+					{"value": "C18.1.1 - Printing of newspapers"},
+					{"value": "C18.1.2 - Other printing"},
+					{"value": "C18.1.3 - Pre-press and pre-media services"},
+					{"value": "C18.1.4 - Binding and related services"},
+					{"value": "C18.2 - Reproduction of recorded media"},
+					{"value": "C18.2.0 - Reproduction of recorded media"},
+					{"value": "C19 - Manufacture of coke and refined petroleum products"},
+					{"value": "C19.1 - Manufacture of coke oven products"},
+					{"value": "C19.1.0 - Manufacture of coke oven products"},
+					{"value": "C19.2 - Manufacture of refined petroleum products"},
+					{"value": "C19.2.0 - Manufacture of refined petroleum products"},
+					{"value": "C20 - Manufacture of chemicals and chemical products"},
+					{"value": "C20.1 - Manufacture of basic chemicals, fertilisers and nitrogen compounds, plastics and synthetic rubber in primary forms"},
+					{"value": "C20.1.1 - Manufacture of industrial gases"},
+					{"value": "C20.1.2 - Manufacture of dyes and pigments"},
+					{"value": "C20.1.3 - Manufacture of other inorganic basic chemicals"},
+					{"value": "C20.1.4 - Manufacture of other organic basic chemicals"},
+					{"value": "C20.1.5 - Manufacture of fertilisers and nitrogen compounds"},
+					{"value": "C20.1.6 - Manufacture of plastics in primary forms"},
+					{"value": "C20.1.7 - Manufacture of synthetic rubber in primary forms"},
+					{"value": "C20.2 - Manufacture of pesticides and other agrochemical products"},
+					{"value": "C20.2.0 - Manufacture of pesticides and other agrochemical products"},
+					{"value": "C20.3 - Manufacture of paints, varnishes and similar coatings, printing ink and mastics"},
+					{"value": "C20.3.0 - Manufacture of paints, varnishes and similar coatings, printing ink and mastics"},
+					{"value": "C20.4 - Manufacture of soap and detergents, cleaning and polishing preparations, perfumes and toilet preparations"},
+					{"value": "C20.4.1 - Manufacture of soap and detergents, cleaning and polishing preparations"},
+					{"value": "C20.4.2 - Manufacture of perfumes and toilet preparations"},
+					{"value": "C20.5 - Manufacture of other chemical products"},
+					{"value": "C20.5.1 - Manufacture of explosives"},
+					{"value": "C20.5.2 - Manufacture of glues"},
+					{"value": "C20.5.3 - Manufacture of essential oils"},
+					{"value": "C20.5.9 - Manufacture of other chemical products n.e.c."},
+					{"value": "C20.6 - Manufacture of man-made fibres"},
+					{"value": "C20.6.0 - Manufacture of man-made fibres"},
+					{"value": "C21 - Manufacture of basic pharmaceutical products and pharmaceutical preparations"},
+					{"value": "C21.1 - Manufacture of basic pharmaceutical products"},
+					{"value": "C21.1.0 - Manufacture of basic pharmaceutical products"},
+					{"value": "C21.2 - Manufacture of pharmaceutical preparations"},
+					{"value": "C21.2.0 - Manufacture of pharmaceutical preparations"},
+					{"value": "C22 - Manufacture of rubber and plastic products"},
+					{"value": "C22.1 - Manufacture of rubber products"},
+					{"value": "C22.1.1 - Manufacture of rubber tyres and tubes; retreading and rebuilding of rubber tyres"},
+					{"value": "C22.1.9 - Manufacture of other rubber products"},
+					{"value": "C22.2 - Manufacture of plastics products"},
+					{"value": "C22.2.1 - Manufacture of plastic plates, sheets, tubes and profiles"},
+					{"value": "C22.2.2 - Manufacture of plastic packing goods"},
+					{"value": "C22.2.3 - Manufacture of builders’ ware of plastic"},
+					{"value": "C22.2.9 - Manufacture of other plastic products"},
+					{"value": "C23 - Manufacture of other non-metallic mineral products"},
+					{"value": "C23.1 - Manufacture of glass and glass products"},
+					{"value": "C23.1.1 - Manufacture of flat glass"},
+					{"value": "C23.1.2 - Shaping and processing of flat glass"},
+					{"value": "C23.1.3 - Manufacture of hollow glass"},
+					{"value": "C23.1.4 - Manufacture of glass fibres"},
+					{"value": "C23.1.9 - Manufacture and processing of other glass, including technical glassware"},
+					{"value": "C23.2 - Manufacture of refractory products"},
+					{"value": "C23.2.0 - Manufacture of refractory products"},
+					{"value": "C23.3 - Manufacture of clay building materials"},
+					{"value": "C23.3.1 - Manufacture of ceramic tiles and flags"},
+					{"value": "C23.3.2 - Manufacture of bricks, tiles and construction products, in baked clay"},
+					{"value": "C23.4 - Manufacture of other porcelain and ceramic products"},
+					{"value": "C23.4.1 - Manufacture of ceramic household and ornamental articles"},
+					{"value": "C23.4.2 - Manufacture of ceramic sanitary fixtures"},
+					{"value": "C23.4.3 - Manufacture of ceramic insulators and insulating fittings"},
+					{"value": "C23.4.4 - Manufacture of other technical ceramic products"},
+					{"value": "C23.4.9 - Manufacture of other ceramic products"},
+					{"value": "C23.5 - Manufacture of cement, lime and plaster"},
+					{"value": "C23.5.1 - Manufacture of cement"},
+					{"value": "C23.5.2 - Manufacture of lime and plaster"},
+					{"value": "C23.6 - Manufacture of articles of concrete, cement and plaster"},
+					{"value": "C23.6.1 - Manufacture of concrete products for construction purposes"},
+					{"value": "C23.6.2 - Manufacture of plaster products for construction purposes"},
+					{"value": "C23.6.3 - Manufacture of ready-mixed concrete"},
+					{"value": "C23.6.4 - Manufacture of mortars"},
+					{"value": "C23.6.5 - Manufacture of fibre cement"},
+					{"value": "C23.6.9 - Manufacture of other articles of concrete, plaster and cement"},
+					{"value": "C23.7 - Cutting, shaping and finishing of stone"},
+					{"value": "C23.7.0 - Cutting, shaping and finishing of stone"},
+					{"value": "C23.9 - Manufacture of abrasive products and non-metallic mineral products n.e.c."},
+					{"value": "C23.9.1 - Production of abrasive products"},
+					{"value": "C23.9.9 - Manufacture of other non-metallic mineral products n.e.c."},
+					{"value": "C24 - Manufacture of basic metals"},
+					{"value": "C24.1 - Manufacture of basic iron and steel and of ferro-alloys"},
+					{"value": "C24.1.0 - Manufacture of basic iron and steel and of ferro-alloys"},
+					{"value": "C24.2 - Manufacture of tubes, pipes, hollow profiles and related fittings, of steel"},
+					{"value": "C24.2.0 - Manufacture of tubes, pipes, hollow profiles and related fittings, of steel"},
+					{"value": "C24.3 - Manufacture of other products of first processing of steel"},
+					{"value": "C24.3.1 - Cold drawing of bars"},
+					{"value": "C24.3.2 - Cold rolling of narrow strip"},
+					{"value": "C24.3.3 - Cold forming or folding"},
+					{"value": "C24.3.4 - Cold drawing of wire"},
+					{"value": "C24.4 - Manufacture of basic precious and other non-ferrous metals"},
+					{"value": "C24.4.1 - Precious metals production"},
+					{"value": "C24.4.2 - Aluminium production"},
+					{"value": "C24.4.3 - Lead, zinc and tin production"},
+					{"value": "C24.4.4 - Copper production"},
+					{"value": "C24.4.5 - Other non-ferrous metal production"},
+					{"value": "C24.4.6 - Processing of nuclear fuel"},
+					{"value": "C24.5 - Casting of metals"},
+					{"value": "C24.5.1 - Casting of iron"},
+					{"value": "C24.5.2 - Casting of steel"},
+					{"value": "C24.5.3 - Casting of light metals"},
+					{"value": "C24.5.4 - Casting of other non-ferrous metals"},
+					{"value": "C25 - Manufacture of fabricated metal products, except machinery and equipment"},
+					{"value": "C25.1 - Manufacture of structural metal products"},
+					{"value": "C25.1.1 - Manufacture of metal structures and parts of structures"},
+					{"value": "C25.1.2 - Manufacture of doors and windows of metal"},
+					{"value": "C25.2 - Manufacture of tanks, reservoirs and containers of metal"},
+					{"value": "C25.2.1 - Manufacture of central heating radiators and boilers"},
+					{"value": "C25.2.9 - Manufacture of other tanks, reservoirs and containers of metal"},
+					{"value": "C25.3 - Manufacture of steam generators, except central heating hot water boilers"},
+					{"value": "C25.3.0 - Manufacture of steam generators, except central heating hot water boilers"},
+					{"value": "C25.4 - Manufacture of weapons and ammunition"},
+					{"value": "C25.4.0 - Manufacture of weapons and ammunition"},
+					{"value": "C25.5 - Forging, pressing, stamping and roll-forming of metal; powder metallurgy"},
+					{"value": "C25.5.0 - Forging, pressing, stamping and roll-forming of metal; powder metallurgy"},
+					{"value": "C25.6 - Treatment and coating of metals; machining"},
+					{"value": "C25.6.1 - Treatment and coating of metals"},
+					{"value": "C25.6.2 - Machining"},
+					{"value": "C25.7 - Manufacture of cutlery, tools and general hardware"},
+					{"value": "C25.7.1 - Manufacture of cutlery"},
+					{"value": "C25.7.2 - Manufacture of locks and hinges"},
+					{"value": "C25.7.3 - Manufacture of tools"},
+					{"value": "C25.9 - Manufacture of other fabricated metal products"},
+					{"value": "C25.9.1 - Manufacture of steel drums and similar containers"},
+					{"value": "C25.9.2 - Manufacture of light metal packaging"},
+					{"value": "C25.9.3 - Manufacture of wire products, chain and springs"},
+					{"value": "C25.9.4 - Manufacture of fasteners and screw machine products"},
+					{"value": "C25.9.9 - Manufacture of other fabricated metal products n.e.c."},
+					{"value": "C26 - Manufacture of computer, electronic and optical products"},
+					{"value": "C26.1 - Manufacture of electronic components and boards"},
+					{"value": "C26.1.1 - Manufacture of electronic components"},
+					{"value": "C26.1.2 - Manufacture of loaded electronic boards"},
+					{"value": "C26.2 - Manufacture of computers and peripheral equipment"},
+					{"value": "C26.2.0 - Manufacture of computers and peripheral equipment"},
+					{"value": "C26.3 - Manufacture of communication equipment"},
+					{"value": "C26.3.0 - Manufacture of communication equipment"},
+					{"value": "C26.4 - Manufacture of consumer electronics"},
+					{"value": "C26.4.0 - Manufacture of consumer electronics"},
+					{"value": "C26.5 - Manufacture of instruments and appliances for measuring, testing and navigation; watches and clocks"},
+					{"value": "C26.5.1 - Manufacture of instruments and appliances for measuring, testing and navigation"},
+					{"value": "C26.5.2 - Manufacture of watches and clocks"},
+					{"value": "C26.6 - Manufacture of irradiation, electromedical and electrotherapeutic equipment"},
+					{"value": "C26.6.0 - Manufacture of irradiation, electromedical and electrotherapeutic equipment"},
+					{"value": "C26.7 - Manufacture of optical instruments and photographic equipment"},
+					{"value": "C26.7.0 - Manufacture of optical instruments and photographic equipment"},
+					{"value": "C26.8 - Manufacture of magnetic and optical media"},
+					{"value": "C26.8.0 - Manufacture of magnetic and optical media"},
+					{"value": "C27 - Manufacture of electrical equipment"},
+					{"value": "C27.1 - Manufacture of electric motors, generators, transformers and electricity distribution and control apparatus"},
+					{"value": "C27.1.1 - Manufacture of electric motors, generators and transformers"},
+					{"value": "C27.1.2 - Manufacture of electricity distribution and control apparatus"},
+					{"value": "C27.2 - Manufacture of batteries and accumulators"},
+					{"value": "C27.2.0 - Manufacture of batteries and accumulators"},
+					{"value": "C27.3 - Manufacture of wiring and wiring devices"},
+					{"value": "C27.3.1 - Manufacture of fibre optic cables"},
+					{"value": "C27.3.2 - Manufacture of other electronic and electric wires and cables"},
+					{"value": "C27.3.3 - Manufacture of wiring devices"},
+					{"value": "C27.4 - Manufacture of electric lighting equipment"},
+					{"value": "C27.4.0 - Manufacture of electric lighting equipment"},
+					{"value": "C27.5 - Manufacture of domestic appliances"},
+					{"value": "C27.5.1 - Manufacture of electric domestic appliances"},
+					{"value": "C27.5.2 - Manufacture of non-electric domestic appliances"},
+					{"value": "C27.9 - Manufacture of other electrical equipment"},
+					{"value": "C27.9.0 - Manufacture of other electrical equipment"},
+					{"value": "C28 - Manufacture of machinery and equipment n.e.c."},
+					{"value": "C28.1 - Manufacture of general-purpose machinery"},
+					{"value": "C28.1.1 - Manufacture of engines and turbines, except aircraft, vehicle and cycle engines"},
+					{"value": "C28.1.2 - Manufacture of fluid power equipment"},
+					{"value": "C28.1.3 - Manufacture of other pumps and compressors"},
+					{"value": "C28.1.4 - Manufacture of other taps and valves"},
+					{"value": "C28.1.5 - Manufacture of bearings, gears, gearing and driving elements"},
+					{"value": "C28.2 - Manufacture of other general-purpose machinery"},
+					{"value": "C28.2.1 - Manufacture of ovens, furnaces and furnace burners"},
+					{"value": "C28.2.2 - Manufacture of lifting and handling equipment"},
+					{"value": "C28.2.3 - Manufacture of office machinery and equipment (except computers and peripheral equipment)"},
+					{"value": "C28.2.4 - Manufacture of power-driven hand tools"},
+					{"value": "C28.2.5 - Manufacture of non-domestic cooling and ventilation equipment"},
+					{"value": "C28.2.9 - Manufacture of other general-purpose machinery n.e.c."},
+					{"value": "C28.3 - Manufacture of agricultural and forestry machinery"},
+					{"value": "C28.3.0 - Manufacture of agricultural and forestry machinery"},
+					{"value": "C28.4 - Manufacture of metal forming machinery and machine tools"},
+					{"value": "C28.4.1 - Manufacture of metal forming machinery"},
+					{"value": "C28.4.9 - Manufacture of other machine tools"},
+					{"value": "C28.9 - Manufacture of other special-purpose machinery"},
+					{"value": "C28.9.1 - Manufacture of machinery for metallurgy"},
+					{"value": "C28.9.2 - Manufacture of machinery for mining, quarrying and construction"},
+					{"value": "C28.9.3 - Manufacture of machinery for food, beverage and tobacco processing"},
+					{"value": "C28.9.4 - Manufacture of machinery for textile, apparel and leather production"},
+					{"value": "C28.9.5 - Manufacture of machinery for paper and paperboard production"},
+					{"value": "C28.9.6 - Manufacture of plastics and rubber machinery"},
+					{"value": "C28.9.9 - Manufacture of other special-purpose machinery n.e.c."},
+					{"value": "C29 - Manufacture of motor vehicles, trailers and semi-trailers"},
+					{"value": "C29.1 - Manufacture of motor vehicles"},
+					{"value": "C29.1.0 - Manufacture of motor vehicles"},
+					{"value": "C29.2 - Manufacture of bodies (coachwork) for motor vehicles; manufacture of trailers and semi-trailers"},
+					{"value": "C29.2.0 - Manufacture of bodies (coachwork) for motor vehicles; manufacture of trailers and semi-trailers"},
+					{"value": "C29.3 - Manufacture of parts and accessories for motor vehicles"},
+					{"value": "C29.3.1 - Manufacture of electrical and electronic equipment for motor vehicles"},
+					{"value": "C29.3.2 - Manufacture of other parts and accessories for motor vehicles"},
+					{"value": "C30 - Manufacture of other transport equipment"},
+					{"value": "C30.1 - Building of ships and boats"},
+					{"value": "C30.1.1 - Building of ships and floating structures"},
+					{"value": "C30.1.2 - Building of pleasure and sporting boats"},
+					{"value": "C30.2 - Manufacture of railway locomotives and rolling stock"},
+					{"value": "C30.2.0 - Manufacture of railway locomotives and rolling stock"},
+					{"value": "C30.3 - Manufacture of air and spacecraft and related machinery"},
+					{"value": "C30.3.0 - Manufacture of air and spacecraft and related machinery"},
+					{"value": "C30.4 - Manufacture of military fighting vehicles"},
+					{"value": "C30.4.0 - Manufacture of military fighting vehicles"},
+					{"value": "C30.9 - Manufacture of transport equipment n.e.c."},
+					{"value": "C30.9.1 - Manufacture of motorcycles"},
+					{"value": "C30.9.2 - Manufacture of bicycles and invalid carriages"},
+					{"value": "C30.9.9 - Manufacture of other transport equipment n.e.c."},
+					{"value": "C31 - Manufacture of furniture"},
+					{"value": "C31.0 - Manufacture of furniture"},
+					{"value": "C31.0.1 - Manufacture of office and shop furniture"},
+					{"value": "C31.0.2 - Manufacture of kitchen furniture"},
+					{"value": "C31.0.3 - Manufacture of mattresses"},
+					{"value": "C31.0.9 - Manufacture of other furniture"},
+					{"value": "C32 - Other manufacturing"},
+					{"value": "C32.1 - Manufacture of jewellery, bijouterie and related articles"},
+					{"value": "C32.1.1 - Striking of coins"},
+					{"value": "C32.1.2 - Manufacture of jewellery and related articles"},
+					{"value": "C32.1.3 - Manufacture of imitation jewellery and related articles"},
+					{"value": "C32.2 - Manufacture of musical instruments"},
+					{"value": "C32.2.0 - Manufacture of musical instruments"},
+					{"value": "C32.3 - Manufacture of sports goods"},
+					{"value": "C32.3.0 - Manufacture of sports goods"},
+					{"value": "C32.4 - Manufacture of games and toys"},
+					{"value": "C32.4.0 - Manufacture of games and toys"},
+					{"value": "C32.5 - Manufacture of medical and dental instruments and supplies"},
+					{"value": "C32.5.0 - Manufacture of medical and dental instruments and supplies"},
+					{"value": "C32.9 - Manufacturing n.e.c."},
+					{"value": "C32.9.1 - Manufacture of brooms and brushes"},
+					{"value": "C32.9.9 - Other manufacturing n.e.c."},
+					{"value": "C33 - Repair and installation of machinery and equipment"},
+					{"value": "C33.1 - Repair of fabricated metal products, machinery and equipment"},
+					{"value": "C33.1.1 - Repair of fabricated metal products"},
+					{"value": "C33.1.2 - Repair of machinery"},
+					{"value": "C33.1.3 - Repair of electronic and optical equipment"},
+					{"value": "C33.1.4 - Repair of electrical equipment"},
+					{"value": "C33.1.5 - Repair and maintenance of ships and boats"},
+					{"value": "C33.1.6 - Repair and maintenance of aircraft and spacecraft"},
+					{"value": "C33.1.7 - Repair and maintenance of other transport equipment"},
+					{"value": "C33.1.9 - Repair of other equipment"},
+					{"value": "C33.2 - Installation of industrial machinery and equipment"},
+					{"value": "C33.2.0 - Installation of industrial machinery and equipment"},
+					{"value": "D - Electricity, gas, steam and air conditioning supply"},
+					{"value": "D35 - Electricity, gas, steam and air conditioning supply"},
+					{"value": "D35.1 - Electric power generation, transmission and distribution"},
+					{"value": "D35.1.1 - Production of electricity"},
+					{"value": "D35.1.2 - Transmission of electricity"},
+					{"value": "D35.1.3 - Distribution of electricity"},
+					{"value": "D35.1.4 - Trade of electricity"},
+					{"value": "D35.2 - Manufacture of gas; distribution of gaseous fuels through mains"},
+					{"value": "D35.2.1 - Manufacture of gas"},
+					{"value": "D35.2.2 - Distribution of gaseous fuels through mains"},
+					{"value": "D35.2.3 - Trade of gas through mains"},
+					{"value": "D35.3 - Steam and air conditioning supply"},
+					{"value": "D35.3.0 - Steam and air conditioning supply"},
+					{"value": "E - Water supply; sewerage; waste managment and remediation activities"},
+					{"value": "E36 - Water collection, treatment and supply"},
+					{"value": "E36.0 - Water collection, treatment and supply"},
+					{"value": "E36.0.0 - Water collection, treatment and supply"},
+					{"value": "E37 - Sewerage"},
+					{"value": "E37.0 - Sewerage"},
+					{"value": "E37.0.0 - Sewerage"},
+					{"value": "E38 - Waste collection, treatment and disposal activities; materials recovery"},
+					{"value": "E38.1 - Waste collection"},
+					{"value": "E38.1.1 - Collection of non-hazardous waste"},
+					{"value": "E38.1.2 - Collection of hazardous waste"},
+					{"value": "E38.2 - Waste treatment and disposal"},
+					{"value": "E38.2.1 - Treatment and disposal of non-hazardous waste"},
+					{"value": "E38.2.2 - Treatment and disposal of hazardous waste"},
+					{"value": "E38.3 - Materials recovery"},
+					{"value": "E38.3.1 - Dismantling of wrecks"},
+					{"value": "E38.3.2 - Recovery of sorted materials"},
+					{"value": "E39 - Remediation activities and other waste management services"},
+					{"value": "E39.0 - Remediation activities and other waste management services"},
+					{"value": "E39.0.0 - Remediation activities and other waste management services"},
+					{"value": "F - Construction"},
+					{"value": "F41 - Construction of buildings"},
+					{"value": "F41.1 - Development of building projects"},
+					{"value": "F41.1.0 - Development of building projects"},
+					{"value": "F41.2 - Construction of residential and non-residential buildings"},
+					{"value": "F41.2.0 - Construction of residential and non-residential buildings"},
+					{"value": "F42 - Civil engineering"},
+					{"value": "F42.1 - Construction of roads and railways"},
+					{"value": "F42.1.1 - Construction of roads and motorways"},
+					{"value": "F42.1.2 - Construction of railways and underground railways"},
+					{"value": "F42.1.3 - Construction of bridges and tunnels"},
+					{"value": "F42.2 - Construction of utility projects"},
+					{"value": "F42.2.1 - Construction of utility projects for fluids"},
+					{"value": "F42.2.2 - Construction of utility projects for electricity and telecommunications"},
+					{"value": "F42.9 - Construction of other civil engineering projects"},
+					{"value": "F42.9.1 - Construction of water projects"},
+					{"value": "F42.9.9 - Construction of other civil engineering projects n.e.c."},
+					{"value": "F43 - Specialised construction activities"},
+					{"value": "F43.1 - Demolition and site preparation"},
+					{"value": "F43.1.1 - Demolition"},
+					{"value": "F43.1.2 - Site preparation"},
+					{"value": "F43.1.3 - Test drilling and boring"},
+					{"value": "F43.2 - Electrical, plumbing and other construction installation activities"},
+					{"value": "F43.2.1 - Electrical installation"},
+					{"value": "F43.2.2 - Plumbing, heat and air-conditioning installation"},
+					{"value": "F43.2.9 - Other construction installation"},
+					{"value": "F43.3 - Building completion and finishing"},
+					{"value": "F43.3.1 - Plastering"},
+					{"value": "F43.3.2 - Joinery installation"},
+					{"value": "F43.3.3 - Floor and wall covering"},
+					{"value": "F43.3.4 - Painting and glazing"},
+					{"value": "F43.3.9 - Other building completion and finishing"},
+					{"value": "F43.9 - Other specialised construction activities"},
+					{"value": "F43.9.1 - Roofing activities"},
+					{"value": "F43.9.9 - Other specialised construction activities n.e.c."},
+					{"value": "G - Wholesale and retail trade; repair of motor vehicles and motorcycles"},
+					{"value": "G45 - Wholesale and retail trade and repair of motor vehicles and motorcycles"},
+					{"value": "G45.1 - Sale of motor vehicles"},
+					{"value": "G45.1.1 - Sale of cars and light motor vehicles"},
+					{"value": "G45.1.9 - Sale of other motor vehicles"},
+					{"value": "G45.2 - Maintenance and repair of motor vehicles"},
+					{"value": "G45.2.0 - Maintenance and repair of motor vehicles"},
+					{"value": "G45.3 - Sale of motor vehicle parts and accessories"},
+					{"value": "G45.3.1 - Wholesale trade of motor vehicle parts and accessories"},
+					{"value": "G45.3.2 - Retail trade of motor vehicle parts and accessories"},
+					{"value": "G45.4 - Sale, maintenance and repair of motorcycles and related parts and accessories"},
+					{"value": "G45.4.0 - Sale, maintenance and repair of motorcycles and related parts and accessories"},
+					{"value": "G46 - Wholesale trade, except of motor vehicles and motorcycles"},
+					{"value": "G46.1 - Wholesale on a fee or contract basis"},
+					{"value": "G46.1.1 - Agents involved in the sale of agricultural raw materials, live animals, textile raw materials and semi-finished goods"},
+					{"value": "G46.1.2 - Agents involved in the sale of fuels, ores, metals and industrial chemicals"},
+					{"value": "G46.1.3 - Agents involved in the sale of timber and building materials"},
+					{"value": "G46.1.4 - Agents involved in the sale of machinery, industrial equipment, ships and aircraft"},
+					{"value": "G46.1.5 - Agents involved in the sale of furniture, household goods, hardware and ironmongery"},
+					{"value": "G46.1.6 - Agents involved in the sale of textiles, clothing, fur, footwear and leather goods"},
+					{"value": "G46.1.7 - Agents involved in the sale of food, beverages and tobacco"},
+					{"value": "G46.1.8 - Agents specialised in the sale of other particular products"},
+					{"value": "G46.1.9 - Agents involved in the sale of a variety of goods"},
+					{"value": "G46.2 - Wholesale of agricultural raw materials and live animals"},
+					{"value": "G46.2.1 - Wholesale of grain, unmanufactured tobacco, seeds and animal feeds"},
+					{"value": "G46.2.2 - Wholesale of flowers and plants"},
+					{"value": "G46.2.3 - Wholesale of live animals"},
+					{"value": "G46.2.4 - Wholesale of hides, skins and leather"},
+					{"value": "G46.3 - Wholesale of food, beverages and tobacco"},
+					{"value": "G46.3.1 - Wholesale of fruit and vegetables"},
+					{"value": "G46.3.2 - Wholesale of meat and meat products"},
+					{"value": "G46.3.3 - Wholesale of dairy products, eggs and edible oils and fats"},
+					{"value": "G46.3.4 - Wholesale of beverages"},
+					{"value": "G46.3.5 - Wholesale of tobacco products"},
+					{"value": "G46.3.6 - Wholesale of sugar and chocolate and sugar confectionery"},
+					{"value": "G46.3.7 - Wholesale of coffee, tea, cocoa and spices"},
+					{"value": "G46.3.8 - Wholesale of other food, including fish, crustaceans and molluscs"},
+					{"value": "G46.3.9 - Non-specialised wholesale of food, beverages and tobacco"},
+					{"value": "G46.4 - Wholesale of household goods"},
+					{"value": "G46.4.1 - Wholesale of textiles"},
+					{"value": "G46.4.2 - Wholesale of clothing and footwear"},
+					{"value": "G46.4.3 - Wholesale of electrical household appliances"},
+					{"value": "G46.4.4 - Wholesale of china and glassware and cleaning materials"},
+					{"value": "G46.4.5 - Wholesale of perfume and cosmetics"},
+					{"value": "G46.4.6 - Wholesale of pharmaceutical goods"},
+					{"value": "G46.4.7 - Wholesale of furniture, carpets and lighting equipment"},
+					{"value": "G46.4.8 - Wholesale of watches and jewellery"},
+					{"value": "G46.4.9 - Wholesale of other household goods"},
+					{"value": "G46.5 - Wholesale of information and communication equipment"},
+					{"value": "G46.5.1 - Wholesale of computers, computer peripheral equipment and software"},
+					{"value": "G46.5.2 - Wholesale of electronic and telecommunications equipment and parts"},
+					{"value": "G46.6 - Wholesale of other machinery, equipment and supplies"},
+					{"value": "G46.6.1 - Wholesale of agricultural machinery, equipment and supplies"},
+					{"value": "G46.6.2 - Wholesale of machine tools"},
+					{"value": "G46.6.3 - Wholesale of mining, construction and civil engineering machinery"},
+					{"value": "G46.6.4 - Wholesale of machinery for the textile industry and of sewing and knitting machines"},
+					{"value": "G46.6.5 - Wholesale of office furniture"},
+					{"value": "G46.6.6 - Wholesale of other office machinery and equipment"},
+					{"value": "G46.6.9 - Wholesale of other machinery and equipment"},
+					{"value": "G46.7 - Other specialised wholesale"},
+					{"value": "G46.7.1 - Wholesale of solid, liquid and gaseous fuels and related products"},
+					{"value": "G46.7.2 - Wholesale of metals and metal ores"},
+					{"value": "G46.7.3 - Wholesale of wood, construction materials and sanitary equipment"},
+					{"value": "G46.7.4 - Wholesale of hardware, plumbing and heating equipment and supplies"},
+					{"value": "G46.7.5 - Wholesale of chemical products"},
+					{"value": "G46.7.6 - Wholesale of other intermediate products"},
+					{"value": "G46.7.7 - Wholesale of waste and scrap"},
+					{"value": "G46.9 - Non-specialised wholesale trade"},
+					{"value": "G46.9.0 - Non-specialised wholesale trade"},
+					{"value": "G47 - Retail trade, except of motor vehicles and motorcycles"},
+					{"value": "G47.1 - Retail sale in non-specialised stores"},
+					{"value": "G47.1.1 - Retail sale in non-specialised stores with food, beverages or tobacco predominating"},
+					{"value": "G47.1.9 - Other retail sale in non-specialised stores"},
+					{"value": "G47.2 - Retail sale of food, beverages and tobacco in specialised stores"},
+					{"value": "G47.2.1 - Retail sale of fruit and vegetables in specialised stores"},
+					{"value": "G47.2.2 - Retail sale of meat and meat products in specialised stores"},
+					{"value": "G47.2.3 - Retail sale of fish, crustaceans and molluscs in specialised stores"},
+					{"value": "G47.2.4 - Retail sale of bread, cakes, flour confectionery and sugar confectionery in specialised stores"},
+					{"value": "G47.2.5 - Retail sale of beverages in specialised stores"},
+					{"value": "G47.2.6 - Retail sale of tobacco products in specialised stores"},
+					{"value": "G47.2.9 - Other retail sale of food in specialised stores"},
+					{"value": "G47.3 - Retail sale of automotive fuel in specialised stores"},
+					{"value": "G47.3.0 - Retail sale of automotive fuel in specialised stores"},
+					{"value": "G47.4 - Retail sale of information and communication equipment in specialised stores"},
+					{"value": "G47.4.1 - Retail sale of computers, peripheral units and software in specialised stores"},
+					{"value": "G47.4.2 - Retail sale of telecommunications equipment in specialised stores"},
+					{"value": "G47.4.3 - Retail sale of audio and video equipment in specialised stores"},
+					{"value": "G47.5 - Retail sale of other household equipment in specialised stores"},
+					{"value": "G47.5.1 - Retail sale of textiles in specialised stores"},
+					{"value": "G47.5.2 - Retail sale of hardware, paints and glass in specialised stores"},
+					{"value": "G47.5.3 - Retail sale of carpets, rugs, wall and floor coverings in specialised stores"},
+					{"value": "G47.5.4 - Retail sale of electrical household appliances in specialised stores"},
+					{"value": "G47.5.9 - Retail sale of furniture, lighting equipment and other household articles in specialised stores"},
+					{"value": "G47.6 - Retail sale of cultural and recreation goods in specialised stores"},
+					{"value": "G47.6.1 - Retail sale of books in specialised stores"},
+					{"value": "G47.6.2 - Retail sale of newspapers and stationery in specialised stores"},
+					{"value": "G47.6.3 - Retail sale of music and video recordings in specialised stores"},
+					{"value": "G47.6.4 - Retail sale of sporting equipment in specialised stores"},
+					{"value": "G47.6.5 - Retail sale of games and toys in specialised stores"},
+					{"value": "G47.7 - Retail sale of other goods in specialised stores"},
+					{"value": "G47.7.1 - Retail sale of clothing in specialised stores"},
+					{"value": "G47.7.2 - Retail sale of footwear and leather goods in specialised stores"},
+					{"value": "G47.7.3 - Dispensing chemist in specialised stores"},
+					{"value": "G47.7.4 - Retail sale of medical and orthopaedic goods in specialised stores"},
+					{"value": "G47.7.5 - Retail sale of cosmetic and toilet articles in specialised stores"},
+					{"value": "G47.7.6 - Retail sale of flowers, plants, seeds, fertilisers, pet animals and pet food in specialised stores"},
+					{"value": "G47.7.7 - Retail sale of watches and jewellery in specialised stores"},
+					{"value": "G47.7.8 - Other retail sale of new goods in specialised stores"},
+					{"value": "G47.7.9 - Retail sale of second-hand goods in stores"},
+					{"value": "G47.8 - Retail sale via stalls and markets"},
+					{"value": "G47.8.1 - Retail sale via stalls and markets of food, beverages and tobacco products"},
+					{"value": "G47.8.2 - Retail sale via stalls and markets of textiles, clothing and footwear"},
+					{"value": "G47.8.9 - Retail sale via stalls and markets of other goods"},
+					{"value": "G47.9 - Retail trade not in stores, stalls or markets"},
+					{"value": "G47.9.1 - Retail sale via mail order houses or via Internet"},
+					{"value": "G47.9.9 - Other retail sale not in stores, stalls or markets"},
+					{"value": "H - Transporting and storage"},
+					{"value": "H49 - Land transport and transport via pipelines"},
+					{"value": "H49.1 - Passenger rail transport, interurban"},
+					{"value": "H49.1.0 - Passenger rail transport, interurban"},
+					{"value": "H49.2 - Freight rail transport"},
+					{"value": "H49.2.0 - Freight rail transport"},
+					{"value": "H49.3 - Other passenger land transport"},
+					{"value": "H49.3.1 - Urban and suburban passenger land transport"},
+					{"value": "H49.3.2 - Taxi operation"},
+					{"value": "H49.3.9 - Other passenger land transport n.e.c."},
+					{"value": "H49.4 - Freight transport by road and removal services"},
+					{"value": "H49.4.1 - Freight transport by road"},
+					{"value": "H49.4.2 - Removal services"},
+					{"value": "H49.5 - Transport via pipeline"},
+					{"value": "H49.5.0 - Transport via pipeline"},
+					{"value": "H50 - Water transport"},
+					{"value": "H50.1 - Sea and coastal passenger water transport"},
+					{"value": "H50.1.0 - Sea and coastal passenger water transport"},
+					{"value": "H50.2 - Sea and coastal freight water transport"},
+					{"value": "H50.2.0 - Sea and coastal freight water transport"},
+					{"value": "H50.3 - Inland passenger water transport"},
+					{"value": "H50.3.0 - Inland passenger water transport"},
+					{"value": "H50.4 - Inland freight water transport"},
+					{"value": "H50.4.0 - Inland freight water transport"},
+					{"value": "H51 - Air transport"},
+					{"value": "H51.1 - Passenger air transport"},
+					{"value": "H51.1.0 - Passenger air transport"},
+					{"value": "H51.2 - Freight air transport and space transport"},
+					{"value": "H51.2.1 - Freight air transport"},
+					{"value": "H51.2.2 - Space transport"},
+					{"value": "H52 - Warehousing and support activities for transportation"},
+					{"value": "H52.1 - Warehousing and storage"},
+					{"value": "H52.1.0 - Warehousing and storage"},
+					{"value": "H52.2 - Support activities for transportation"},
+					{"value": "H52.2.1 - Service activities incidental to land transportation"},
+					{"value": "H52.2.2 - Service activities incidental to water transportation"},
+					{"value": "H52.2.3 - Service activities incidental to air transportation"},
+					{"value": "H52.2.4 - Cargo handling"},
+					{"value": "H52.2.9 - Other transportation support activities"},
+					{"value": "H53 - Postal and courier activities"},
+					{"value": "H53.1 - Postal activities under universal service obligation"},
+					{"value": "H53.1.0 - Postal activities under universal service obligation"},
+					{"value": "H53.2 - Other postal and courier activities"},
+					{"value": "H53.2.0 - Other postal and courier activities"},
+					{"value": "I - Accommodation and food service activities"},
+					{"value": "I55 - Accommodation"},
+					{"value": "I55.1 - Hotels and similar accommodation"},
+					{"value": "I55.1.0 - Hotels and similar accommodation"},
+					{"value": "I55.2 - Holiday and other short-stay accommodation"},
+					{"value": "I55.2.0 - Holiday and other short-stay accommodation"},
+					{"value": "I55.3 - Camping grounds, recreational vehicle parks and trailer parks"},
+					{"value": "I55.3.0 - Camping grounds, recreational vehicle parks and trailer parks"},
+					{"value": "I55.9 - Other accommodation"},
+					{"value": "I55.9.0 - Other accommodation"},
+					{"value": "I56 - Food and beverage service activities"},
+					{"value": "I56.1 - Restaurants and mobile food service activities"},
+					{"value": "I56.1.0 - Restaurants and mobile food service activities"},
+					{"value": "I56.2 - Event catering and other food service activities"},
+					{"value": "I56.2.1 - Event catering activities"},
+					{"value": "I56.2.9 - Other food service activities"},
+					{"value": "I56.3 - Beverage serving activities"},
+					{"value": "I56.3.0 - Beverage serving activities"},
+					{"value": "J - Information and communication"},
+					{"value": "J58 - Publishing activities"},
+					{"value": "J58.1 - Publishing of books, periodicals and other publishing activities"},
+					{"value": "J58.1.1 - Book publishing"},
+					{"value": "J58.1.2 - Publishing of directories and mailing lists"},
+					{"value": "J58.1.3 - Publishing of newspapers"},
+					{"value": "J58.1.4 - Publishing of journals and periodicals"},
+					{"value": "J58.1.9 - Other publishing activities"},
+					{"value": "J58.2 - Software publishing"},
+					{"value": "J58.2.1 - Publishing of computer games"},
+					{"value": "J58.2.9 - Other software publishing"},
+					{"value": "J59 - Motion picture, video and television programme production, sound recording and music publishing activities"},
+					{"value": "J59.1 - Motion picture, video and television programme activities"},
+					{"value": "J59.1.1 - Motion picture, video and television programme production activities"},
+					{"value": "J59.1.2 - Motion picture, video and television programme post-production activities"},
+					{"value": "J59.1.3 - Motion picture, video and television programme distribution activities"},
+					{"value": "J59.1.4 - Motion picture projection activities"},
+					{"value": "J59.2 - Sound recording and music publishing activities"},
+					{"value": "J59.2.0 - Sound recording and music publishing activities"},
+					{"value": "J60 - Programming and broadcasting activities"},
+					{"value": "J60.1 - Radio broadcasting"},
+					{"value": "J60.1.0 - Radio broadcasting"},
+					{"value": "J60.2 - Television programming and broadcasting activities"},
+					{"value": "J60.2.0 - Television programming and broadcasting activities"},
+					{"value": "J61 - Telecommunications"},
+					{"value": "J61.1 - Wired telecommunications activities"},
+					{"value": "J61.1.0 - Wired telecommunications activities"},
+					{"value": "J61.2 - Wireless telecommunications activities"},
+					{"value": "J61.2.0 - Wireless telecommunications activities"},
+					{"value": "J61.3 - Satellite telecommunications activities"},
+					{"value": "J61.3.0 - Satellite telecommunications activities"},
+					{"value": "J61.9 - Other telecommunications activities"},
+					{"value": "J61.9.0 - Other telecommunications activities"},
+					{"value": "J62 - Computer programming, consultancy and related activities"},
+					{"value": "J62.0 - Computer programming, consultancy and related activities"},
+					{"value": "J62.0.1 - Computer programming activities"},
+					{"value": "J62.0.2 - Computer consultancy activities"},
+					{"value": "J62.0.3 - Computer facilities management activities"},
+					{"value": "J62.0.9 - Other information technology and computer service activities"},
+					{"value": "J63 - Information service activities"},
+					{"value": "J63.1 - Data processing, hosting and related activities; web portals"},
+					{"value": "J63.1.1 - Data processing, hosting and related activities"},
+					{"value": "J63.1.2 - Web portals"},
+					{"value": "J63.9 - Other information service activities"},
+					{"value": "J63.9.1 - News agency activities"},
+					{"value": "J63.9.9 - Other information service activities n.e.c."},
+					{"value": "K - Financial and insurance activities"},
+					{"value": "K64 - Financial service activities, except insurance and pension funding"},
+					{"value": "K64.1 - Monetary intermediation"},
+					{"value": "K64.1.1 - Central banking"},
+					{"value": "K64.1.9 - Other monetary intermediation"},
+					{"value": "K64.2 - Activities of holding companies"},
+					{"value": "K64.2.0 - Activities of holding companies"},
+					{"value": "K64.3 - Trusts, funds and similar financial entities"},
+					{"value": "K64.3.0 - Trusts, funds and similar financial entities"},
+					{"value": "K64.9 - Other financial service activities, except insurance and pension funding"},
+					{"value": "K64.9.1 - Financial leasing"},
+					{"value": "K64.9.2 - Other credit granting"},
+					{"value": "K64.9.9 - Other financial service activities, except insurance and pension funding n.e.c."},
+					{"value": "K65 - Insurance, reinsurance and pension funding, except compulsory social security"},
+					{"value": "K65.1 - Insurance"},
+					{"value": "K65.1.1 - Life insurance"},
+					{"value": "K65.1.2 - Non-life insurance"},
+					{"value": "K65.2 - Reinsurance"},
+					{"value": "K65.2.0 - Reinsurance"},
+					{"value": "K65.3 - Pension funding"},
+					{"value": "K65.3.0 - Pension funding"},
+					{"value": "K66 - Activities auxiliary to financial services and insurance activities"},
+					{"value": "K66.1 - Activities auxiliary to financial services, except insurance and pension funding"},
+					{"value": "K66.1.1 - Administration of financial markets"},
+					{"value": "K66.1.2 - Security and commodity contracts brokerage"},
+					{"value": "K66.1.9 - Other activities auxiliary to financial services, except insurance and pension funding"},
+					{"value": "K66.2 - Activities auxiliary to insurance and pension funding"},
+					{"value": "K66.2.1 - Risk and damage evaluation"},
+					{"value": "K66.2.2 - Activities of insurance agents and brokers"},
+					{"value": "K66.2.9 - Other activities auxiliary to insurance and pension funding"},
+					{"value": "K66.3 - Fund management activities"},
+					{"value": "K66.3.0 - Fund management activities"},
+					{"value": "L - Real estate activities"},
+					{"value": "L68 - Real estate activities"},
+					{"value": "L68.1 - Buying and selling of own real estate"},
+					{"value": "L68.1.0 - Buying and selling of own real estate"},
+					{"value": "L68.2 - Renting and operating of own or leased real estate"},
+					{"value": "L68.2.0 - Renting and operating of own or leased real estate"},
+					{"value": "L68.3 - Real estate activities on a fee or contract basis"},
+					{"value": "L68.3.1 - Real estate agencies"},
+					{"value": "L68.3.2 - Management of real estate on a fee or contract basis"},
+					{"value": "M - Professional, scientific and technical activities"},
+					{"value": "M69 - Legal and accounting activities"},
+					{"value": "M69.1 - Legal activities"},
+					{"value": "M69.1.0 - Legal activities"},
+					{"value": "M69.2 - Accounting, bookkeeping and auditing activities; tax consultancy"},
+					{"value": "M69.2.0 - Accounting, bookkeeping and auditing activities; tax consultancy"},
+					{"value": "M70 - Activities of head offices; management consultancy activities"},
+					{"value": "M70.1 - Activities of head offices"},
+					{"value": "M70.1.0 - Activities of head offices"},
+					{"value": "M70.2 - Management consultancy activities"},
+					{"value": "M70.2.1 - Public relations and communication activities"},
+					{"value": "M70.2.2 - Business and other management consultancy activities"},
+					{"value": "M71 - Architectural and engineering activities; technical testing and analysis"},
+					{"value": "M71.1 - Architectural and engineering activities and related technical consultancy"},
+					{"value": "M71.1.1 - Architectural activities"},
+					{"value": "M71.1.2 - Engineering activities and related technical consultancy"},
+					{"value": "M71.2 - Technical testing and analysis"},
+					{"value": "M71.2.0 - Technical testing and analysis"},
+					{"value": "M72 - Scientific research and development"},
+					{"value": "M72.1 - Research and experimental development on natural sciences and engineering"},
+					{"value": "M72.1.1 - Research and experimental development on biotechnology"},
+					{"value": "M72.1.9 - Other research and experimental development on natural sciences and engineering"},
+					{"value": "M72.2 - Research and experimental development on social sciences and humanities"},
+					{"value": "M72.2.0 - Research and experimental development on social sciences and humanities"},
+					{"value": "M73 - Advertising and market research"},
+					{"value": "M73.1 - Advertising"},
+					{"value": "M73.1.1 - Advertising agencies"},
+					{"value": "M73.1.2 - Media representation"},
+					{"value": "M73.2 - Market research and public opinion polling"},
+					{"value": "M73.2.0 - Market research and public opinion polling"},
+					{"value": "M74 - Other professional, scientific and technical activities"},
+					{"value": "M74.1 - Specialised design activities"},
+					{"value": "M74.1.0 - Specialised design activities"},
+					{"value": "M74.2 - Photographic activities"},
+					{"value": "M74.2.0 - Photographic activities"},
+					{"value": "M74.3 - Translation and interpretation activities"},
+					{"value": "M74.3.0 - Translation and interpretation activities"},
+					{"value": "M74.9 - Other professional, scientific and technical activities n.e.c."},
+					{"value": "M74.9.0 - Other professional, scientific and technical activities n.e.c."},
+					{"value": "M75 - Veterinary activities"},
+					{"value": "M75.0 - Veterinary activities"},
+					{"value": "M75.0.0 - Veterinary activities"},
+					{"value": "N - Administrative and support service activities"},
+					{"value": "N77 - Rental and leasing activities"},
+					{"value": "N77.1 - Renting and leasing of motor vehicles"},
+					{"value": "N77.1.1 - Renting and leasing of cars and light motor vehicles"},
+					{"value": "N77.1.2 - Renting and leasing of trucks"},
+					{"value": "N77.2 - Renting and leasing of personal and household goods"},
+					{"value": "N77.2.1 - Renting and leasing of recreational and sports goods"},
+					{"value": "N77.2.2 - Renting of video tapes and disks"},
+					{"value": "N77.2.9 - Renting and leasing of other personal and household goods"},
+					{"value": "N77.3 - Renting and leasing of other machinery, equipment and tangible goods"},
+					{"value": "N77.3.1 - Renting and leasing of agricultural machinery and equipment"},
+					{"value": "N77.3.2 - Renting and leasing of construction and civil engineering machinery and equipment"},
+					{"value": "N77.3.3 - Renting and leasing of office machinery and equipment (including computers)"},
+					{"value": "N77.3.4 - Renting and leasing of water transport equipment"},
+					{"value": "N77.3.5 - Renting and leasing of air transport equipment"},
+					{"value": "N77.3.9 - Renting and leasing of other machinery, equipment and tangible goods n.e.c."},
+					{"value": "N77.4 - Leasing of intellectual property and similar products, except copyrighted works"},
+					{"value": "N77.4.0 - Leasing of intellectual property and similar products, except copyrighted works"},
+					{"value": "N78 - Employment activities"},
+					{"value": "N78.1 - Activities of employment placement agencies"},
+					{"value": "N78.1.0 - Activities of employment placement agencies"},
+					{"value": "N78.2 - Temporary employment agency activities"},
+					{"value": "N78.2.0 - Temporary employment agency activities"},
+					{"value": "N78.3 - Other human resources provision"},
+					{"value": "N78.3.0 - Other human resources provision"},
+					{"value": "N79 - Travel agency, tour operator and other reservation service and related activities"},
+					{"value": "N79.1 - Travel agency and tour operator activities"},
+					{"value": "N79.1.1 - Travel agency activities"},
+					{"value": "N79.1.2 - Tour operator activities"},
+					{"value": "N79.9 - Other reservation service and related activities"},
+					{"value": "N79.9.0 - Other reservation service and related activities"},
+					{"value": "N80 - Security and investigation activities"},
+					{"value": "N80.1 - Private security activities"},
+					{"value": "N80.1.0 - Private security activities"},
+					{"value": "N80.2 - Security systems service activities"},
+					{"value": "N80.2.0 - Security systems service activities"},
+					{"value": "N80.3 - Investigation activities"},
+					{"value": "N80.3.0 - Investigation activities"},
+					{"value": "N81 - Services to buildings and landscape activities"},
+					{"value": "N81.1 - Combined facilities support activities"},
+					{"value": "N81.1.0 - Combined facilities support activities"},
+					{"value": "N81.2 - Cleaning activities"},
+					{"value": "N81.2.1 - General cleaning of buildings"},
+					{"value": "N81.2.2 - Other building and industrial cleaning activities"},
+					{"value": "N81.2.9 - Other cleaning activities"},
+					{"value": "N81.3 - Landscape service activities"},
+					{"value": "N81.3.0 - Landscape service activities"},
+					{"value": "N82 - Office administrative, office support and other business support activities"},
+					{"value": "N82.1 - Office administrative and support activities"},
+					{"value": "N82.1.1 - Combined office administrative service activities"},
+					{"value": "N82.1.9 - Photocopying, document preparation and other specialised office support activities"},
+					{"value": "N82.2 - Activities of call centres"},
+					{"value": "N82.2.0 - Activities of call centres"},
+					{"value": "N82.3 - Organisation of conventions and trade shows"},
+					{"value": "N82.3.0 - Organisation of conventions and trade shows"},
+					{"value": "N82.9 - Business support service activities n.e.c."},
+					{"value": "N82.9.1 - Activities of collection agencies and credit bureaus"},
+					{"value": "N82.9.2 - Packaging activities"},
+					{"value": "N82.9.9 - Other business support service activities n.e.c."},
+					{"value": "O - Public administration and defence; compulsory social security"},
+					{"value": "O84 - Public administration and defence; compulsory social security"},
+					{"value": "O84.1 - Administration of the State and the economic and social policy of the community"},
+					{"value": "O84.1.1 - General public administration activities"},
+					{"value": "O84.1.2 - Regulation of the activities of providing health care, education, cultural services and other social services, excluding social security"},
+					{"value": "O84.1.3 - Regulation of and contribution to more efficient operation of businesses"},
+					{"value": "O84.2 - Provision of services to the community as a whole"},
+					{"value": "O84.2.1 - Foreign affairs"},
+					{"value": "O84.2.2 - Defence activities"},
+					{"value": "O84.2.3 - Justice and judicial activities"},
+					{"value": "O84.2.4 - Public order and safety activities"},
+					{"value": "O84.2.5 - Fire service activities"},
+					{"value": "O84.3 - Compulsory social security activities"},
+					{"value": "O84.3.0 - Compulsory social security activities"},
+					{"value": "P - Education"},
+					{"value": "P85 - Education"},
+					{"value": "P85.1 - Pre-primary education"},
+					{"value": "P85.1.0 - Pre-primary education"},
+					{"value": "P85.2 - Primary education"},
+					{"value": "P85.2.0 - Primary education"},
+					{"value": "P85.3 - Secondary education"},
+					{"value": "P85.3.1 - General secondary education"},
+					{"value": "P85.3.2 - Technical and vocational secondary education"},
+					{"value": "P85.4 - Higher education"},
+					{"value": "P85.4.1 - Post-secondary non-tertiary education"},
+					{"value": "P85.4.2 - Tertiary education"},
+					{"value": "P85.5 - Other education"},
+					{"value": "P85.5.1 - Sports and recreation education"},
+					{"value": "P85.5.2 - Cultural education"},
+					{"value": "P85.5.3 - Driving school activities"},
+					{"value": "P85.5.9 - Other education n.e.c."},
+					{"value": "P85.6 - Educational support activities"},
+					{"value": "P85.6.0 - Educational support activities"},
+					{"value": "Q - Human health and social work activities"},
+					{"value": "Q86 - Human health activities"},
+					{"value": "Q86.1 - Hospital activities"},
+					{"value": "Q86.1.0 - Hospital activities"},
+					{"value": "Q86.2 - Medical and dental practice activities"},
+					{"value": "Q86.2.1 - General medical practice activities"},
+					{"value": "Q86.2.2 - Specialist medical practice activities"},
+					{"value": "Q86.2.3 - Dental practice activities"},
+					{"value": "Q86.9 - Other human health activities"},
+					{"value": "Q86.9.0 - Other human health activities"},
+					{"value": "Q87 - Residential care activities"},
+					{"value": "Q87.1 - Residential nursing care activities"},
+					{"value": "Q87.1.0 - Residential nursing care activities"},
+					{"value": "Q87.2 - Residential care activities for mental retardation, mental health and substance abuse"},
+					{"value": "Q87.2.0 - Residential care activities for mental retardation, mental health and substance abuse"},
+					{"value": "Q87.3 - Residential care activities for the elderly and disabled"},
+					{"value": "Q87.3.0 - Residential care activities for the elderly and disabled"},
+					{"value": "Q87.9 - Other residential care activities"},
+					{"value": "Q87.9.0 - Other residential care activities"},
+					{"value": "Q88 - Social work activities without accommodation"},
+					{"value": "Q88.1 - Social work activities without accommodation for the elderly and disabled"},
+					{"value": "Q88.1.0 - Social work activities without accommodation for the elderly and disabled"},
+					{"value": "Q88.9 - Other social work activities without accommodation"},
+					{"value": "Q88.9.1 - Child day-care activities"},
+					{"value": "Q88.9.9 - Other social work activities without accommodation n.e.c."},
+					{"value": "R - Arts, entertainment and recreation"},
+					{"value": "R90 - Creative, arts and entertainment activities"},
+					{"value": "R90.0 - Creative, arts and entertainment activities"},
+					{"value": "R90.0.1 - Performing arts"},
+					{"value": "R90.0.2 - Support activities to performing arts"},
+					{"value": "R90.0.3 - Artistic creation"},
+					{"value": "R90.0.4 - Operation of arts facilities"},
+					{"value": "R91 - Libraries, archives, museums and other cultural activities"},
+					{"value": "R91.0 - Libraries, archives, museums and other cultural activities"},
+					{"value": "R91.0.1 - Library and archives activities"},
+					{"value": "R91.0.2 - Museums activities"},
+					{"value": "R91.0.3 - Operation of historical sites and buildings and similar visitor attractions"},
+					{"value": "R91.0.4 - Botanical and zoological gardens and nature reserves activities"},
+					{"value": "R92 - Gambling and betting activities"},
+					{"value": "R92.0 - Gambling and betting activities"},
+					{"value": "R92.0.0 - Gambling and betting activities"},
+					{"value": "R93 - Sports activities and amusement and recreation activities"},
+					{"value": "R93.1 - Sports activities"},
+					{"value": "R93.1.1 - Operation of sports facilities"},
+					{"value": "R93.1.2 - Activities of sport clubs"},
+					{"value": "R93.1.3 - Fitness facilities"},
+					{"value": "R93.1.9 - Other sports activities"},
+					{"value": "R93.2 - Amusement and recreation activities"},
+					{"value": "R93.2.1 - Activities of amusement parks and theme parks"},
+					{"value": "R93.2.9 - Other amusement and recreation activities"},
+					{"value": "S - Other services activities"},
+					{"value": "S94 - Activities of membership organisations"},
+					{"value": "S94.1 - Activities of business, employers and professional membership organisations"},
+					{"value": "S94.1.1 - Activities of business and employers membership organisations"},
+					{"value": "S94.1.2 - Activities of professional membership organisations"},
+					{"value": "S94.2 - Activities of trade unions"},
+					{"value": "S94.2.0 - Activities of trade unions"},
+					{"value": "S94.9 - Activities of other membership organisations"},
+					{"value": "S94.9.1 - Activities of religious organisations"},
+					{"value": "S94.9.2 - Activities of political organisations"},
+					{"value": "S94.9.9 - Activities of other membership organisations n.e.c."},
+					{"value": "S95 - Repair of computers and personal and household goods"},
+					{"value": "S95.1 - Repair of computers and communication equipment"},
+					{"value": "S95.1.1 - Repair of computers and peripheral equipment"},
+					{"value": "S95.1.2 - Repair of communication equipment"},
+					{"value": "S95.2 - Repair of personal and household goods"},
+					{"value": "S95.2.1 - Repair of consumer electronics"},
+					{"value": "S95.2.2 - Repair of household appliances and home and garden equipment"},
+					{"value": "S95.2.3 - Repair of footwear and leather goods"},
+					{"value": "S95.2.4 - Repair of furniture and home furnishings"},
+					{"value": "S95.2.5 - Repair of watches, clocks and jewellery"},
+					{"value": "S95.2.9 - Repair of other personal and household goods"},
+					{"value": "S96 - Other personal service activities"},
+					{"value": "S96.0 - Other personal service activities"},
+					{"value": "S96.0.1 - Washing and (dry-)cleaning of textile and fur products"},
+					{"value": "S96.0.2 - Hairdressing and other beauty treatment"},
+					{"value": "S96.0.3 - Funeral and related activities"},
+					{"value": "S96.0.4 - Physical well-being activities"},
+					{"value": "S96.0.9 - Other personal service activities n.e.c."},
+					{"value": "T - Activities of households as employers; undifferentiated goods - and services - producing activities of households for own use"},
+					{"value": "T97 - Activities of households as employers of domestic personnel"},
+					{"value": "T97.0 - Activities of households as employers of domestic personnel"},
+					{"value": "T97.0.0 - Activities of households as employers of domestic personnel"},
+					{"value": "T98 - Undifferentiated goods- and services-producing activities of private households for own use"},
+					{"value": "T98.1 - Undifferentiated goods-producing activities of private households for own use"},
+					{"value": "T98.1.0 - Undifferentiated goods-producing activities of private households for own use"},
+					{"value": "T98.2 - Undifferentiated service-producing activities of private households for own use"},
+					{"value": "T98.2.0 - Undifferentiated service-producing activities of private households for own use"},
+					{"value": "U - Activities of extraterritorial organisations and bodies"},
+					{"value": "U99 - Activities of extraterritorial organisations and bodies"},
+					{"value": "U99.0 - Activities of extraterritorial organisations and bodies"},
+					{"value": "U99.0.0 - Activities of extraterritorial organisations and bodies"}
+			]
+		},
+		{
+			"type": "choice",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/type",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "type"
+			},
+			"description": {
+				"en": "This property represents the type of a Public Service as described in a controlled vocabulary, for instance social protection, health, recreation, culture and religion, economic affairs... The CPSV-AP v2.1 recommends to use as controlled vocabulary the COFOG taxonomy (http://unstats.un.org/unsd/cr/registry/regcst.asp?Cl=4)."
+			},
+			"choices": [
+				{"value": "01 - General public services"},
+				{"value": "01.1 - Executive and legislative organs, financial and fiscal affairs, external affairs"},
+				{"value": "01.1.1 - Executive and legislative organs  (CS)"},
+				{"value": "01.1.2 - Financial and fiscal affairs  (CS)"},
+				{"value": "01.1.3 - External affairs  (CS)"},
+				{"value": "01.2 - Foreign economic aid"},
+				{"value": "01.2.1 - Economic aid to developing countries and countries in transition  (CS)"},
+				{"value": "01.2.2 - Economic aid routed through international organizations  (CS)"},
+				{"value": "01.3 - General services"},
+				{"value": "01.3.1 - General personnel services  (CS)"},
+				{"value": "01.3.2 - Overall planning and statistical services  (CS)"},
+				{"value": "01.3.3 - Other general services  (CS)"},
+				{"value": "01.4 - Basic research"},
+				{"value": "01.4.0 - Basic research  (CS)"},
+				{"value": "01.5 - R&D General public services"},
+				{"value": "01.5.0 - R&D General public services  (CS)"},
+				{"value": "01.6 - General public services n.e.c."},
+				{"value": "01.6.0 - General public services n.e.c.  (CS)"},
+				{"value": "01.7 - Public debt transactions"},
+				{"value": "01.7.0 - Public debt transactions  (CS)"},
+				{"value": "01.8 - Transfers of a general character between different levels of government"},
+				{"value": "01.8.0 - Transfers of a general character between different levels of government  (CS)"},
+				{"value": "02 - Defence"},
+				{"value": "02.1 - Military defence"},
+				{"value": "02.1.0 - Military defence  (CS)"},
+				{"value": "02.2 - Civil defence"},
+				{"value": "02.2.0 - Civil defence  (CS)"},
+				{"value": "02.3 - Foreign military aid"},
+				{"value": "02.3.0- Foreign military aid  (CS)"},
+				{"value": "02.4 - R&D Defence"},
+				{"value": "02.4.0- R&D Defence  (CS)"},
+				{"value": "02.5 - Defence n.e.c."},
+				{"value": "02.5.0- Defence n.e.c.  (CS)"},
+				{"value": "03 - Public order and safety"},
+				{"value": "03.1 - Police services"},
+				{"value": "03.1.0 - Police services  (CS)"},
+				{"value": "03.2 - Fire-protection services"},
+				{"value": "03.2.0 - Fire-protection services  (CS)"},
+				{"value": "03.3 - Law courts"},
+				{"value": "03.3.0 - Law courts  (CS)"},
+				{"value": "03.4 - Prisons"},
+				{"value": "03.4.0 - Prisons  (CS)"},
+				{"value": "03.5 - R&D Public order and safety"},
+				{"value": "03.5.0 - R&D Public order and safety  (CS)"},
+				{"value": "03.6 - Public order and safety n.e.c."},
+				{"value": "03.6.0 - Public order and safety n.e.c.  (CS)"},
+				{"value": "04 - Economic affairs"},
+				{"value": "04.1 - General economic, commercial and labour affairs"},
+				{"value": "04.1.1 - General economic and commercial affairs  (CS)"},
+				{"value": "04.1.2 - General labour affairs  (CS)"},
+				{"value": "04.2 - Agriculture, forestry, fishing and hunting"},
+				{"value": "04.2.1 - Agriculture  (CS)"},
+				{"value": "04.2.2 - Forestry  (CS)"},
+				{"value": "04.2.3 - Fishing and hunting  (CS)"},
+				{"value": "04.3 - Fuel and energy"},
+				{"value": "04.3.1 - Coal and other solid mineral fuels  (CS)"},
+				{"value": "04.3.2 - Petroleum and natural gas  (CS)"},
+				{"value": "04.3.3 - Nuclear fuel  (CS)"},
+				{"value": "04.3.4 - Other fuels  (CS)"},
+				{"value": "04.3.5 - Electricity  (CS)"},
+				{"value": "04.3.6 - Non-electric energy  (CS)"},
+				{"value": "04.4 - Mining, manufacturing and construction"},
+				{"value": "04.4.1 - Mining of mineral resources other than mineral fuels  (CS)"},
+				{"value": "04.4.2 - Manufacturing  (CS)"},
+				{"value": "04.4.3 - Construction  (CS)"},
+				{"value": "04.5 - Transport"},
+				{"value": "04.5.1 - Road transport  (CS)"},
+				{"value": "04.5.2 - Water transport  (CS)"},
+				{"value": "04.5.3 - Railway transport  (CS)"},
+				{"value": "04.5.4 - Air transport  (CS)"},
+				{"value": "04.5.5 - Pipeline and other transport  (CS)"},
+				{"value": "04.6 - Communication"},
+				{"value": "04.6.0 - Communication  (CS)"},
+				{"value": "04.7 - Other industries"},
+				{"value": "04.7.1 - Distributive trades, storage and warehousing  (CS)"},
+				{"value": "04.7.2 - Hotels and restaurants  (CS)"},
+				{"value": "04.7.3 - Tourism  (CS)"},
+				{"value": "04.7.4 - Multi-purpose development projects  (CS)"},
+				{"value": "04.8 - R&D Economic affairs"},
+				{"value": "04.8.1 - R&D General economic, commercial and labour affairs  (CS)"},
+				{"value": "04.8.2 - R&D Agriculture, forestry, fishing and hunting  (CS)"},
+				{"value": "04.8.3 - R&D Fuel and energy  (CS)"},
+				{"value": "04.8.4 - R&D Mining, manufacturing and construction  (CS)"},
+				{"value": "04.8.5 - R&D Transport  (CS)"},
+				{"value": "04.8.6 - R&D Communication  (CS)"},
+				{"value": "04.8.7 - R&D Other industries  (CS)"},
+				{"value": "04.9 - Economic affairs n.e.c."},
+				{"value": "04.9.0 - Economic affairs n.e.c.  (CS)"},
+				{"value": "05 - Environmental protection"},
+				{"value": "05.1 - Waste management"},
+				{"value": "05.1.0 - Waste management  (CS)"},
+				{"value": "05.2 - Waste water management"},
+				{"value": "05.2.0 - Waste water management  (CS)"},
+				{"value": "05.3 - Pollution abatement"},
+				{"value": "05.3.0 - Pollution abatement  (CS)"},
+				{"value": "05.4 - Protection of biodiversity and landscape"},
+				{"value": "05.4.0 - Protection of biodiversity and landscape  (CS)"},
+				{"value": "05.5 - R&D Environmental protection"},
+				{"value": "05.5.0 - R&D Environmental protection  (CS)"},
+				{"value": "05.6 - Environmental protection n.e.c."},
+				{"value": "05.6.0 - Environmental protection n.e.c.  (CS)"},
+				{"value": "06 - Housing and community amenities"},
+				{"value": "06.1 - Housing development"},
+				{"value": "06.1.0 - Housing development  (CS)"},
+				{"value": "06.2 - Community development"},
+				{"value": "06.2.0 - Community development  (CS)"},
+				{"value": "06.3 - Water supply"},
+				{"value": "06.3.0 - Water supply  (CS)"},
+				{"value": "06.4 - Street lighting"},
+				{"value": "06.4.0 - Street lighting  (CS)"},
+				{"value": "06.5 - R&D Housing and community amenities"},
+				{"value": "06.5.0 - R&D Housing and community amenities  (CS)"},
+				{"value": "06.6 - Housing and community amenities n.e.c."},
+				{"value": "06.6.0 - Housing and community amenities n.e.c.  (CS)"},
+				{"value": "07 - Health"},
+				{"value": "07.1 - Medical products, appliances and equipment"},
+				{"value": "07.1.1 - Pharmaceutical products  (IS)"},
+				{"value": "07.1.2 - Other medical products  (IS)"},
+				{"value": "07.1.3 - Therapeutic appliances and equipment  (IS)"},
+				{"value": "07.2 - Outpatient services"},
+				{"value": "07.2.1 - General medical services  (IS)"},
+				{"value": "07.2.2 - Specialized medical services  (IS)"},
+				{"value": "07.2.3 - Dental services  (IS)"},
+				{"value": "07.2.4 - Paramedical services  (IS)"},
+				{"value": "07.3 - Hospital services"},
+				{"value": "07.3.1 - General hospital services  (IS)"},
+				{"value": "07.3.2 - Specialized hospital services  (IS)"},
+				{"value": "07.3.3 - Medical and maternity centre services  (IS)"},
+				{"value": "07.3.4 - Nursing and convalescent home services  (IS)"},
+				{"value": "07.4 - Public health services"},
+				{"value": "07.4.0 - Public health services  (IS)"},
+				{"value": "07.5 - R&D Health"},
+				{"value": "07.5.0 - R&D Health  (CS)"},
+				{"value": "07.6 - Health n.e.c."},
+				{"value": "07.6.0 - Health n.e.c.  (CS)"},
+				{"value": "08 - Recreation, culture and religion"},
+				{"value": "08.1 - Recreational and sporting services"},
+				{"value": "08.1.0 - Recreational and sporting services  (IS)"},
+				{"value": "08.2 - Cultural services"},
+				{"value": "08.2.0 - Cultural services  (IS)"},
+				{"value": "08.3 - Broadcasting and publishing services"},
+				{"value": "08.3.0 - Broadcasting and publishing services  (CS)"},
+				{"value": "08.4 - Religious and other community services"},
+				{"value": "08.4.0 - Religious and other community services  (CS)"},
+				{"value": "08.5 - R&D Recreation, culture and religion"},
+				{"value": "08.5.0 - R&D Recreation, culture and religion  (CS)"},
+				{"value": "08.6 - Recreation, culture and religion n.e.c."},
+				{"value": "08.6.0 - Recreation, culture and religion n.e.c.  (CS)"},
+				{"value": "09 - Education"},
+				{"value": "09.1 - Pre-primary and primary education"},
+				{"value": "09.1.1 - Pre-primary education  (IS)"},
+				{"value": "09.1.2 - Primary education  (IS)"},
+				{"value": "09.2 - Secondary education"},
+				{"value": "09.2.1 - Lower-secondary education  (IS)"},
+				{"value": "09.2.2 - Upper-secondary education  (IS)"},
+				{"value": "09.3 - Post-secondary non-tertiary education"},
+				{"value": "09.3.0 - Post-secondary non-tertiary education  (IS)"},
+				{"value": "09.4 - Tertiary education"},
+				{"value": "09.4.1 - First stage of tertiary education  (IS)"},
+				{"value": "09.4.2 - Second stage of tertiary education  (IS)"},
+				{"value": "09.5 - Education not definable by level"},
+				{"value": "09.5.0 - Education not definable by level  (IS)"},
+				{"value": "09.6 - Subsidiary services to education"},
+				{"value": "09.6.0 - Subsidiary services to education  (IS)"},
+				{"value": "09.7 - R&D Education"},
+				{"value": "09.7.0 - R&D Education  (CS)"},
+				{"value": "09.8 - Education n.e.c."},
+				{"value": "09.8.0 - Education n.e.c.  (CS)"},
+				{"value": "10 - Social protection"},
+				{"value": "10.1 - Sickness and disability"},
+				{"value": "10.1.1 - Sickness  (IS)"},
+				{"value": "10.1.2 - Disability  (IS)"},
+				{"value": "10.2 - Old age"},
+				{"value": "10.2.0 - Old age  (IS)"},
+				{"value": "10.3 - Survivors"},
+				{"value": "10.3.0 - Survivors  (IS)"},
+				{"value": "10.4 - Family and children"},
+				{"value": "10.4.0 - Family and children  (IS)"},
+				{"value": "10.5 - Unemployment"},
+				{"value": "10.5.0 - Unemployment  (IS)"},
+				{"value": "10.6 - Housing"},
+				{"value": "10.6.0 - Housing  (IS)"},
+				{"value": "10.7 - Social exclusion n.e.c."},
+				{"value": "10.7.0 - Social exclusion n.e.c.  (IS)"},
+				{"value": "10.8 - R&D Social protection"},
+				{"value": "10.8.0 - R&D Social protection  (CS)"},
+				{"value": "10.9 - Social protection n.e.c."},
+				{"value": "10.9.0 - Social protection n.e.c.  (CS)"}
+			]
+		},
+		{
+			"type": "choice",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/language",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "language"
+			},
+			"description": {
+				"en": "This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the European Publications Office's Languages Named Authority List (NAL) (http://publications.europa.eu/mdr/authority/language/index.html)."
+			},
+			"choices": 
+			[
+				{"value": "TODO"}
+			]
+		},
+		{
+			"type": "choice",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://www.w3.org/ns/adms#status",
+			"cardinality": {
+				"min": 0,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "status"
+			},
+			"description": {
+				"en": "Indicates whether a Public Service is active, inactive, under development etc. according to a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the ADMS Status vocabulary (http://purl.org/adms/status/)."
+			},
+			"styles": [
+				"dropdown"
+			],
+			"choices": 
+				[
+					{
+						"value": "http://purl.org/adms/status/Completed",
+						"label": "Completed"
+					},
+					{
+					"value": "http://purl.org/adms/status/Deprecated",
+					"label": "Deprecated"
+					},
+					{
+						"value": "http://purl.org/adms/status/UnderDevelopment",
+						"label": "UnderDevelopment"
+					},
+					{
+						"value": "http://purl.org/adms/status/Withdrawn",
+						"label": "WithDrawn"
+					}
+				]
+		},		
+		{
+			"type": "choice",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/spatial",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"label": {
+				"en": "spatial"
+			},
+			"description": {
+				"en": "A Public Service is likely to be available only within a given area, typically the area covered by a particular public authority. Also a Public Service may be available within certain time periods such as the winter months. The CPSV-AP v2.1 recommends to use as controlled vocabulary the European Publications Office's Administrative Territorial Units Named Authority List (http://publications.europa.eu/resource/authority/atu/)"
+			},
+			"choices":
+			[
+				{"value": "TODO"}
+			]
+		},
+		{
+			"type": "text",
+			"nodetype": "DATATYPE_LITERAL",
+			"datatype": "http://www.w3.org/2001/XMLSchema#duration",
+			"property": "http://data.europa.eu/m8g/processingTime",
+			"cardinality": {
+				"min": 0,
+				"pref": 0,
+				"max": 1
+			},
+			"label": {
+				"en": "processingTime"
+			},
+			"description": {
+				"en": "The value of this property is the (estimated) time needed for executing a Public Service. The actual information is provided using the ISO8601 syntax for durations."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/requires",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"label": {
+				"en": "requires"
+			},
+			"description": {
+				"en": "One Public Service may require, or in some way make use of, the output of one or several other Public Services. In this case, for a Public Service to be executed, another Public Service must be executed beforehand. The nature of the requirement will be described in the associated Rule or Input."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/relation",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"label": {
+				"en": "related"
+			},
+			"description": {
+				"en": "This property represents a Public Service related to the particular instance of the Public Service class."
+			}
+		},
+		{	
+			"label": {
+				"en": "hasCompetentAuthority"
+			},
+			"description": {
+				"en": "This property links a Public Service to a Public Organisation, which is the responsible Agent for the delivery of the Public Service. Whether the particular Public Organisation provides the public service directly or outsources it is not relevant. The Public Organisation that is the Competent Authority of the service is the one that is ultimately responsible for managing and providing the public service."
+			},
+			"property": "http://data.europa.eu/m8g/hasCompetentAuthority",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"id": "m8g:PublicOrganisation"
+		},
+		{	
+			"label": {
+				"en": "isGroupedBy: BusinessEvent"
+			},
+			"description": {
+				"en": "This property links the Public Service to the Event class. Several Public Services may be associated with a particular Event and, likewise, the same Public Service may be associated with several different Events."
+			},
+			"property": "http://data.europa.eu/m8g/isGroupedBy",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "BusinessEvent"
+		},
+		{
+			"label": {
+				"en": "isGroupedBy: LifeEvent"
+			},
+			"description": {
+				"en": "This property links the Public Service to the Event class. Several Public Services may be associated with a particular Event and, likewise, the same Public Service may be associated with several different Events."
+			},
+			"property": "http://data.europa.eu/m8g/isGroupedBy",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "LifeEvent"
+		},
+		{	
+			"label": {
+				"en": "hasCriterion"
+			},
+			"description": {
+				"en": "Links a Public Service to a class that describes the criteria for needing or using the service, such as residency in a given location, being over a certain age etc. The Criterion class is defined in the Core Criterion and Core Evidence Vocabulary."
+			},
+			"property": "http://data.europa.eu/m8g/hasCriterion",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "m8g:CriterionRequirement"
+		},
+		{
+			"label": {
+				"en": "serviceProvider"
+			},
+			"description": {
+				"en": "This property links a Public Service to an Agent who provides it. This is distinct from the role of Competent Authority and may be an external contractor."
+			},
+			"property": "http://data.europa.eu/m8g/serviceProvider",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "m8g:Agent"
+		},
+		{
+			"label": {
+				"en": "hasParticipation"
+			},
+			"description": {
+				"en": "The CPSV-AP defines the three basic roles of Competent Authority, Service Provider and Service User but this simple model can be extended if required using the Has Participation property that links to the Participation class."
+			},
+			"property": "http://data.europa.eu/m8g/hasParticipation",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "m8g:Participation"
+		},
+		{
+			"label": {
+				"en": "hasInput"
+			},
+			"description": {
+				"en": "The Has Input property links a Public Service to one or more instances of the Evidence class. A specific Public Service may require the presence of certain pieces of Evidence in order to be delivered. If the evidence required to make use of a service varies according to the channel through which it is accessed, then Has Input should be at the level of the Channel."
+			},
+			"property": "http://purl.org/vocab/cpsv#hasInput",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "m8g:Evidence"
+		},
+		{
+			"label": {
+				"en": "hasFormalFramework"
+			},
+			"description": {
+				"en": "The Has Formal Framework property links a Public Service to a Formal Framework. It indicates the Formal Framework (e.g. legislation) to which the Public Service relates, operates or has its legal basis."
+			},
+			"property": "http://data.europa.eu/m8g/hasFormalFramework",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "cpsv:FormalFramework"
+		},
+		{
+			"label": {
+				"en": "produces"
+			},
+			"description": {
+				"en": "The Produces property links a Public Service to one or more instances of the Output class, describing the actual result of executing a given Public Service. Outputs can be any resource, for instance a document, artefact or anything else being produced as a result of executing the Public Service."
+			},
+			"property": "http://purl.org/vocab/cpsv#produces",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "m8g:Output"
+		},
+		{
+			"label": {
+				"en": "follows"
+			},
+			"description": {
+				"en": "The follows property links a Public Service to the Rule(s) under which it operates. The definition of the Rule class is very broad. In a typical case, the competent authority that provides the public service will also define the rules that will implement its own policies. The CPSV-AP is flexible to allow for significant variation in such a scenario."
+			},
+			"property": "http://purl.org/vocab/cpsv#follows",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "cpsv:Rule"
+		},
+		{
+			"label": {
+				"en": "hasContactPoint"
+			},
+			"description": {
+				"en": "A contact point for the service is almost always helpful. The value of this property, the contact information itself, should be provided using VCard. Note that the contact information should be relevant to the Public Service which may not be the same as contact information for the Competent Authority or any Participant."
+			},
+			"property": "http://data.europa.eu/m8g/hasContactPoint",
+			"cardinality": {
+				"min": 0,
+				"pref": 0,
+				"max": 1
+			},
+			"id": "schema:ContactPoint"
+		},
+		{
+			"label": {
+				"en": "hasChannel"
+			},
+			"description": {
+				"en": "This property links the Public Service to any Channel through which an Agent provides, uses or otherwise interacts with the Public Service, such as an online service, phone number or office."
+			},
+			"property": "http://data.europa.eu/m8g/hasChannel",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "m8g:Channel"
+		},
+		{
+			"label": {
+				"en": "hasCost"
+			},
+			"description": {
+				"en": "The Has Cost property links a Public Service to one or more instances of the Cost class. It indicates the costs related to the execution of a Public Service for the citizen or business related to the execution of the particular Public Service. Where the cost varies depending on the channel through which the service is accessed, it can be linked to the channel using the If Accessed Through relationship."
+			},
+			"property": "http://data.europa.eu/m8g/hasCost",
+			"cardinality": {
+				"min": 0,
+				"pref": 0,
+				"max": 1
+			},
+			"id": "m8g:Cost"
+		},
+		{
+			"label": {
+				"en": "isDescribedAt"
+			},
+			"description": {
+				"en": "The Is Described At property links a Public Service to the dataset where it belongs to. It is used to track the metadata of the origin of the public service descriptions."
+			},
+			"property": "http://data.europa.eu/m8g/isDescribedAt",
+			"cardinality": {
+				"min": 0,
+				"pref": 0,
+				"max": 1
+			},
+			"id": "m8g:PublicServiceDataset"
+		}]
+	},
+
+
+
+	{
+		"type": "group",
+		"id": "m8g:PublicServiceDataset",
+		"property": "http://data.europa.eu/m8g/PublicServiceDataset",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/PublicServiceDataset"
+		},
+		"content": [
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Public Service Dataset."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/title",
+			"cardinality": {
+				"min": 1,
+				"pref": 1
+			},
+			"label": {
+				"en": "name"
+			},
+			"description": {
+				"en": "This property contains a name given to the Public Service Dataset. This property can be repeated for parallel language versions of the name."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://www.w3.org/ns/dcat#landingPage",
+			"cardinality": {
+				"min": 1,
+				"pref": 1
+			},
+			"label": {
+				"en": "landingPage"
+			},
+			"description": {
+				"en": "This property refers to a web page that provides access to the Public Service Dataset. It is intended to point to a landing page at the original data provider, not to a page on a site of a third party, such as an aggregator."
+			}
+		},
+		{
+			"label": {
+				"en": "publisher"
+			},
+			"description": {
+				"en": "This property represents the Publisher of the Public Service Dataset, i.e. an entity (organisation) responsible for making the Public Service Dataset available."
+			},
+			"property": "http://data.europa.eu/m8g/publisher",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"id": "m8g:Agent"
+		}]
+	},
+
+
+	{
+		"type": "group",
+		"id": "m8g:Cost",
+		"property": "http://data.europa.eu/m8g/Cost",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/Cost"
+		},
+		"content": [
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Cost."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/description",
+			"cardinality": {
+				"min": 0,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "description"
+			},
+			"description": {
+				"en": "This property represents a free text description of the Cost."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://data.europa.eu/m8g/value",
+			"cardinality": {
+				"min": 0,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "value"
+			},
+			"description": {
+				"en": "This property represents a numeric value indicating the amount of the Cost."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://data.europa.eu/m8g/currency",
+			"cardinality": {
+				"min": 0,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "currency"
+			},
+			"description": {
+				"en": "This property represents the currency in which the Cost needs to be paid and the value of the Cost is expressed. The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the European Publications Office's Currencies Named Authority List (NAL) (http://publications.europa.eu/mdr/authority/currency/index.html)."
+			}
+		},
+		{
+			"label": {
+				"en": "isDefinedBy"
+			},
+			"description": {
+				"en": "This property links the Cost class with one or more instances of the Public Organisation class. This property indicates which Public Organisation is the Competent Authority for defining the costs associated with the delivery of a particular Public Service."
+			},
+			"property": "http://data.europa.eu/m8g/isDefinedBy",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "m8g:PublicOrganisation"
+		},
+		{
+			"label": {
+				"en": "ifAccessedThrough"
+			},
+			"description": {
+				"en": "Where the cost varies depending on the channel used, for example, if accessed through an online service cf. accessed at a physical location, the cost can be linked to the channel using the If Accessed Through property."
+			},
+			"property": "http://data.europa.eu/m8g/ifAccessedThrough",
+			"cardinality": {
+				"min": 0,
+				"pref": 0,
+				"max": 1
+			},
+			"id": "m8g:Channel"
+		}]
+	},
+
+
+	{
+		"type": "group",
+		"id": "m8g:Channel",
+		"property": "http://data.europa.eu/m8g/Channel",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/Channel"
+		},
+		"content": [
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Channel."
+			}
+		},
+		{
+			"type": "choice",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/type",
+			"cardinality": {
+				"min": 0,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "type"
+			},
+			"description": {
+				"en": "This property represents the type of Channel as defined in a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the CPSV-AP list of Channels."
+			},
+			"choices":
+				[
+					{"value": "E-mail"},
+					{"value": "Homepage"},
+					{"value": "Fax"},
+					{"value": "Assistant"},
+					{"value": "Telephone"},
+					{"value": "Mobile App"},
+					{"value": "Digital TV"},
+					{"value": "Mail"},
+					{"value": "Service Bureau"},
+					{"value": "Client's Location"}
+				]
+		},
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "https://schema.org/openingHours",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "openingHours"
+			},
+			"description": {
+				"en": "This property represents the normal opening hours of a channel. The value should follow the flexible format defined for schema.org's opening hours property. Following that structure, days of the week are represented by two letter codes (Mo, Tu, We, Th, Fr, Sa, Su). Lists should be comma separated (for example: Mo, We, Fr) and periods separated by a hyphen. If it is appropriate to add opening hours then this follows the day so if a channel is available 08:00 – 20:00 Monday to Saturday and 08:00 – 18:00 on Sundays that would be encoded as Mo-Sa 08:00-20:00, Su 08:00-18:00."
+			}
+		},
+		{
+			"label": {
+				"en": "availabilityRestriction"
+			},
+			"description": {
+				"en": "This property links a channel to information about when the channel is not available, overriding the general opening hours information. The details are provided using the Opening Hours Specification class."
+			},
+			"property": "https://schema.org/hoursAvailable",
+			"cardinality": {
+				"min": 0,
+				"pref": 0,
+				"max": 1
+			},
+			"id": "schema:OpeningHoursSpecification"
+		},
+		{
+			"label": {
+				"en": "hasInput"
+			},
+			"description": {
+				"en": "In the majority of cases, the evidence required to use a Public Service will be independent of the channel through which the service is accessed. The Has Input property should normally be used to link a Public Service directly to one or more pieces of Evidence. However, where the type of Evidence required varies according to the channel used to access the Public Service, then the Has Input property may be used at the Channel level. For example, a digital signature may be required for an online channel, whereas a physical signature may be required for a face to face service provision."
+			},
+			"property": "http://purl.org/vocab/cpsv#hasInput",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "m8g:Evidence"
+		},
+		{
+			"label": {
+				"en": "ownedBy"
+			},
+			"description": {
+				"en": "This property links the Channel class with one or more instances of the Public Organisation class. This property indicates the owner of a specific Channel through which a Public Service is being delivered."
+			},
+			"property": "http://data.europa.eu/m8g/ownedBy",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "m8g:Agent"
+		}]
+	},
+
+
+	{
+		"type": "group",
+		"id": "schema:ContactPoint",
+		"property": "https://schema.org/ContactPoint",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "https://schema.org/ContactPoint"
+		},
+		"content":[
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Contact Point."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "https://schema.org/email",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "hasEmail"
+			},
+			"description": {
+				"en": "The email address of the Contact Point."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "https://schema.org/telephone",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "hasTelephone"
+			},
+			"description": {
+				"en": "The telephone number of the Contact Point."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "https://schema.org/openingHours",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "openingHours"
+			},
+			"description": {
+				"en": "This property represents the normal opening hours of a contact point. The value should follow the flexible format defined for schema.org's opening hours property (http://schema.org/openingHours). Following that structure, days of the week are represented by two letter codes (Mo, Tu, We, Th, Fr, Sa, Su). Lists should be comma separated (for example: Mo, We, Fr) and periods separated by a hyphen (for example: Mo-Fr). If it is appropriate to add opening hours then this follows the day so if a contact point is available 08:00 – 20:00 Monday to Saturday and 08:00 – 18:00 on Sundays that would be encoded as Mo-Sa 08:00-20:00, Su 08:00-18:00."
+			}
+		},
+		{
+			"label": {
+				"en": "availabilityRestriction"
+			},
+			"description": {
+				"en": "This property links a contact point to information about when the contact point is not available, overriding the general opening hours information."
+			},
+			"property": "https://schema.org/hoursAvailable",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "schema:OpeningHoursSpecification"
+		}]
+	},
+
+
+	{
+		"type": "group",
+		"id": "schema:OpeningHoursSpecification",
+		"property": "http://schema.org/openingHoursSpecification",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://schema.org/openingHoursSpecification"
+		},
+		"content": [
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Opening Hours Specification."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "DATATYPE_LITERAL",
+  			"datatype": "http://www.w3.org/2001/XMLSchema#date",
+			"property": "http://schema.org/validFrom",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "validFrom"
+			},
+			"description": {
+				"en": "The date when the opening hours becomes valid. Values expected to be one of these types: DateTime."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "DATATYPE_LITERAL",
+  			"datatype": "http://www.w3.org/2001/XMLSchema#date",
+			"property": "http://schema.org/validThrough",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "validThrough"
+			},
+			"description": {
+				"en": "The date after when the item is not valid. Values expected to be one of these types: DateTime."
+			}
+		},
+		{
+			"type": "choice",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://schema.org/dayOfWeek",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "dayOfWeek"
+			},
+			"description": {
+				"en": "The day of the week for which these opening hours are valid."
+			},
+			"choices": [
+			{
+				"value": "http://schema.org/Monday",
+				"label": "Monday"
+			},
+			{
+				"value": "http://schema.org/Tuesday",
+				"label": "Tuesday"
+			},
+			{
+				"value": "http://schema.org/Wednesday",
+				"label": "Wednesday"
+			},
+			{
+				"value": "http://schema.org/Thursday",
+				"label": "Thursday"
+			},
+			{
+				"value": "http://schema.org/Friday",
+				"label": "Friday"
+			},
+			{
+				"value": "http://schema.org/Saturday",
+				"label": "Saturday"
+			},
+			{
+				"value": "http://schema.org/Sunday",
+				"label": "Sunday"
+			},
+			{
+				"value": "http://schema.org/PublicHolidays",
+				"label": "PublicHolidays"
+			}]
+		},
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://schema.org/opens",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "opens"
+			},
+			"description": {
+				"en": "The opening hour of the place or service on the given day(s) of the week in the form hh:mm:ss[Z|(+|-)hh:mm]."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://schema.org/closes",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "closes"
+			},
+			"description": {
+				"en": "The closing hour of the place or service on the given day(s) of the week in the form hh:mm:ss[Z|(+|-)hh:mm]."
+			}
+		}]
+	},
+
+
+	{
+		"type": "group",
+		"id": "cpsv:Rule",
+		"property": "http://purl.org/vocab/cpsv#Rule",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://purl.org/vocab/cpsv#Rule"
+		},
+		"content": [
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Rule."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/title",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "name"
+			},
+			"description": {
+				"en": "This property represents the Name of the Rule."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/description",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "description"
+			},
+			"description": {
+				"en": "This property represents a free text Description of the Rule."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/language",
+			"cardinality": {
+				"min": 0,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "type"
+			},
+			"description": {
+				"en": "This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the European Publications Office's Languages Named Authority List (NAL) (http://publications.europa.eu/mdr/authority/language/index.html)."
+			}
+		},
+		{
+			"label": {
+				"en": "implements"
+			},
+			"description": {
+				"en": "The Implements property links a Rule to relevant legislation or policy documents i.e. the Formal Framework under which the Rules are being defined."
+			},
+			"property": "http://purl.org/vocab/cpsv#implements",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "cpsv:FormalFramework"
+		}]
+	},
+
+
+	{
+		"type": "group",
+		"id": "m8g:Output",
+		"property": "http://data.europa.eu/m8g/Output",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/Output"
+		},
+		"content": [
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Output."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/title",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "name"
+			},
+			"description": {
+				"en": "This property represents the Name (or title) of the Output."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/description",
+			"cardinality": {
+				"min": 0,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "description"
+			},
+			"description": {
+				"en": "This property represents a free text Description of the Output."
+			}
+		},
+		{
+			"type": "choice",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/type",
+			"cardinality": {
+				"min": 0,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "type"
+			},
+			"description": {
+				"en": "This property represents the type of Output as defined in a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the CPSV-AP list of Outputs."
+			},
+			"choices": 
+			[
+				{"value": "Declaration"},
+				{"value": "Physical object"},
+				{"value": "Code"},
+				{"value": "Financial obligation"},
+				{"value": "Financial benefit"},
+				{"value": "Recognition"},
+				{"value": "Permit"}
+			]
+		}]
+	},
+
+	{
+		"type": "group",
+		"id": "cpsv:FormalFramework",
+		"property": "http://purl.org/vocab/cpsv#FormalFramework",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://purl.org/vocab/cpsv#FormalFramework"
+		},
+		"content": [{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Formal Framework."
+			}
+		},{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/title",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "name"
+			},
+			"description": {
+				"en": "This property represents the Name of the Formal Framework."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/description",
+			"cardinality": {
+				"min": 0,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "description"
+			},
+			"description": {
+				"en": "A free text description of the Formal Framework."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/type",
+			"cardinality": {
+				"min": 1,
+				"pref": 1
+			},
+			"label": {
+				"en": "type"
+			},
+			"description": {
+				"en": "This property represents the Type of a Formal Framework as described in a controlled vocabulary (e.g. directive, law, draft proposition, Parliamentary act, ministerial decision etc.). The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the Resource Types Named Authority Lists (NAL) (http://publications.europa.eu/mdr/authority/resource-type/index.html)"
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://data.europa.eu/eli/ontology#language",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "language"
+			},
+			"description": {
+				"en": "This property represents the Language(s) in which the Formal Framework is available. The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the European Publications Office's Languages Named Authority List (NAL) (http://publications.europa.eu/mdr/authority/language/index.html)."
+			}
+		},
+		{
+			"type": "choice",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://www.w3.org/ns/adms#status",
+			"cardinality": {
+				"min": 0,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "status"
+			},
+			"description": {
+				"en": "This property represents the Status of the Formal Framework, for instance in force, not in force, partially applicable, implicitly revoked, explicitly revoked, repealed, expired, suspended, … The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the European Legislation Identifier (http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52012XG1026(01))."
+			},
+			"choices": 
+				[
+					{"value": "in force"},
+					{"value": "not in force"},
+					{"value": "partially in force"},
+					{"value": "implicitly revoked"},
+					{"value": "explicitly revoked"},
+					{"value": "repealed"},
+					{"value": "expired"},
+					{"value": "suspended"},
+					{"value": "other"}
+				]
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://data.europa.eu/m8g/executionStatus",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "executionStatus"
+			},
+			"description": {
+				"en": "Indicates the different statuses that a public service can go through during its execution."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://data.europa.eu/m8g/subject",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "subject"
+			},
+			"description": {
+				"en": "This property represents the Subject of this Formal Framework. The possible values for this property are described in a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the Eurovoc domains (http://eurovoc.europa.eu/drupal/?q=node/555)."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://data.europa.eu/m8g/territorialApplication",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "territorialApplication"
+			},
+			"description": {
+				"en": "This property represents the geographical scope of where the Formal Framework is applicable, for instance EU, country/Member State, region… The values of this property come from a controlled vocabulary. The CPSV-AP v2.1 recommends to use as controlled vocabulary the NUTS taxonomy (http://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=NUTS_22&StrLanguageCode=EN&IntPcKey=&StrLayoutCode=HIERARCHIC)."
+			}
+		},
+		{
+			"label": {
+				"en": "related"
+			},
+			"description": {
+				"en": "This property represents another instance of the Formal Framework class that is related to the particular Formal Framework being described."
+			},
+			"property": "http://purl.org/dc/terms/relation",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "cpsv:FormalFramework"
+		}]
+	},
+
+
+	{
+		"type": "group",
+		"id": "m8g:Evidence",
+		"property": "http://data.europa.eu/m8g/Evidence",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/Evidence"
+		},
+		"content": [{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the piece of Evidence."
+			}
+		},{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/title",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "name"
+			},
+			"description": {
+				"en": "This property represents the official Name of the piece of Evidence."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/description",
+			"cardinality": {
+				"min": 0,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "description"
+			},
+			"description": {
+				"en": "This property represents a free text Description of the piece of Evidence."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/type",
+			"cardinality": {
+				"min": 0,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "type"
+			},
+			"description": {
+				"en": "This property represents the type of Evidence as described in a controlled vocabulary."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://data.europa.eu/eli/ontology#language",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "language"
+			},
+			"description": {
+				"en": "Indicates the language(s) in which the Evidence must be provided. The CPSV-AP v2.1 recommends to use as controlled vocabulary the European Publications Office's Languages Named Authority List (NAL) (http://publications.europa.eu/mdr/authority/language/index.html)."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "URI",
+			"property": "http://xmlns.com/foaf/0.1/Document",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "relatedDocumentation"
+			},
+			"description": {
+				"en": "This property represents documentation that contains information related to the Evidence, for instance a particular template for an administrative document, an application or a guide on formatting the Input."
+			}
+		}]
+	},
+
+
+	{
+		"type": "group",
+		"id": "m8g:Participation",
+		"property": "http://data.europa.eu/m8g/Participation",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/Participation"
+		},
+		"content": [{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Participation."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/description",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "description"
+			},
+			"description": {
+				"en": "A free text description of the Participation."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://data.europa.eu/m8g/role",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "role"
+			},
+			"description": {
+				"en": "Provides the role played. This should be provided using a controlled vocabulary. Since this is an extension mechanism for the CPSV-AP, the controlled vocabulary should be decided to suit local implementations."
+			}
+		}]
+	},
+
+
+	{
+		"id": "m8g:Agent",
+		"type": "group",
+		"nodetype": "RESOURCE",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://purl.org/dc/terms/Agent"
+		},
+		"content": [{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Agent."
+			}
+		},{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/title",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "name"
+			},
+			"description": {
+				"en": "This property represents the Name of the Agent."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://data.europa.eu/m8g/hasAddress",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "hasAddress"
+			},
+			"description": {
+				"en": "This property represents an Address related to an Agent. Asserting the address relationship implies that the Agent has an Address."
+			}
+		},
+		{
+			"label": {
+				"en": "playsRole"
+			},
+			"description": {
+				"en": "This property links an Agent to the Participation class. The Participation class facilitates the detailed description of how an Agent participates in or interacts with a Public Service and may include temporal and spatial constraints on that participation."
+			},
+			"property": "http://data.europa.eu/m8g/playsRole",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "m8g:Participation"
+		}]
+	},
+
+
+	{
+		"id": "m8g:PublicOrganisation",
+		"type": "group",
+		"nodetype": "RESOURCE",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/PublicOrganisation"
+		},
+		"content": [{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Public Organisation."
+			}
+		},{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://www.w3.org/2004/02/skos/core#altLabel",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "preferredLabel"
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/spatial",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "spatial"
+			},
+			"description": {
+				"en": "The CPSV-AP v2.1 recommends to use as controlled vocabulary the European Publications Office's Administrative Territorial Units Named Authority List (http://publications.europa.eu/resource/authority/atu/)."
+			}
+		}]
+	},
+
+
+	{
+		"id": "m8g:CriterionRequirement",
+		"type": "group",
+		"nodetype": "RESOURCE",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/CriterionRequirement"
+		},
+		"content": [{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Criterion Requirement."
+			}
+		},{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/title",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "name"
+			},
+			"description": {
+				"en": "This property represents the official Name of the CriterionRequirement."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/type",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "type"
+			},
+			"description": {
+				"en": "This property represents the type of CriterionRequirement as described in a controlled vocabulary."
+			}
+		}]
+	},
+
+
+	{
+		"id": "BusinessEvent",
+		"type": "group",
+		"nodetype": "RESOURCE",
+		"extends": "m8g:Event",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/BusinessEvent"
+		},
+		"content":
+		[{
+			"type": "choice",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/type",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "type"
+			},
+			"description": {
+				"en": "The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child. The CPSV-AP v2.1 recommends to use as controlled vocabulary the CPSV-AP list of Life Events and Business Events."
+			},
+			"choices": [
+	{	"value": "Starting business",
+		"label": {"en": "1. Starting business"}
+ 	},
+	{	"value": "Registering a company",
+		"label": {"en": "1.1 Registering a company"}
+ 	},
+	{	"value": "Needing a licence, permit or certificate to start or continue an activity",
+		"label": {"en": "1.2Needing a licence, permit or certificate to start or continue an activity"}
+ 	},
+	{	"value": "Registering Intellectual Property",
+		"label": {"en": "1.3 Registering Intellectual Property"}
+ 	},
+	{	"value": "Registering a branch",
+		"label": {"en": "1.4 Registering a branch"}
+ 	},
+	{	"value": "Starting a new activity",
+		"label": {"en": "1.5 Starting a new activity"}
+ 	},
+	{	"value": "Financing a company",
+		"label": {"en": "1.6 Financing a company"}
+ 	},
+	{	"value": "Hiring an employee",
+		"label": {"en": "1.7 Hiring an employee "}
+ 	},
+	{	"value": "Starting cross-border business",
+		"label": {"en": "2. Starting cross-border business"}
+ 	},
+	{	"value": "Registering a cross-border business",
+		"label": {"en": "2.1 Registering a cross-border business"}
+ 	},
+	{	"value": "Registering a branch",
+		"label": {"en": "2.2 Registering a branch"}
+ 	},
+	{	"value": "Doing business",
+		"label": {"en": "3. Doing business"}
+ 	},
+	{	"value": "Financing a company",
+		"label": {"en": "3.1 Financing a company"}
+ 	},
+	{	"value": "Needing a licence, permit or certificate to start or continue an activity",
+		"label": {"en": "3.2 Needing a licence, permit or certificate to start or continue an activity"}
+ 	},
+	{	"value": "Registering Intellectual Property",
+		"label": {"en": "3.3 Registering Intellectual Property"}
+ 	},
+	{	"value": "Hiring an employee",
+		"label": {"en": "3.4 Hiring an employee"}
+ 	},
+	{	"value": "Participating in public procurement",
+		"label": {"en": "3.5 Participating in public procurement"}
+ 	},
+	{	"value": "Notifying and reporting to authorities",
+		"label": {"en": "3.6 Notifying and reporting to authorities"}
+ 	},
+	{	"value": "Starting a new activity",
+		"label": {"en": "3.7 Starting a new activity"}
+ 	},
+	{	"value": "Registering a branch",
+		"label": {"en": "3.8 Registering a branch"}
+ 	},
+	{	"value": "Having problems in paying creditors",
+		"label": {"en": "3.9 Having problems in paying creditors"}
+ 	},
+	{	"value": "Closing business",
+		"label": {"en": "4. Closing business"}
+ 	},
+	{	"value": "Restructuring of a company",
+		"label": {"en": "4.1 Restructuring of a company"}
+ 	},
+	{	"value": "Dissolution of a company",
+		"label": {"en": "4.2 Dissolution of a company"}
+	 }
+ ]
+		}]
+	},
+	{
+		"id": "LifeEvent",
+		"type": "group",
+		"nodetype": "RESOURCE",
+		"extends": "m8g:Event",
+		"constraints": {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://data.europa.eu/m8g/LifeEvent"
+		},
+		"content":
+		[{
+			"type": "choice",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/type",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "type"
+			},
+			"description": {
+				"en": "The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child. The CPSV-AP v2.1 recommends to use as controlled vocabulary the CPSV-AP list of Life Events and Business Events."
+			},
+			"choices": [
+				{"value": "Having a child"},
+				{"value": "Becoming a (social) caretaker"},
+				{"value": "Starting education"},
+				{"value":"Looking for a new job"},
+				{"value": "Losing/quitting a job"},
+				{"value": "Looking for a place to live"},
+				{"value": "Changing relationship status"},
+				{"value": "Driving a vehicle"},
+				{"value": "Travelling abroad"},
+				{"value": "Moving to/from the country"},
+				{"value": "Going into military service"},
+				{"value": "Facing an emergency / health problem"},
+				{"value": "Facing a crime"},
+				{"value": "Retirement"},
+				{"value": "Death of a relative"}
+			]
+		}]
+	},
+	{
+		"type": "group",
+		"nodetype": "RESOURCE",
+		"id": "m8g:Event",
+		"content": [{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/identifier",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "identifier"
+			},
+			"description": {
+				"en": "This property represents an Identifier for the Event."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/title",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "name"
+			},
+			"description": {
+				"en": "This property represents the Name (or title) of the Event."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/description",
+			"cardinality": {
+				"min": 0,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "description"
+			},
+			"description": {
+				"en": "This property represents a free text description of the Event. The description is likely to be the text that a business or citizen sees for that specific Event when looking for relevant Public Services. Public administrations are therefore encouraged to include a reasonable level of detail in the description."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://purl.org/dc/terms/relation",
+			"cardinality": {
+				"min": 0,
+				"pref": 1
+			},
+			"label": {
+				"en": "relatedService"
+			},
+			"description": {
+				"en": "This property links an event directly to a public service that is related to it."
+			}
+		}]
+	}]
+}

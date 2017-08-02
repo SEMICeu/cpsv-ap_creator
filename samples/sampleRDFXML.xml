@@ -4,7 +4,7 @@
 	xmlns:ns1="http://data.europa.eu/m8g/">
   <rdf:Description rdf:about="http://example.com/about">
     <dcterms:identifier>ID PS</dcterms:identifier>
-    <dcterms:title>nlfnkjeznjfkze</dcterms:title>
+    <dcterms:title>Title_1</dcterms:title>
     <ns1:isGroupedBy rdf:nodeID="_9"/>
     <ns1:isGroupedBy rdf:nodeID="_8"/>
     <ns1:isGroupedBy rdf:nodeID="_0"/>

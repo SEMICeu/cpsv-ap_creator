@@ -4,12 +4,12 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link type="text/css" href="http://rdforms.com/release/dijit/themes/claro/claro.css" rel="stylesheet" />
     <link type="text/css" href="http://rdforms.com/release/rdforms/view/resources/rdforms.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="../css/cpsv.css">
-    <script src="../release/dojo/dojo.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/cpsv.css">
+    <script src="./release/dojo/dojo.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="download.js"></script>
-    <script src="import.js"></script>
-    <script src="openTab.js"></script>
+    <script src="./js/download.js"></script>
+    <script src="./js/import.js"></script>
+    <script src="./js/openTab.js"></script>
 </head>
 
 
@@ -21,8 +21,8 @@
         'rdforms/template/ItemStore', //Stores all the RDForm templates
         'rdforms/apps/Experiment',        //The editor User interface
         'dojo/json',
-        'dojo/text!./emptyRDF.json',
-        'dojo/text!./CPSVAPtemplate.json',
+        'dojo/text!./samples/emptyRDF.json',
+        'dojo/text!./template/CPSVAPtemplate.json',
         'dojo/domReady!'             //Wait until the dom is ready.
     ], function(Graph, ItemStore, Experiment, json, emptyRDF, CPSVAPtemplate) {
         /*Setup the editor.
@@ -56,7 +56,7 @@
 </script>
 
         <header class="banner">
-              <a id="logobanner" href="#"><img src="../images/CPSV-AP_logo.png" width="70" height="70" float = "left" alt="CPSV-AP logo" /></a>
+              <a id="logobanner" href="#"><img src="./images/CPSV-AP_logo.png" width="70" height="70" float = "left" alt="CPSV-AP logo" /></a>
               <h1> Public Service Describer </h1>
    
               <div class= "tab">
@@ -88,7 +88,7 @@
         </div>
         
         <footer>
-                <a href="http://ec.europa.eu/"><img src="../images/logo_commission.png" width="115" alt="European Commission"/></a>
+                <a href="http://ec.europa.eu/"><img src="./images/logo_commission.png" width="115" alt="European Commission"/></a>
                 <p>
                     <small>Public service describer: Copyright ©  European Union 2016. This validator is published under the <a href="https://joinup.ec.europa.eu/community/eupl/home">EUPL v1.1 licence</a><br/>
                     This project is funded by <a href="https://ec.europa.eu/isa2/actions/accessing-member-state-information-resources-european-level_en">ISA2 Action 2016.29</a> under framework contract DI/07171 Lot 2 (Specific Contract 414).<br/>

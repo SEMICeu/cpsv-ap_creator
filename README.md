@@ -33,7 +33,7 @@ After having installed the dependencies, build RDForms. This is done by:
     $ cd path_to_rdforms/build
     $ ./build.sh
 
-##configuration
+### configuration
 
 It is recommended to experiment directly with non-built versions as it gives you very good debugging and inspection tools to understand what is going on (especially firebug in firefox and the built in debugging tools in Chrome). 
 Furthermore, you do not have to deploy the rdforms library on a web server, you can point your browser to the sample directory using file: address, for instance file:///path_to_rdforms/samples/example1.html. But due to the AJAX approach for loading dependencies you first have to allow your browser to do ajax request from a file url,
@@ -43,6 +43,7 @@ in Firefox this is done by:
 * Searching for and changing the security.fileuri.strict_origin_policy to false
 
 In Chrome this is done by starting the browser with the following flag: --allow-file-access-from-files
+
 ## Usage instructions
 
 Open the publicserviceCreator.html file in your standard web browser. 

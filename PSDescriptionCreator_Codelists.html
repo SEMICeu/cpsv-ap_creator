@@ -22,15 +22,15 @@
         'rdforms/apps/Experiment',        //The editor User interface
         'dojo/json',
         'dojo/text!./samples/emptyRDF.json',
-        'dojo/text!./template/SamenwerkendeCatalogiNetherlands.json',
+        'dojo/text!./template/CPSVtemplateWithCodelists.json',
         'dojo/domReady!'             //Wait until the dom is ready.
-    ], function(Graph, ItemStore, Experiment, json, emptyRDF, SamenwerkendeCatalogiNetherlands) {
+    ], function(Graph, ItemStore, Experiment, json, emptyRDF, CPSVtemplateWithCodelists) {
         /*Setup the editor.
         Create the graph, itemstore and templatebundle
         Create a new experiment inside the container div and start it*/
         var graph = new Graph(json.parse(emptyRDF));
         var itemStore = new ItemStore();
-        var bundle = itemStore.registerBundle({source: json.parse(SamenwerkendeCatalogiNetherlands)});
+        var bundle = itemStore.registerBundle({source: json.parse(CPSVtemplateWithCodelists)});
         var e = new Experiment({
             graph: graph,
             template: bundle.getRoot(),
@@ -57,7 +57,7 @@
 
         <header class="banner">
               <a id="logobanner" href="#"><img src="./images/CPSV-AP_logo.png" width="70" height="70" float = "left" alt="CPSV-AP logo" /></a>
-              <h1>Public Service Description Creator - Samenwerkende Catalogi</h1>
+              <h1> Public Service Description Creator </h1>
    
               <div class= "tab">
                 <button class=" tablinks" id="editorButton" onclick="openTab(event, 'editor') ">Editor</button>

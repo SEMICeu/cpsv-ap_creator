@@ -2853,76 +2853,76 @@
 				"en": "The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child. The CPSV-AP v2.1 recommends to use as controlled vocabulary the CPSV-AP list of Life Events and Business Events."
 			},
 			"choices": [
-	{	"value": "Starting business",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/StartingBusiness",
 		"label": {"en": "1. Starting business"}
  	},
-	{	"value": "Registering a company",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/RegisteringACompany",
 		"label": {"en": "1.1 Registering a company"}
  	},
-	{	"value": "Needing a licence, permit or certificate to start or continue an activity",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/NeedingAlicencePermitOrCertificateToStartOrContinueAnActivity",
 		"label": {"en": "1.2Needing a licence, permit or certificate to start or continue an activity"}
  	},
-	{	"value": "Registering Intellectual Property",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/RegisteringIntellectualProperty",
 		"label": {"en": "1.3 Registering Intellectual Property"}
  	},
-	{	"value": "Registering a branch",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/RegisteringABranch",
 		"label": {"en": "1.4 Registering a branch"}
  	},
-	{	"value": "Starting a new activity",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/StartingANewActivity",
 		"label": {"en": "1.5 Starting a new activity"}
  	},
-	{	"value": "Financing a company",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/FinancingACompany",
 		"label": {"en": "1.6 Financing a company"}
  	},
-	{	"value": "Hiring an employee",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/HiringAnEmployee",
 		"label": {"en": "1.7 Hiring an employee "}
  	},
-	{	"value": "Starting cross-border business",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/StartingCrossBorderBusiness",
 		"label": {"en": "2. Starting cross-border business"}
  	},
-	{	"value": "Registering a cross-border business",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/RegisteringACrossBorderBusiness",
 		"label": {"en": "2.1 Registering a cross-border business"}
  	},
-	{	"value": "Registering a branch",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/RegisteringABranch",
 		"label": {"en": "2.2 Registering a branch"}
  	},
-	{	"value": "Doing business",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/DoingBusiness",
 		"label": {"en": "3. Doing business"}
  	},
-	{	"value": "Financing a company",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/FinancingACompany",
 		"label": {"en": "3.1 Financing a company"}
  	},
-	{	"value": "Needing a licence, permit or certificate to start or continue an activity",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/NeedingALicencePermitOrCertificateToStartOrContinueAnActivity",
 		"label": {"en": "3.2 Needing a licence, permit or certificate to start or continue an activity"}
  	},
-	{	"value": "Registering Intellectual Property",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/RegisteringIntellectualProperty",
 		"label": {"en": "3.3 Registering Intellectual Property"}
  	},
-	{	"value": "Hiring an employee",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/HiringAnEmployee",
 		"label": {"en": "3.4 Hiring an employee"}
  	},
-	{	"value": "Participating in public procurement",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/ParticipatingInPublicProcurement",
 		"label": {"en": "3.5 Participating in public procurement"}
  	},
-	{	"value": "Notifying and reporting to authorities",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/NotifyingAndReportingToAuthorities",
 		"label": {"en": "3.6 Notifying and reporting to authorities"}
  	},
-	{	"value": "Starting a new activity",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/StartingANewActivity",
 		"label": {"en": "3.7 Starting a new activity"}
  	},
-	{	"value": "Registering a branch",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/RegisteringABranch",
 		"label": {"en": "3.8 Registering a branch"}
  	},
-	{	"value": "Having problems in paying creditors",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/HavingProblemsInPayingCreditors",
 		"label": {"en": "3.9 Having problems in paying creditors"}
  	},
-	{	"value": "Closing business",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/ClosingBusiness",
 		"label": {"en": "4. Closing business"}
  	},
-	{	"value": "Restructuring of a company",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/RestructuringOfAChttp://data.europa.eu/m8g/BusinessEvent/ompany",
 		"label": {"en": "4.1 Restructuring of a company"}
  	},
-	{	"value": "Dissolution of a company",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/DissolutionOfACompany",
 		"label": {"en": "4.2 Dissolution of a company"}
 	 }
  ]
@@ -2952,21 +2952,66 @@
 				"en": "The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child. The CPSV-AP v2.1 recommends to use as controlled vocabulary the CPSV-AP list of Life Events and Business Events."
 			},
 			"choices": [
-				{"value": "Having a child"},
-				{"value": "Becoming a (social) caretaker"},
-				{"value": "Starting education"},
-				{"value":"Looking for a new job"},
-				{"value": "Losing/quitting a job"},
-				{"value": "Looking for a place to live"},
-				{"value": "Changing relationship status"},
-				{"value": "Driving a vehicle"},
-				{"value": "Travelling abroad"},
-				{"value": "Moving to/from the country"},
-				{"value": "Going into military service"},
-				{"value": "Facing an emergency / health problem"},
-				{"value": "Facing a crime"},
-				{"value": "Retirement"},
-				{"value": "Death of a relative"}
+				{
+					"value": "http://data.europa.eu/m8g/LifeEvent/HavingAChild",
+					"label": "Having a child"
+				},
+				{
+					"value": "http://data.europa.eu/m8g/LifeEvent/BecomingASocialTaretaker",
+					"label": "Becoming a (social) caretaker"
+				},
+				{
+					"value": "http://data.europa.eu/m8g/LifeEvent/StartingEducation",
+					"label": "Starting education"
+				},
+				{
+					"value":"Lhttp://data.europa.eu/m8g/LifeEvent/LookingForANewJob",
+					"label":"Looking for a new job"
+				},
+				{
+					"value": "http://data.europa.eu/m8g/LifeEvent/LosingOrQuittingAJob",
+					"label": "Losing/quitting a job"
+				},
+				{
+					"value": "http://data.europa.eu/m8g/LifeEvent/LookingForAPlaceToLive",
+					"label": "Looking for a place to live"
+				},
+				{
+					"value": "http://data.europa.eu/m8g/LifeEvent/ChangingRelationshipStatus",
+					"label": "Changing relationship status"
+				},
+				{
+					"value": "http://data.europa.eu/m8g/LifeEvent/DrivingAVehicle",
+					"label": "Driving a vehicle"
+				},
+				{
+					"value": "http://data.europa.eu/m8g/LifeEvent/TravellingAbroad",
+					"label": "Travelling abroad"
+				},
+				{
+					"value": "http://data.europa.eu/m8g/LifeEvent/MovingToOrFromTheCountry",
+					"label": "Moving to/from the country"
+				},
+				{
+					"value": "http://data.europa.eu/m8g/LifeEvent/GoingIntoMilitaryService",
+					"label": "Going into military service"
+				},
+				{
+					"value": "http://data.europa.eu/m8g/LifeEvent/FacingAnEmergencyOrHealthProblem",
+					"label": "Facing an emergency / health problem"
+				},
+				{
+					"value": "http://data.europa.eu/m8g/LifeEvent/FacingACrime",
+					"label": "Facing a crime"
+				},
+				{
+					"value": "http://data.europa.eu/m8g/LifeEvent/Retirement",
+					"label": "Retirement"
+				},
+				{
+					"value": "http://data.europa.eu/m8g/LifeEvent/DeathOfARelative",
+					"label": "Death of a relative"
+				}
 			]
 		}]
 	},

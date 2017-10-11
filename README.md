@@ -20,17 +20,17 @@ It is possible that your computer will need to be restarted during the process. 
 
 ### Command-line installation instructions
 
-Before you can use the editor you need to make sure all the dependencies are loaded. Simply run:
+The CPSV-AP Public Service Description Creator uses [RDForms 4.1 by MetaSolutionsAB](https://github.com/MetaSolutionsAB/rdforms/releases/tag/4.1), a JavaScript library that provides a way to declarative describe how the editor and presentation views of RDF should look like. Before you can use the editor you need to make sure all the dependencies for RDForms are loaded. Simply run:
 
-    $ cd path_to_rdforms
+    $ cd path_to_editor
     $ npm   install
     $ bower install
 
-This requires that you have [nodejs](http://nodejs.org/), [npm](https://www.npmjs.org/) and [bower](http://bower.io/) installed. Note: npm installs nodejs libraries used by converters and a small webserver used by the formulator (to be introduced below) while bower installs the client libraries such as dojo and rdfjson that RDForms builds upon.
+This requires that you have [nodejs](http://nodejs.org/), [npm](https://www.npmjs.org/) and [bower](http://bower.io/) installed. Note: npm installs nodejs libraries used by converters and a small webserver used by the formulator (to be introduced below) while bower installs the client libraries such as dojo and rdfjson that RDForms builds upon. 
 
 After having installed the dependencies, build RDForms. This is done by:
 
-    $ cd path_to_rdforms/build
+    $ cd path_to_editor/build
     $ ./build.sh
 
 ### Configuration

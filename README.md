@@ -22,7 +22,7 @@ It is possible that your computer will need to be restarted during the process. 
 
 The CPSV-AP Public Service Description Creator uses [RDForms 4.1 by MetaSolutionsAB](https://github.com/MetaSolutionsAB/rdforms/releases/tag/4.1), a JavaScript library that provides a way to declarative describe how the editor and presentation views of RDF should look like. Before you can use the editor you need to make sure all the dependencies for RDForms are loaded. Simply run:
 
-    $ cd path_to_editor
+    $ cd path_to_cpsv-ap_creator
     $ npm   install
     $ bower install
 
@@ -30,7 +30,7 @@ This requires that you have [nodejs](http://nodejs.org/), [npm](https://www.npmj
 
 After having installed the dependencies, build RDForms. This is done by:
 
-    $ cd path_to_editor/build
+    $ cd path_to_cpsv-ap_creator/build
     $ ./build.sh
 
 ### Configuration

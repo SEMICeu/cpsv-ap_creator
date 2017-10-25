@@ -20,8 +20,8 @@ Download the content of this GitHub project to your local computer and unzip it.
 
 ![How to download the content of a GitHub project](https://github.com/catalogue-of-services-isa/cpsv-ap_rdf_editor/blob/master/images/downloadProjectFromGitHub.png?raw=true)
 
-Double-click the install.bat file in the main folder. The Editor will now install.
-The following programs will be installed (default settings apply):
+Double-click the install.bat file in the main folder. The CPSV-AP description Creator will now install.
+Next to this, the following programs will be installed which are required to be able to run the Description Creator (default settings apply):
 * nodejs
 * bower
 * Git

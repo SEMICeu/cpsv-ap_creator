@@ -1,5 +1,5 @@
 @echo off
-title Install CPSV-AP RDF Editor - The necessary programs
+title Install CPSV-AP Public Service Description Creator - The necessary programs
 :: See the title at the top. And this comment will not appear in the command prompt.
 :: start "" https://git-scm.com/download/win
 
@@ -31,7 +31,7 @@ IF "%outputGit%" EQU "" (
 			npm install -g bower
 			start ./build/Git-2.13.3-64-bit.exe
 			pause
-			echo All necessary, supporting programs are now installed. Installing CPSV-AP RDF Editor... This may take a while.
+			echo All necessary, supporting programs are now installed. Installing CPSV-AP Public Service Description Creator... This may take a while.
 			pause
 
 		) else (
@@ -40,7 +40,7 @@ IF "%outputGit%" EQU "" (
 
 			start ./build/Git-2.13.3-64-bit.exe
 			pause
-			echo All necessary, supporting programs are now installed. Installing CPSV-AP RDF Editor... This may take a while.
+			echo All necessary, supporting programs are now installed. Installing CPSV-AP Public Service Description Creator... This may take a while.
 			pause
 
 		)
@@ -61,11 +61,11 @@ IF "%outputGit%" EQU "" (
 
 		pause
 		npm install -g bower
-		echo All necessary, supporting programs are now installed. Installing CPSV-AP RDF Editor...
+		echo All necessary, supporting programs are now installed. Installing CPSV-AP Public Service Description Creator...
 		pause
 
 		) else (
-		echo All necessary, supporting programs are already installed. Installing CPSV-AP RDF Editor... This may take a while.
+		echo All necessary, supporting programs are already installed. Installing CPSV-AP Public Service Description Creator... This may take a while.
 		echo Please respond with 'Y' when asked.
 		pause
 
@@ -77,5 +77,5 @@ call npm install >nul 2>&1
 call bower install >nul 2>&1
 cd ./build
 CALL ./build.bat
-echo The CPSV-AP RDF Editor has been installed successfully.
+echo The CPSV-AP Public Service Description Creator has been installed successfully.
 pause

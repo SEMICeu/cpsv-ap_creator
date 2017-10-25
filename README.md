@@ -26,7 +26,7 @@ The following programs will be installed (default settings apply):
 * bower
 * Git
 
-Those programs which are already installed on your computer, will be automatically skipped by the installation process.
+If some/all of these programs are already installed on your computer, the installation process will automatically detect this and skip their installation.
 
 It is possible that your computer will need to be restarted during the process. If so, please re-open the install.bat file after restarting to continue the installation process.
 

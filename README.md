@@ -7,18 +7,30 @@ The CPSV-AP Public Service Description Creator uses [RDForms 4.1 by MetaSolution
 
 ## Installation instructions
 
-### Automated installation for Windows
+To install the CPSV-AP Description creator, please follow one of the following methods:
+* [automated installation for Windows](#automatedInstallation)
+* [Command-line installation instructions for Linux](#commandLineInstallation)
+
+Both methods are explained in more details in the following paragraph.
+After installation, make sure to follow the steps provided in the [Configuration section](#configuration) and finaly the [usage instructions](#usageInstructions).
+
+### Automated installation for Windows <a name="automatedInstallation"></a>
 
 Download the content of this GitHub project to your local computer and unzip it.
 
 ![How to download the content of a GitHub project](https://github.com/catalogue-of-services-isa/cpsv-ap_rdf_editor/blob/master/images/downloadProjectFromGitHub.png?raw=true)
 
 Double-click the install.bat file in the main folder. The Editor will now install.
-several programs will be installed, these being bower and nodejs, default settings apply.
+The following programs will be installed (default settings apply):
+* nodejs
+* bower
+* Git
+
+Those programs which are already installed on your computer, will be automatically skipped by the installation process.
 
 It is possible that your computer will need to be restarted during the process. If so, please re-open the install.bat file after restarting to continue the installation process.
 
-### Command-line installation instructions
+### Command-line installation instructions for Linux <a name="commandLineInstallation"></a>
 
 The CPSV-AP Public Service Description Creator uses [RDForms 4.1 by MetaSolutionsAB](https://github.com/MetaSolutionsAB/rdforms/releases/tag/4.1), a JavaScript library that provides a way to declarative describe how the editor and presentation views of RDF should look like. Before you can use the editor you need to make sure all the dependencies for RDForms are loaded and RDForms is build. To load the dependencies, simply run:
 
@@ -33,9 +45,9 @@ After having installed the dependencies, build RDForms. This is done by:
     $ cd path_to_cpsv-ap_creator/build
     $ ./build.sh
 
-### Configuration
+## Configuration <a name="configuration"></a>
 
-Due to the AJAX approach for loading dependencies you first have to allow your browser to do ajax request from a file url,
+Due to the AJAX approach for loading dependencies you first have to allow your browser to do AJAX request from a file url,
 
 in Firefox this is done by:
 * Going into the config mode by typing about:config in the location bar
@@ -43,7 +55,7 @@ in Firefox this is done by:
 
 In Chrome this is done by starting the browser with the following flag: --allow-file-access-from-files
 
-## Usage instructions
+## Usage instructions <a name="usageInstructions"></a>
 
 Open the publicserviceCreator.html file in your standard web browser. 
 

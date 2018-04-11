@@ -1,4 +1,3 @@
-
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -7,7 +6,8 @@
     <link rel="stylesheet" type="text/css" href="./css/cpsv.css">
     <script src="./release/dojo/dojo.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="./js/download.js"></script>
+    <script src="./js/convert.js"></script>
+    <script src="./js/download_new.js"></script>
     <script src="./js/import.js"></script>
     <script src="./js/openTab.js"></script>
 </head>
@@ -24,13 +24,13 @@
         'dojo/text!./samples/emptyRDF.json',
         'dojo/text!./template/CPSVtemplateWithCodelists.json',
         'dojo/domReady!'             //Wait until the dom is ready.
-    ], function(Graph, ItemStore, Experiment, json, emptyRDF, CPSVtemplateWithCodelists) {
+    ], function(Graph, ItemStore, Experiment, json, emptyRDF, CPSVAPtemplate) {
         /*Setup the editor.
         Create the graph, itemstore and templatebundle
         Create a new experiment inside the container div and start it*/
         var graph = new Graph(json.parse(emptyRDF));
         var itemStore = new ItemStore();
-        var bundle = itemStore.registerBundle({source: json.parse(CPSVtemplateWithCodelists)});
+        var bundle = itemStore.registerBundle({source: json.parse(CPSVAPtemplate)});
         var e = new Experiment({
             graph: graph,
             template: bundle.getRoot(),
@@ -43,12 +43,27 @@
         /*Append a button to the ribbon in the RDF tab*/
         $('#dijit_layout_TabContainer_1_tablist').append("<button>download</button>");
         var buttons = document.getElementById("dijit_layout_TabContainer_1_tablist").getElementsByTagName("BUTTON");
-        /*Append a Browse button to the ribbon in the RDF tab and add the onclick functionality to it*/
-        $('#dijit_layout_TabContainer_1_tablist').append("<input type='file' accept='text/xml' onchange='openFile(event)'>");
-        
-        /*Add the onlick event to the button. Download the text to a local file.*/
+        /*Add the onclick event to the button. Download the text to a local file.*/
         buttons[0].onclick = function(){
             downloadClicked();              
+        };
+
+        /*Append a Browse button to the ribbon in the RDF tab and add the onclick functionality to it*/
+        $('#dijit_layout_TabContainer_1_tablist').append("<input type='file' accept='text/xml' onchange='openFile(event)'>");
+
+         /*When the "Editor" tab is clicked, convert RDF to Editor format*/
+        $("div[widgetid='dijit_layout_TabContainer_0_tablist_dijit_layout_ContentPane_0']")[0].onclick = function() {
+            convertToEditor();
+        };
+
+        /*When the "Presenter" tab is clicked, convert RDF to Editor format*/
+        $("div[widgetid='dijit_layout_TabContainer_0_tablist_dijit_layout_ContentPane_1']")[0].onclick = function() {
+            convertToEditor();
+        };
+
+        /*When the "RDF data" tab is clicked, convert RDF to CPSV-AP compliant format*/
+        $("div[widgetid='dijit_layout_TabContainer_0_tablist_dijit__WidgetsInTemplateMixin_0']")[0].onclick = function() {
+            convertToCPSV();
         };
 
     });    
@@ -56,10 +71,10 @@
 </script>
 
         <header class="banner">
-              <a id="logobanner" href="#"><img src="./images/CPSV-AP_logo.png" width="70" height="70" float = "left" alt="CPSV-AP logo" /></a>
-              <h1> Public Service Description Creator </h1>
+            <a id="logobanner" href="#"><img src="./images/CPSV-AP_logo.png" width="70" height="70" float = "left" alt="CPSV-AP logo" /></a>
+            <h1> Public Service Description Creator </h1>
    
-              <div class= "tab">
+            <div class= "tab">
                 <button class=" tablinks" id="editorButton" onclick="openTab(event, 'editor') ">Editor</button>
                 <button class="tablinks" onclick="openTab(event, 'about')">About</button>
             </div>
@@ -88,14 +103,14 @@
         </div>
         
         <footer>
-                <a href="http://ec.europa.eu/"><img src="./images/logo_commission.png" width="115" alt="European Commission"/></a>
-                <p>
-                    <small>Public Service Description Creator: Copyright ©  European Union 2016. This validator is published under the <a href="https://joinup.ec.europa.eu/community/eupl/home">EUPL v1.1 licence</a><br/>
-                    This project is funded by <a href="https://ec.europa.eu/isa2/actions/accessing-member-state-information-resources-european-level_en">ISA2 Action 2016.29</a> under framework contract DI/07171 Lot 2 (Specific Contract 414).<br/>
-                    Authors: Carmen Vandeloo (Based on the work done).<br/>
-                    Apache Fuseki is a copyright © 2011-2015 of the Apache Software Foundation, licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
-                    </small>
-                </p>
+            <a href="http://ec.europa.eu/"><img src="./images/logo_commission.png" width="115" alt="European Commission"/></a>
+            <p>
+                <small>Public Service Description Creator: Copyright ©  European Union 2016. This validator is published under the <a href="https://joinup.ec.europa.eu/community/eupl/home">EUPL v1.1 licence</a><br/>
+                This project is funded by <a href="https://ec.europa.eu/isa2/actions/accessing-member-state-information-resources-european-level_en">ISA2 Action 2016.29</a> under framework contract DI/07171 Lot 2 (Specific Contract 414).<br/>
+                Authors: Carmen Vandeloo (Based on the work done).<br/>
+                Apache Fuseki is a copyright © 2011-2015 of the Apache Software Foundation, licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+                </small>
+            </p>
         </footer>
     </div>
 </body>

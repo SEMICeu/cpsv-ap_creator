@@ -59,13 +59,7 @@ In Chrome this is done by starting the browser with the following flag: --allow-
 
 Open the publicserviceCreator.html file in your standard web browser. 
 
-Edit your description in the editor tab, see the results in the present tab and download the resulting RDF in the RDF tab. Any changes you make in the editor will be reflected in the other tabs. Created descriptions can be imported into the RDF tab and then viewed (and possibly changed) in the editor tab. The tool allows to make a description for one public service.
-
-Descriptions are exported in two formats:
-
-* Machine-readable CPSV-AP 2.1 compliant format; and
-* Public Service Description Creator format, this format is used to import the public service description into the Public Service Description Creator to make changes or updates.
-
+Edit your description in the editor tab, see the results in the present tab and download the resulting RDF in the RDF tab. Any changes you make in the editor will be reflected in the other tabs. Created descriptions can be imported into the RDF tab and then viewed (and possibly changed) in the editor tab. The tool allows to make a description for one public service and to export the created description.
 
 ## License
 

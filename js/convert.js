@@ -35,41 +35,50 @@ function transformRDFXMLtoCPSV(text) {
     var posIdentifier = text.indexOf("<dcterms:identifier", posStartDescription);
     var posEndDescription = text.indexOf("</rdf:Description>", posStartDescription);
 
+    /* if an identifier is present for the PS */
     if (posStartDescription != -1 && posIdentifier != -1 && posEndDescription != -1 && posStartDescription < posIdentifier && posIdentifier < posEndDescription) {
         var posStart = text.indexOf(">", posIdentifier) + 1;
         var posEnd = text.indexOf("<", posStart);
         var identifier = text.substring(posStart, posEnd);
+        /*insert <rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/>*/
+        text = text.substr(0, posEnd + 21) + "\n" + '    <rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/>' + text.substr(posEnd + 21);
         /*replace with identifier*/
         if (isURL(identifier)) { 
             text = text.replace("http://example.com/about", identifier);
         } else {
             text = text.replace('rdf:about="http://example.com/about', 'rdf:nodeID="' + identifier);
         }
-        /*remove identifier and insert <rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/>*/
-        text = text.replace("<dcterms:identifier>" + identifier + "</dcterms:identifier>", '<rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/>');        
+    /* if no identifier is present for the PS */       
     } else if ( (posIdentifier == -1 && posStartDescription != -1 && posEndDescription != -1) || ( posStartDescription != -1 && posIdentifier != -1 && posEndDescription != -1 ) ) {
         /*replace with blank node identifier*/
         text = text.replace('rdf:about="http://example.com/about', 'rdf:nodeID="PS_0');
-        /*remove identifier and insert <rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/>*/
+        /*insert <rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/>*/
         index = text.indexOf('rdf:nodeID="PS_0">');
-        text = text.substr(0, index + 18) + "\n" + '    <rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/>' + text.substr(index + 18);
+        text = text.substr(0, index + 18) + "\n" + '    <rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/>' + "\n" + '    <dcterms:identifier>PS_0</dcterms:identifier>' + text.substr(index + 18);
     } else {
 
     }
 
-    var posStartNodeID, posEndNodeID = -1;
+    posEndDescription = text.indexOf("</rdf:Description>", posStartDescription);
+
+    console.log(text);
+
+    var posStartNodeID,posEndNodeID = -1;
     var nodeID = null;
-    /*As long as it finds identifiers, replace them over the whole document*/
-    while ( text.split("dcterms:identifier").length - 1 > 1 ) {
+    /*As long as it finds identifiers further on in the document, replace them over the whole document*/
+    while (text.indexOf("<dcterms:identifier", posEndDescription) != -1 ) {
         /*find identifier value*/
-        pos = text.indexOf("dcterms:identifier", posEnd);
+        pos = text.indexOf("dcterms:identifier", posEndDescription);
         posStart = text.indexOf(">", pos) + 1;
         posEnd = text.indexOf("<", posStart);
         identifier = text.substring(posStart, posEnd);
+        console.log(identifier);
         /*find rdf:nodeID value*/
         posStartNodeID = text.lastIndexOf("nodeID", pos) + 8;
         posEndNodeID = text.indexOf('"', posStartNodeID);
         nodeID = text.substring(posStartNodeID, posEndNodeID);
+        posEndDescription = text.indexOf("</rdf:Description>", posEndNodeID);
+        console.log(nodeID);
         /* if not a blank node, change rdf:nodeID by rdf:about in the description*/
         if (isURL(identifier)) {
             text = text.replace('rdf:Description rdf:nodeID="' + nodeID, 'rdf:Description rdf:about="' + identifier);
@@ -77,21 +86,13 @@ function transformRDFXMLtoCPSV(text) {
             while (text.indexOf(nodeID) != -1 ) {
                 text = text.replace('rdf:nodeID="' + nodeID,'rdf:resource="' + identifier);
             };
-            /*remove identifier*/
-            text = text.replace(" <dcterms:identifier>" + identifier + "</dcterms:identifier>", "");
-            text = text.replace(/^\s*[\r\n]/gm, "");
         } else {
              /*replace all occurences*/
             while (text.indexOf(nodeID) != -1 ) {
                 text = text.replace('rdf:nodeID="' + nodeID,'rdf:nodeID="' + identifier);
             };
-            /*remove identifier*/
-            text = text.replace(" <dcterms:identifier>" + identifier + "</dcterms:identifier>", "");
-            text = text.replace(/^\s*[\r\n]/gm, "");
         }
-
     }
-
     return text;
 }
 
@@ -102,41 +103,47 @@ function transformRDFXMLtoEditor(text) {
     var posIdentifier = text.indexOf('rdf:about=');
     var posIdentifierBlankNode = text.indexOf('rdf:nodeID=');
 
+    /* if URI identifier for PS */
     if ( posPS != -1 && posStartDescription != -1 && posIdentifier != -1 && posStartDescription < posIdentifier && posIdentifier < posPS ) {
         /*find identifier*/
         var posStart = text.indexOf('"', posIdentifier) + 1;
-        var posEnd = text.indexOf('"', posStart);
-        var identifier = text.substring(posStart, posEnd);
+        var posEndID = text.indexOf('"', posStart);
+        var identifier = text.substring(posStart, posEndID);
         /*replace with example:about*/
         text = text.replace(identifier, "http://example.com/about");
-        /*remove <rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/> and insert identifier*/
-        text = text.replace('<rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/>', "<dcterms:identifier>" + identifier + "</dcterms:identifier>");
+        /*remove <rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/>*/
+        text = text.replace('<rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/>', "");
+        text = text.replace(/^\s*[\r\n]/gm, "");
+    /* if blank node identifier for PS */
     } else if ( posPS != -1 && posStartDescription != -1 && posIdentifierBlankNode != -1 && posStartDescription < posIdentifierBlankNode && posIdentifierBlankNode < posPS ) {
         /*find identifier*/
         var posStart = text.indexOf('"', posIdentifierBlankNode) + 1;
-        var posEnd = text.indexOf('"', posStart);
-        var identifier = text.substring(posStart, posEnd);
+        var posEndID = text.indexOf('"', posStart);
+        var identifier = text.substring(posStart, posEndID);
         /*replace with example:about*/
         text = text.replace('rdf:nodeID="' + identifier, 'rdf:about="http://example.com/about');
-        /*remove <rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/> and insert identifier*/
-        text = text.replace('<rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/>', "<dcterms:identifier>" + identifier + "</dcterms:identifier>");
+        /*remove <rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/>*/
+        text = text.replace('<rdf:type rdf:resource="http://purl.org/vocab/cpsv#PublicService"/>', "");
+        text = text.replace(/^\s*[\r\n]/gm, "");
     } else {
 
     }
 
-    var posID, posStartID, posEndID, nodeID = -1;
+    var posID, posStartID, nodeID = -1;
     /* As long as it finds rdf:about, replace them over the whole document */
-    while ( text.split("rdf:about").length - 1 > 1 ) {
+     while (text.indexOf("rdf:about", posEndID) != -1 ) {
         /*find rdf:about*/
-        posID = text.indexOf("rdf:about", posEnd);
+        posID = text.indexOf("rdf:about", posEndID);
         posStartID = text.indexOf('"', posID) + 1;
         posEndID = text.indexOf('"', posStartID);
         identifier = text.substring(posStartID, posEndID);
+        console.log(identifier);
         nodeID = nodeID + 1;
-        text = text.replace('rdf:about="' + identifier + '"', 'rdf:nodeID="_n' + nodeID + '">' + "<dcterms:identifier>" + identifier + "</dcterms:identifier>");
+        text = text.replace('rdf:about="' + identifier, 'rdf:nodeID="_n' + nodeID);
 
-        /*replace all occurences of identifier by blank node ID*/
-        while (text.split(identifier).length - 1 > 1 ) {
+        /*replace all occurences of rdf:resource=identifier by blank node ID*/
+        while (text.indexOf('rdf:resource="' + identifier) != -1) {
+            console.log("here");
             text = text.replace('rdf:resource="' + identifier, 'rdf:nodeID="_n' + nodeID);
         };
     }  

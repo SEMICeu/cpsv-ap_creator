@@ -83,7 +83,7 @@
 		},
 		{
 			"type": "choice",
-			"nodetype": "ONLY_LITERAL",
+			"nodetype": "URI",
 			"property": "http://data.europa.eu/m8g/sector",
 			"cardinality": {
 				"min": 0,
@@ -2092,7 +2092,7 @@
 		},
 		{
 			"type": "choice",
-			"nodetype": "ONLY_LITERAL",
+			"nodetype": "URI",
 			"property": "http://purl.org/dc/terms/type",
 			"cardinality": {
 				"min": 0,
@@ -2485,7 +2485,7 @@
 		},
 		{
 			"type": "choice",
-			"nodetype": "ONLY_LITERAL",
+			"nodetype": "URI",
 			"property": "http://purl.org/dc/terms/language",
 			"cardinality": {
 				"min": 0,
@@ -2627,7 +2627,7 @@
 		},
 		{
 			"type": "choice",
-			"nodetype": "ONLY_LITERAL",
+			"nodetype": "URI",
 			"property": "http://www.w3.org/ns/adms#status",
 			"cardinality": {
 				"min": 0,
@@ -2665,7 +2665,7 @@
 		},		
 		{
 			"type": "choice",
-			"nodetype": "ONLY_LITERAL",
+			"nodetype": "URI",
 			"property": "http://purl.org/dc/terms/spatial",
 			"cardinality": {
 				"min": 0,
@@ -8060,7 +8060,7 @@
 		},
 		{
 			"type": "text",
-			"nodetype": "ONLY_LITERAL",
+			"nodetype": "URI",
 			"property": "http://purl.org/dc/terms/requires",
 			"cardinality": {
 				"min": 0,
@@ -8075,7 +8075,7 @@
 		},
 		{
 			"type": "text",
-			"nodetype": "ONLY_LITERAL",
+			"nodetype": "URI",
 			"property": "http://purl.org/dc/terms/relation",
 			"cardinality": {
 				"min": 0,
@@ -8422,7 +8422,7 @@
 		},
 		{
 			"type": "choice",
-			"nodetype": "ONLY_LITERAL",
+			"nodetype": "URI",
 			"property": "http://data.europa.eu/m8g/currency",
 			"cardinality": {
 				"min": 0,
@@ -8546,7 +8546,7 @@
 		},
 		{
 			"type": "choice",
-			"nodetype": "ONLY_LITERAL",
+			"nodetype": "URI",
 			"property": "http://purl.org/dc/terms/type",
 			"cardinality": {
 				"min": 0,
@@ -8788,7 +8788,7 @@
 		},
 		{
 			"type": "choice",
-			"nodetype": "ONLY_LITERAL",
+			"nodetype": "URI",
 			"property": "http://schema.org/dayOfWeek",
 			"cardinality": {
 				"min": 0,
@@ -8942,7 +8942,7 @@
 
 		{
 			"type": "choice",
-			"nodetype": "ONLY_LITERAL",
+			"nodetype": "URI",
 			"property": "http://purl.org/dc/terms/language",
 			"cardinality": {
 				"min": 0,
@@ -9159,7 +9159,7 @@
 		},
 		{
 			"type": "choice",
-			"nodetype": "ONLY_LITERAL",
+			"nodetype": "URI",
 			"property": "http://purl.org/dc/terms/type",
 			"cardinality": {
 				"min": 0,
@@ -9248,7 +9248,7 @@
 		},
 		{
 			"type": "choice",
-			"nodetype": "LANGUAGE_LITERAL",
+			"nodetype": "URI",
 			"property": "http://purl.org/dc/terms/type",
 			"cardinality": {
 				"min": 1,
@@ -9833,7 +9833,7 @@
 		},
 		{
 			"type": "choice",
-			"nodetype": "LANGUAGE_LITERAL",
+			"nodetype": "URI",
 			"property": "http://data.europa.eu/eli/ontology#language",
 			"cardinality": {
 				"min": 0,
@@ -10004,7 +10004,7 @@
 		
 		{
 			"type": "choice",
-			"nodetype": "LANGUAGE_LITERAL",
+			"nodetype": "URI",
 			"property": "http://data.europa.eu/m8g/subject",
 			"cardinality": {
 				"min": 0,
@@ -10064,7 +10064,7 @@
 		},
 		{
 			"type": "choice",
-			"nodetype": "LANGUAGE_LITERAL",
+			"nodetype": "URI",
 			"property": "http://data.europa.eu/m8g/territorialApplication",
 			"cardinality": {
 				"min": 0,
@@ -10475,7 +10475,7 @@
 		},
 		{
 			"type": "choice",
-			"nodetype": "LANGUAGE_LITERAL",
+			"nodetype": "URI",
 			"property": "http://data.europa.eu/eli/ontology#language",
 			"cardinality": {
 				"min": 0,
@@ -10800,7 +10800,7 @@
 		},
 		{
 			"type": "choice",
-			"nodetype": "LANGUAGE_LITERAL",
+			"nodetype": "URI",
 			"property": "http://purl.org/dc/terms/spatial",
 			"cardinality": {
 				"min": 1,

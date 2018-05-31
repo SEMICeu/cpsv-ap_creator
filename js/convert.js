@@ -1,13 +1,30 @@
-function convertToCPSV () {	
-	setTimeout( function ()	{	
-	    /*Get the value of the text fields*/
-	    var textXML = dijit.byId("dijit_form_SimpleTextarea_1");
-	    textXML.set("value", transformRDFXMLtoCPSV(textXML.get("value")));
+function switchToRDFXML (text) {
+    setTimeout( function () { 
+        if (( text.split("rdf:about").length - 1 < 2 )) {
+            if (( text.split("http://purl.org/dc/terms/").length - 1 < 1 )) {
+                xmlns:dcterms="http://purl.org/dc/terms/";
+                var textXML = dijit.byId("dijit_form_SimpleTextarea_1").get("value");
+                posStartTag = textXML.indexOf("<rdf:RDF ");
+                textXML = textXML.substr(0, posStartTag + 9) + 'xmlns:dcterms="http://purl.org/dc/terms/"' + "\n" + textXML.substr(posStartTag + 9);
+                dijit.byId("dijit_form_SimpleTextarea_1").set("value", textXML);
+            }
+        }
+    }, 10);
+}
+
+
+function convertToCPSV () { 
+    setTimeout( function () {
+
+        /*Get the value of the text fields*/
+        var textXML = dijit.byId("dijit_form_SimpleTextarea_1");
+        switchToRDFXML(textXML.get("value"));   
+        textXML.set("value", transformRDFXMLtoCPSV(textXML.get("value")));
     }, 10);
 }
 
 function convertToEditor () {
-	/*Get the value of the active text field*/
+    /*Get the value of the active text field*/
     var textXML = dijit.byId("dijit_form_SimpleTextarea_1");
     textXML.set("value", transformRDFXMLtoEditor(textXML.get("value")));
 }

@@ -16248,7 +16248,7 @@
 		"content":
 		[{
 			"type": "choice",
-			"nodetype": "ONLY_LITERAL",
+			"nodetype": "URI",
 			"property": "http://purl.org/dc/terms/type",
 			"cardinality": {
 				"min": 0,
@@ -16347,7 +16347,7 @@
 		"content":
 		[{
 			"type": "choice",
-			"nodetype": "ONLY_LITERAL",
+			"nodetype": "URI",
 			"property": "http://purl.org/dc/terms/type",
 			"cardinality": {
 				"min": 0,
@@ -16477,7 +16477,7 @@
 		},
 		{
 			"type": "text",
-			"nodetype": "ONLY_LITERAL",
+			"nodetype": "URI",
 			"property": "http://purl.org/dc/terms/relation",
 			"cardinality": {
 				"min": 0,

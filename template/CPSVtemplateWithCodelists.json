@@ -2105,7 +2105,7 @@
 				"en": "This property represents the type of a Public Service as described in a controlled vocabulary, for instance social protection, health, recreation, culture and religion, economic affairs... The CPSV-AP v2.1 recommends to use as controlled vocabulary the COFOG taxonomy (http://unstats.un.org/unsd/cr/registry/regcst.asp?Cl=4)."
 			},
 			"choices": [
-				{"value":"https://unstats.un.org/unsd/cr/registry/regcs.asp?Cl=4&amp;Lg=1&amp;Co=01",
+				{"value":"https://unstats.un.org/unsd/cr/registry/regcs.asp?Cl=4&Lg=1&Co=01",
 				"label": "01 - General public services"},
 				{"value":"https://unstats.un.org/unsd/cr/registry/regcs.asp?Cl=4&amp;Lg=1&amp;Co=01.1",
 				"label": "01.1 - Executive and legislative organs, financial and fiscal affairs, external affairs"},
@@ -16264,73 +16264,73 @@
 	{	"value": "http://data.europa.eu/m8g/BusinessEvent/StartingBusiness",
 		"label": {"en": "1. Starting business"}
  	},
-	{	"value": "http://data.europa.eu/m8g/BusinessEvent/RegisteringACompany",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/StartingBusiness/RegisteringACompany",
 		"label": {"en": "1.1 Registering a company"}
  	},
-	{	"value": "http://data.europa.eu/m8g/BusinessEvent/NeedingAlicencePermitOrCertificateToStartOrContinueAnActivity",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/StartingBusiness/NeedingAlicencePermitOrCertificateToStartOrContinueAnActivity",
 		"label": {"en": "1.2Needing a licence, permit or certificate to start or continue an activity"}
  	},
-	{	"value": "http://data.europa.eu/m8g/BusinessEvent/RegisteringIntellectualProperty",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/StartingBusiness/RegisteringIntellectualProperty",
 		"label": {"en": "1.3 Registering Intellectual Property"}
  	},
-	{	"value": "http://data.europa.eu/m8g/BusinessEvent/RegisteringABranch",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/StartingBusiness/RegisteringABranch",
 		"label": {"en": "1.4 Registering a branch"}
  	},
-	{	"value": "http://data.europa.eu/m8g/BusinessEvent/StartingANewActivity",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/StartingBusiness/StartingANewActivity",
 		"label": {"en": "1.5 Starting a new activity"}
  	},
-	{	"value": "http://data.europa.eu/m8g/BusinessEvent/FinancingACompany",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/StartingBusiness/FinancingACompany",
 		"label": {"en": "1.6 Financing a company"}
  	},
-	{	"value": "http://data.europa.eu/m8g/BusinessEvent/HiringAnEmployee",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/StartingBusiness/HiringAnEmployee",
 		"label": {"en": "1.7 Hiring an employee "}
  	},
 	{	"value": "http://data.europa.eu/m8g/BusinessEvent/StartingCrossBorderBusiness",
 		"label": {"en": "2. Starting cross-border business"}
  	},
-	{	"value": "http://data.europa.eu/m8g/BusinessEvent/RegisteringACrossBorderBusiness",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/StartingCrossBorderBusiness/RegisteringACrossBorderBusiness",
 		"label": {"en": "2.1 Registering a cross-border business"}
  	},
-	{	"value": "http://data.europa.eu/m8g/BusinessEvent/RegisteringABranch",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/StartingCrossBorderBusiness/RegisteringABranch",
 		"label": {"en": "2.2 Registering a branch"}
  	},
 	{	"value": "http://data.europa.eu/m8g/BusinessEvent/DoingBusiness",
 		"label": {"en": "3. Doing business"}
  	},
-	{	"value": "http://data.europa.eu/m8g/BusinessEvent/FinancingACompany",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/DoingBusiness/FinancingACompany",
 		"label": {"en": "3.1 Financing a company"}
  	},
-	{	"value": "http://data.europa.eu/m8g/BusinessEvent/NeedingALicencePermitOrCertificateToStartOrContinueAnActivity",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/DoingBusiness/NeedingALicencePermitOrCertificateToStartOrContinueAnActivity",
 		"label": {"en": "3.2 Needing a licence, permit or certificate to start or continue an activity"}
  	},
-	{	"value": "http://data.europa.eu/m8g/BusinessEvent/RegisteringIntellectualProperty",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/DoingBusiness/RegisteringIntellectualProperty",
 		"label": {"en": "3.3 Registering Intellectual Property"}
  	},
-	{	"value": "http://data.europa.eu/m8g/BusinessEvent/HiringAnEmployee",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/DoingBusiness/HiringAnEmployee",
 		"label": {"en": "3.4 Hiring an employee"}
  	},
-	{	"value": "http://data.europa.eu/m8g/BusinessEvent/ParticipatingInPublicProcurement",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/DoingBusiness/ParticipatingInPublicProcurement",
 		"label": {"en": "3.5 Participating in public procurement"}
  	},
-	{	"value": "http://data.europa.eu/m8g/BusinessEvent/NotifyingAndReportingToAuthorities",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/DoingBusiness/NotifyingAndReportingToAuthorities",
 		"label": {"en": "3.6 Notifying and reporting to authorities"}
  	},
-	{	"value": "http://data.europa.eu/m8g/BusinessEvent/StartingANewActivity",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/DoingBusiness/StartingANewActivity",
 		"label": {"en": "3.7 Starting a new activity"}
  	},
-	{	"value": "http://data.europa.eu/m8g/BusinessEvent/RegisteringABranch",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/DoingBusiness/RegisteringABranch",
 		"label": {"en": "3.8 Registering a branch"}
  	},
-	{	"value": "http://data.europa.eu/m8g/BusinessEvent/HavingProblemsInPayingCreditors",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/DoingBusiness/HavingProblemsInPayingCreditors",
 		"label": {"en": "3.9 Having problems in paying creditors"}
  	},
 	{	"value": "http://data.europa.eu/m8g/BusinessEvent/ClosingBusiness",
 		"label": {"en": "4. Closing business"}
  	},
-	{	"value": "http://data.europa.eu/m8g/BusinessEvent/RestructuringOfAChttp://data.europa.eu/m8g/BusinessEvent/ompany",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/ClosingBusiness/RestructuringOfACompany",
 		"label": {"en": "4.1 Restructuring of a company"}
  	},
-	{	"value": "http://data.europa.eu/m8g/BusinessEvent/DissolutionOfACompany",
+	{	"value": "http://data.europa.eu/m8g/BusinessEvent/ClosingBusiness/DissolutionOfACompany",
 		"label": {"en": "4.2 Dissolution of a company"}
 	 }
  ]

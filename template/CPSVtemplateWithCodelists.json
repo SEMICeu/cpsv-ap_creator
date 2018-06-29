@@ -10804,7 +10804,7 @@
 		{
 			"type": "text",
 			"nodetype": "LANGUAGE_LITERAL",
-			"property": "http://www.w3.org/2004/02/skos/core#altLabel",
+			"property": "http://www.w3.org/2004/02/skos/core#prefLabel",
 			"cardinality": {
 				"min": 1,
 				"pref": 1,

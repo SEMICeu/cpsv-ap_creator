@@ -10788,6 +10788,22 @@
 		},{
 			"type": "text",
 			"nodetype": "LANGUAGE_LITERAL",
+			"property": "http://purl.org/dc/terms/title",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "name"
+			},
+			"description": {
+				"en": "This property represents the Name of the Agent."
+			}
+		},
+		{
+			"type": "text",
+			"nodetype": "LANGUAGE_LITERAL",
 			"property": "http://www.w3.org/2004/02/skos/core#altLabel",
 			"cardinality": {
 				"min": 1,
@@ -16176,6 +16192,36 @@
 			{"value":"http://publications.europa.eu/resource/authority/place/YUG",
 			"label":"YUG-Yugoslavia"}
 			]
+		},
+		{
+			"type": "text",
+			"nodetype": "ONLY_LITERAL",
+			"property": "http://data.europa.eu/m8g/hasAddress",
+			"cardinality": {
+				"min": 1,
+				"pref": 1,
+				"max": 1
+			},
+			"label": {
+				"en": "hasAddress"
+			},
+			"description": {
+				"en": "This property represents an Address related to an Agent. Asserting the address relationship implies that the Agent has an Address."
+			}
+		},
+		{
+			"label": {
+				"en": "playsRole"
+			},
+			"description": {
+				"en": "This property links an Agent to the Participation class. The Participation class facilitates the detailed description of how an Agent participates in or interacts with a Public Service and may include temporal and spatial constraints on that participation."
+			},
+			"property": "http://data.europa.eu/m8g/playsRole",
+			"cardinality": {
+				"min": 0,
+				"pref": 0
+			},
+			"id": "m8g:Participation"
 		}]
 	},
 

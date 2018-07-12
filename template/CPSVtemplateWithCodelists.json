@@ -1,6 +1,7 @@
 {
 	"root": "cpsv:PublicService",
-	"templates": [{
+	"templates": [
+	{
 		"id": "cpsv:PublicService",
 		"type": "group",
 		"label": {
@@ -9990,15 +9991,24 @@
 			},
 			"choices": 
 				[
-					{"value": "In force"},
-					{"value": "Not in force"},
-					{"value": "Partially in force"},
-					{"value": "Implicitly revoked"},
-					{"value": "Explicitly revoked"},
-					{"value": "Repealed"},
-					{"value": "Expired"},
-					{"value": "Suspended"},
-					{"value": "Other"}
+					{"value": "In force",
+					"label": "In force"},
+					{"value": "Not in force",
+					"label": "Not in force"},
+					{"value": "Partially in force",
+					"label": "Partially in force"},
+					{"value": "Implicitly revoked",
+					"label": "Implicitly revoked"},
+					{"value": "Explicitly revoked",
+					"label": "Explicitly revoked"},
+					{"value": "Repealed",
+					"label": "Repealed"},
+					{"value": "Expired",
+					"label": "Expired"},
+					{"value": "Suspended",
+					"label": "Suspended"},
+					{"value": "Other",
+					"label": "Other"}
 				]
 		},
 		

@@ -8148,20 +8148,6 @@
 		},
 		{
 			"label": {
-				"en": "serviceProvider"
-			},
-			"description": {
-				"en": "This property links a Public Service to an Agent who provides it. This is distinct from the role of Competent Authority and may be an external contractor."
-			},
-			"property": "http://data.europa.eu/m8g/serviceProvider",
-			"cardinality": {
-				"min": 0,
-				"pref": 0
-			},
-			"id": "m8g:Agent"
-		},
-		{
-			"label": {
 				"en": "hasParticipation"
 			},
 			"description": {
@@ -8360,7 +8346,7 @@
 				"pref": 1,
 				"max": 1
 			},
-			"id": "m8g:Agent"
+			"id": "dct:Agent"
 		}]
 	},
 
@@ -8640,7 +8626,7 @@
 				"min": 0,
 				"pref": 0
 			},
-			"id": "m8g:Agent"
+			"id": "dct:Agent"
 		}]
 	},
 
@@ -10703,7 +10689,7 @@
 
 
 	{
-		"id": "m8g:Agent",
+		"id": "dct:Agent",
 		"type": "group",
 		"nodetype": "RESOURCE",
 		"constraints": {

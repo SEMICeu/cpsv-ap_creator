@@ -62,7 +62,8 @@ function transformRDFXMLtoCPSV(text) {
     var posStartNodeID,posEndNodeID = -1;
     var nodeID = null;
     /*As long as it finds identifiers further on in the document, replace them over the whole document*/
-    while (text.indexOf("<dcterms:identifier", posEndDescription) != -1 ) {
+    
+    for (i = 0; i < (occurrences(text, "<dcterms:identifier", false) - 1); i++) {
         /*find identifier value*/
         pos = text.indexOf("dcterms:identifier", posEndDescription);
         posStart = text.indexOf(">", pos) + 1;
@@ -77,14 +78,15 @@ function transformRDFXMLtoCPSV(text) {
         /* if not a blank node, change rdf:nodeID by rdf:about in the description*/
         if (isURL(identifier)) {
             text = text.replace('rdf:Description rdf:nodeID="' + nodeID, 'rdf:Description rdf:about="' + identifier);
+            posEndDescription = posEndDescription + (identifier.length - nodeID.length);
             /*replace all occurences*/
-            while (text.indexOf(nodeID) != -1 ) {
+            while (occurrences(text, 'rdf:nodeID="' + nodeID, false) > 0 ) {
                 text = text.replace('rdf:nodeID="' + nodeID,'rdf:resource="' + identifier);
                 posEndDescription = posEndDescription + (identifier.length - nodeID.length);
             };
         } else {
              /*replace all occurences*/
-            while (text.indexOf(nodeID) != -1 ) {
+            while (occurrences(text, 'rdf:nodeID="' + nodeID, false) > 0 ) {
                 text = text.replace('rdf:nodeID="' + nodeID,'rdf:nodeID="' + identifier);
                 posEndDescription = posEndDescription + (identifier.length - nodeID.length);
             };
@@ -158,4 +160,24 @@ function isURL(str) {
   '(\\?[;&a-z\\d%@_.,~+&:=-]*)?'+ // query string
   '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
   return pattern.test(str);
+}
+
+function occurrences(string, subString, allowOverlapping) {
+
+    string += "";
+    subString += "";
+    if (subString.length <= 0) return (string.length + 1);
+
+    var n = 0,
+        pos = 0,
+        step = allowOverlapping ? 1 : subString.length;
+
+    while (true) {
+        pos = string.indexOf(subString, pos);
+        if (pos >= 0) {
+            ++n;
+            pos += step;
+        } else break;
+    }
+    return n;
 }

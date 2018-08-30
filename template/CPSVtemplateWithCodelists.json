@@ -16415,7 +16415,7 @@
 					"label": "Starting education"
 				},
 				{
-					"value":"Lhttp://data.europa.eu/m8g/LifeEvent/LookingForANewJob",
+					"value":"http://data.europa.eu/m8g/LifeEvent/LookingForANewJob",
 					"label":"Looking for a new job"
 				},
 				{

@@ -8226,8 +8226,7 @@
 			"property": "http://data.europa.eu/m8g/hasContactPoint",
 			"cardinality": {
 				"min": 0,
-				"pref": 0,
-				"max": 1
+				"pref": 0
 			},
 			"id": "schema:ContactPoint"
 		},
@@ -8255,8 +8254,7 @@
 			"property": "http://data.europa.eu/m8g/hasCost",
 			"cardinality": {
 				"min": 0,
-				"pref": 0,
-				"max": 1
+				"pref": 0
 			},
 			"id": "m8g:Cost"
 		},
@@ -8270,8 +8268,7 @@
 			"property": "http://data.europa.eu/m8g/isDescribedAt",
 			"cardinality": {
 				"min": 0,
-				"pref": 0,
-				"max": 1
+				"pref": 0
 			},
 			"id": "m8g:PublicServiceDataset"
 		}]
@@ -10675,8 +10672,7 @@
 			"property": "http://data.europa.eu/m8g/role",
 			"cardinality": {
 				"min": 1,
-				"pref": 1,
-				"max": 1
+				"pref": 1
 			},
 			"label": {
 				"en": "role"

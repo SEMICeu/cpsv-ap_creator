@@ -16,10 +16,5 @@ function download(filename, text) {
 /*Function executed once the download button is clicked*/
 function downloadClicked() {
     /*Get the value of the active text field*/ 
-    var activeTextField = $(".dijitTabPaneWrapper.dijitTabContainerTop-container.dijitTabPaneWrapperNested.dijitAlignCenter .dijitTabContainerTopChildWrapper.dijitVisible textarea").attr('id');
-    if (activeTextField == "dijit_form_SimpleTextarea_1") {
-        download('PublicServiceDescriptionRDFXML.xml', dijit.byId("dijit_form_SimpleTextarea_1").value);
-    } else {
-       download('PublicServiceDescriptionRDFJSON.json', dijit.byId("dijit_form_SimpleTextarea_2").value); 
-       }
+    download('PublicServiceDescriptionRDFXML.rdf', dijit.byId("dijit_form_SimpleTextarea_1").value);
 }

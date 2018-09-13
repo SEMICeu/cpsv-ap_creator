@@ -79,7 +79,7 @@ function transformRDFXMLtoCPSV(text) {
             text = text.replace('rdf:Description rdf:nodeID="' + nodeID, 'rdf:Description rdf:about="' + identifier);
             posEndDescription = posEndDescription + (identifier.length - nodeID.length);
             /*replace all occurences*/
-            while (occurrences(text, 'rdf:nodeID="' + nodeID, false) > 0 ) {
+            while (occurrences(text, 'rdf:nodeID="' + nodeID +'"', false) > 0 ) {
                 text = text.replace('rdf:nodeID="' + nodeID,'rdf:resource="' + identifier);
                 posEndDescription = posEndDescription + (identifier.length - nodeID.length);
             };

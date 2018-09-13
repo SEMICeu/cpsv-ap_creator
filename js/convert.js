@@ -75,8 +75,7 @@ function transformRDFXMLtoCPSV(text) {
         nodeID = text.substring(posStartNodeID, posEndNodeID);
 
         posEndDescription = text.indexOf("</rdf:Description>", posEndNodeID);
-        /* if not a blank node, change rdf:nodeID by rdf:about in the description*/
-        if (isURL(identifier)) {
+        /* change rdf:nodeID by rdf:about in the description*/
             text = text.replace('rdf:Description rdf:nodeID="' + nodeID, 'rdf:Description rdf:about="' + identifier);
             posEndDescription = posEndDescription + (identifier.length - nodeID.length);
             /*replace all occurences*/
@@ -84,14 +83,8 @@ function transformRDFXMLtoCPSV(text) {
                 text = text.replace('rdf:nodeID="' + nodeID,'rdf:resource="' + identifier);
                 posEndDescription = posEndDescription + (identifier.length - nodeID.length);
             };
-        } else {
-             /*replace all occurences*/
-            while (occurrences(text, 'rdf:nodeID="' + nodeID, false) > 0 ) {
-                text = text.replace('rdf:nodeID="' + nodeID,'rdf:nodeID="' + identifier);
-                posEndDescription = posEndDescription + (identifier.length - nodeID.length);
-            };
-        }
     }
+
     return text;
 }
 
